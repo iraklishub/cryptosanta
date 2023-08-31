@@ -1,7 +1,6 @@
 import '@/src/styles/globals.css'
 import { Inter } from 'next/font/google'
 import { i18n } from '@/i18n'
-import { LanguageSwitcher } from 'src/app/components'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,10 +16,7 @@ export async function generateStaticParams() {
 export default function RootLayout({ children, params }) {
   return (
     <html lang={params.lng}>
-      <body className={inter.className}>
-        <LanguageSwitcher />
-        {children}
-      </body>
+      <body className={`${inter.className} h-screen`}>{children}</body>
     </html>
   )
 }
