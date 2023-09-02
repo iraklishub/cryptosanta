@@ -16,7 +16,9 @@ export async function generateStaticParams() {
 export default function RootLayout({ children, params }) {
   return (
     <html lang={params.lng}>
-      <body className={`${inter.className} h-screen`}>{children}</body>
+      <body className={`${inter.className} h-screen bg-cover bg-center flex flex-col items-center`}>
+        {children}
+      </body>
     </html>
   )
 }

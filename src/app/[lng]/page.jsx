@@ -1,5 +1,5 @@
 import { getDictionary } from './dictionaries/dictionaries'
-import { LanguageSwitcher } from 'src/app/components'
+import { LanguageSwitcher, LetterForm } from 'src/app/components'
 // import Image from 'next/image'
 // import Link from 'next/link'
 // import Logo from '../../../public/assets/images'
@@ -9,7 +9,7 @@ export default async function Page({ params: { lng } }) {
 
   return (
     <>
-      <header className="flex justify-end px-4 bg-cover bg-center h-1/6">
+      <header className="flex justify-end p-4 w-full">
         {/* <Link href="/" className="flex items-center">
           <Image src={Logo} width={100} height={100} alt="logo" className="mr-4" />
           <h1 className="font-semibold text-6xl tracking-wide font-extrabold text-transparent text-8xl bg-clip-text bg-gradient-to-r from-red-600 via-red-200 to-cyan-200">
@@ -19,7 +19,11 @@ export default async function Page({ params: { lng } }) {
         </Link> */}
         <LanguageSwitcher title={dict.language} />
       </header>
-      <main className="bg-contain bg-no-repeat bg-center h-5/6">{dict.home_page}</main>
+      <main className="p-4 w-full md:w-2/3 lg:w-3/4">
+        <div className="">
+          <LetterForm t={dict.form} />
+        </div>
+      </main>
     </>
   )
 }

@@ -1,5 +1,15 @@
 {
-  "home_page": "գլխավոր էջ",
-  "language": "լեզու",
-  "ho_ho_ho": "ho, ho, ho!"
+  "home_page": "home page",
+  "language": "language",
+  "ho_ho_ho": "ho, ho, ho!",
+  "form": {
+    "name": "name",
+    "email": "email",
+    "letter": "letter",
+    "dear_santa": "dear Santa ...",
+    "your_name": "your name",
+    "parent_email": "parent's email",
+    "send": "send",
+    "sending": "sending"
+  }
 }
