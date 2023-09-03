@@ -1,8 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import ReCAPTCHA from 'react-google-recaptcha'
+import { verifyCaptchaToken } from '@/src/utils/recaptchaTokenAuth'
 
-const LetterForm = ({ t, className }) => {
+const LetterForm = ({ t, sitekey, lng, className }) => {
+  const recaptchaRef = useRef(null)
+
+  const [isVerified, setIsverified] = useState(false)
   const [isLoading, setisLoading] = useState(false)
   const [data, setdata] = useState({
     name: '',
@@ -12,28 +17,35 @@ const LetterForm = ({ t, className }) => {
 
   const sendLetter = async (e) => {
     e.preventDefault()
-    // setisLoading(true)
-    console.log(data)
-    // try {
-    //   const response = await fetch('/api/send', {
-    //     method: 'POST',
-    //     body: JSON.stringify(data)
-    //   })
+    setisLoading(true)
 
-    //   if (response.status === 200) {
-    //     setdata({
-    //       name: '',
-    //       email: '',
-    //       message: ''
-    //     })
-    //     // toast here
-    //   }
-    // } catch (error) {
-    //   console.log(error)
-    //   console.error(error)
-    // } finally {
-    //   setisLoading(false)
-    // }
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+
+      if (response.status === 200) {
+        setdata({
+          name: '',
+          email: '',
+          message: ''
+        })
+        // toast here
+      }
+    } catch (error) {
+      console.log(error)
+      console.error(error)
+    } finally {
+      setisLoading(false)
+    }
+  }
+
+  async function handleCaptchaSubmission(token) {
+    // Server function to verify captchaToken
+    await verifyCaptchaToken(token)
+      .then(() => setIsverified(true))
+      .catch(() => setIsverified(false))
   }
 
   return (
@@ -74,10 +86,18 @@ const LetterForm = ({ t, className }) => {
           className="h-60 bg-orange-100/80 text-stone-950 placeholder:text-stone-700 placeholder:capitalize font-semibold mt-4 outline-0 rounded-md px-4 py-2"
         />
       </label>
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey={sitekey}
+        onChange={handleCaptchaSubmission}
+        className="mt-4"
+        hl={lng}
+        theme="dark"
+      />
       <div className="mt-4 flex justify-end">
         <button
           type="submit"
-          disabled={isLoading}
+          disabled={!isVerified || isLoading}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
         >
           <svg

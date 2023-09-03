@@ -21,7 +21,7 @@ export default async function Page({ params: { lng } }) {
       </header>
       <main className="p-4 w-full md:w-2/3 lg:w-3/4">
         <div className="">
-          <LetterForm t={dict.form} />
+          <LetterForm t={dict.form} sitekey={process.env.RECAPTCHA_SITE_KEY} lng={lng} />
         </div>
       </main>
     </>

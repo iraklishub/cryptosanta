@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export async function POST(request) {
   try {
     const body = await request.json()
-    console.log('body', body)
+
     const { name, email, message } = body
     const data = await resend.emails.send({
       from: 'Santa Claus <info@claussanta.com>',
