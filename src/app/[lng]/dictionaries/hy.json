@@ -10,6 +10,8 @@
     "your_name": "your name",
     "parent_email": "parent's email",
     "send": "send",
-    "sending": "sending"
+    "sending": "sending",
+    "sent": "letter sent!",
+    "sending_failed": "sending failed"
   }
 }

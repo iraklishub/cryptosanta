@@ -2,7 +2,9 @@
 
 import { useState, useRef } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
+import { toast } from 'react-toastify'
 import { verifyCaptchaToken } from '@/src/utils/recaptchaTokenAuth'
+import { Button, Field } from '..'
 
 const LetterForm = ({ t, sitekey, lng, className }) => {
   const recaptchaRef = useRef(null)
@@ -31,13 +33,33 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
           email: '',
           message: ''
         })
-        // toast here
       }
     } catch (error) {
       console.log(error)
       console.error(error)
+      toast.error(t.sending_failed, {
+        position: 'top-left',
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark'
+      })
     } finally {
+      recaptchaRef.current.reset()
       setisLoading(false)
+      toast.success(t.sent, {
+        position: 'top-left',
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'dark'
+      })
     }
   }
 
@@ -53,39 +75,30 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
       onSubmit={sendLetter}
       className={`flex flex-col bg-slate-900/60 text-white p-4 ${className}`}
     >
-      <label className="flex items-center">
-        <span className="w-1/6 capitalize">{t.your_name}</span>
-        <input
-          type="text"
-          value={data.name}
-          onChange={(e) => setdata({ ...data, name: e.target.value })}
-          required
-          autoComplete="off"
-          className="bg-transparent outline-0 border-b-2 p-1 ml-2"
-        />
-      </label>
-      <label className="flex items-center mt-4">
-        <span className="w-1/6 capitalize">{t.parent_email}</span>
-        <input
-          type="email"
-          value={data.email}
-          onChange={(e) => setdata({ ...data, email: e.target.value })}
-          required
-          autoComplete="off"
-          className="bg-transparent outline-0 border-b-2 p-1 ml-2"
-        />
-      </label>
-      <label className="flex flex-col mt-10">
-        <span className="text-center text-2xl capitalize">{t.letter}</span>
-        <textarea
-          name="message"
-          value={data.message}
-          onChange={(e) => setdata({ ...data, message: e.target.value })}
-          placeholder={t.dear_santa}
-          required
-          className="h-60 bg-orange-100/80 text-stone-950 placeholder:text-stone-700 placeholder:capitalize font-semibold mt-4 outline-0 rounded-md px-4 py-2"
-        />
-      </label>
+      <Field
+        type="text"
+        label={t.your_name}
+        value={data.name}
+        onChange={(e) => setdata({ ...data, name: e.target.value })}
+        required
+      />
+      <Field
+        type="email"
+        label={t.parent_email}
+        value={data.email}
+        onChange={(e) => setdata({ ...data, email: e.target.value })}
+        required
+        className="mt-4"
+      />
+      <Field
+        isTextarea
+        label={t.letter}
+        value={data.message}
+        onChange={(e) => setdata({ ...data, message: e.target.value })}
+        required
+        placeholder={t.dear_santa}
+        className="mt-10"
+      />
       <ReCAPTCHA
         ref={recaptchaRef}
         sitekey={sitekey}
@@ -93,13 +106,10 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
         className="mt-4"
         hl={lng}
         theme="dark"
+        onveri
       />
       <div className="mt-4 flex justify-end">
-        <button
-          type="submit"
-          disabled={!isVerified || isLoading}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-flex items-center"
-        >
+        <Button type="submit" disabled={!isVerified || isLoading}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -114,7 +124,7 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
           </svg>
 
           <span className="ml-2 capitalize">{isLoading ? `${t.sending}..` : t.send}</span>
-        </button>
+        </Button>
       </div>
     </form>
   )

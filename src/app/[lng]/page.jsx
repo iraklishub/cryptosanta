@@ -1,5 +1,7 @@
 import { getDictionary } from './dictionaries/dictionaries'
 import { LanguageSwitcher, LetterForm } from 'src/app/components'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 // import Image from 'next/image'
 // import Link from 'next/link'
 // import Logo from '../../../public/assets/images'
@@ -24,6 +26,18 @@ export default async function Page({ params: { lng } }) {
           <LetterForm t={dict.form} sitekey={process.env.RECAPTCHA_SITE_KEY} lng={lng} />
         </div>
       </main>
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   )
 }
