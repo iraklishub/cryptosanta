@@ -2,8 +2,7 @@ import 'server-only'
 
 const dictionaries = {
   en: () => import('./en.json').then((module) => module.default),
-  ka: () => import('./ka.json').then((module) => module.default),
-  hy: () => import('./hy.json').then((module) => module.default)
+  ka: () => import('./ka.json').then((module) => module.default)
 }
 
 export const getDictionary = async (locale) => dictionaries[locale]()

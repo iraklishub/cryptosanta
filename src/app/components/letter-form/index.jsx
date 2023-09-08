@@ -11,10 +11,15 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
 
   const [isVerified, setIsverified] = useState(false)
   const [isLoading, setisLoading] = useState(false)
+
   const [data, setdata] = useState({
     name: '',
     email: '',
-    message: ''
+    wish: '',
+    mailData: {
+      subjectText: t.subject,
+      t
+    }
   })
 
   const sendLetter = async (e) => {
@@ -31,7 +36,11 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
         setdata({
           name: '',
           email: '',
-          message: ''
+          wish: '',
+          mailData: {
+            subjectText: t.subject,
+            t
+          }
         })
       }
     } catch (error) {
@@ -49,6 +58,7 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
       })
     } finally {
       recaptchaRef.current.reset()
+      setIsverified(false)
       setisLoading(false)
       toast.success(t.sent, {
         position: 'top-left',
@@ -75,39 +85,55 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
       onSubmit={sendLetter}
       className={`flex flex-col bg-slate-900/60 text-white p-4 ${className}`}
     >
-      <Field
-        type="text"
-        label={t.your_name}
-        value={data.name}
-        onChange={(e) => setdata({ ...data, name: e.target.value })}
-        required
-      />
-      <Field
-        type="email"
-        label={t.parent_email}
-        value={data.email}
-        onChange={(e) => setdata({ ...data, email: e.target.value })}
-        required
-        className="mt-4"
-      />
-      <Field
-        isTextarea
-        label={t.letter}
-        value={data.message}
-        onChange={(e) => setdata({ ...data, message: e.target.value })}
-        required
-        placeholder={t.dear_santa}
-        className="mt-10"
-      />
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        sitekey={sitekey}
-        onChange={handleCaptchaSubmission}
-        className="mt-4"
-        hl={lng}
-        theme="dark"
-        onveri
-      />
+      <div className="flex flex-col">
+        <span className="capitalize text-center text-2xl">{t.letter}</span>
+        <p className="bg-orange-100/80 text-stone-950 font-semibold mt-4 rounded-md px-6 py-4">
+          {t.letter_text.dear_santa}, <br /> <br />
+          {t.letter_text.doing_well} <br /> <br />
+          {t.letter_text.my_name_is}{' '}
+          <Field
+            type="text"
+            value={data.name}
+            onChange={(e) => setdata({ ...data, name: e.target.value })}
+            required
+            placeholder={t.letter_text.your_name}
+            className="w-36"
+          />
+          , <br /> <br />
+          {t.letter_text.good_this_year}, {t.letter_text.ask_parents}{' '}
+          <Field
+            type="email"
+            value={data.email}
+            onChange={(e) => setdata({ ...data, email: e.target.value })}
+            required
+            placeholder={t.letter_text.parent_email}
+            className="mt-4"
+          />
+          <br /> <br />
+          {t.letter_text.gift_this_christmas}{' '}
+          <Field
+            type="text"
+            value={data.wish}
+            onChange={(e) => setdata({ ...data, wish: e.target.value })}
+            required
+            placeholder={t.letter_text.wish}
+            className="w-full"
+          />
+          <br /> <br />
+          {t.letter_text.merry_christmas_happy_new_year} <br /> <br />
+          {t.letter_text.with_love}, {data.name}.
+          <br />
+        </p>
+      </div>
+      <div className="mt-4 h-20">
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={sitekey}
+          onChange={handleCaptchaSubmission}
+          hl={lng}
+          theme="dark"
+        />
+      </div>
       <div className="mt-4 flex justify-end">
         <Button type="submit" disabled={!isVerified || isLoading}>
           <svg

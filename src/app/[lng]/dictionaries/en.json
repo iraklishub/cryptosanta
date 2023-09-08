@@ -1,17 +1,27 @@
 {
-  "home_page": "home page",
   "language": "language",
   "ho_ho_ho": "ho, ho, ho!",
   "form": {
+    "subject": "'s letter to Santa",
     "name": "name",
     "email": "email",
     "letter": "letter",
-    "dear_santa": "dear Santa ...",
-    "your_name": "your name",
-    "parent_email": "parent's email",
     "send": "send",
     "sending": "sending",
     "sent": "letter sent!",
-    "sending_failed": "sending failed"
+    "sending_failed": "sending failed",
+    "letter_text": {
+      "parent_email": "parent's email",
+      "your_name": "your name",
+      "wish": "your wish(es)",
+      "dear_santa": "Dear Santa",
+      "my_name_is": "My name is",
+      "doing_well": "I hope you're doing well.",
+      "good_this_year": "I've tried to be good this year",
+      "ask_parents": "you can ask my parents about it, you can reach them on Email",
+      "gift_this_christmas": "This Christmas, I'd love to get",
+      "merry_christmas_happy_new_year": "Merry Christmas and Happy New Year!",
+      "with_love": "With love"
+    }
   }
 }
