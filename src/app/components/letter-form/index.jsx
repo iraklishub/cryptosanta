@@ -4,10 +4,12 @@ import { useState, useRef } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { toast } from 'react-toastify'
 import { verifyCaptchaToken } from '@/src/utils/recaptchaTokenAuth'
-import { Button, Field } from '..'
+import { Button, Field, MessageIcon, ExitIcon } from '..'
 
 const LetterForm = ({ t, sitekey, lng, className }) => {
   const recaptchaRef = useRef(null)
+
+  const [isOpen, setIsOpen] = useState(false)
 
   const [isVerified, setIsverified] = useState(false)
   const [isLoading, setisLoading] = useState(false)
@@ -80,11 +82,18 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
       .catch(() => setIsverified(false))
   }
 
-  return (
+  return isOpen ? (
     <form
       onSubmit={sendLetter}
-      className={`flex flex-col bg-slate-900/60 text-white p-4 ${className}`}
+      className={`flex flex-col bg-slate-900/60 text-white p-4 relative ${className}`}
     >
+      <button
+        type="button"
+        className="absolute right-4 hover:text-red-400"
+        onClick={() => setIsOpen(false)}
+      >
+        <ExitIcon />
+      </button>
       <div className="flex flex-col">
         <span className="capitalize text-center text-2xl">{t.letter}</span>
         <p className="bg-orange-100/80 text-stone-950 font-semibold mt-4 rounded-md px-6 py-4">
@@ -136,23 +145,21 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
       </div>
       <div className="mt-4 flex justify-end">
         <Button type="submit" disabled={!isVerified || isLoading}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-5 h-5"
-          >
-            <path
-              fillRule="evenodd"
-              d="M2.106 6.447A2 2 0 001 8.237V16a2 2 0 002 2h14a2 2 0 002-2V8.236a2 2 0 00-1.106-1.789l-7-3.5a2 2 0 00-1.788 0l-7 3.5zm1.48 4.007a.75.75 0 00-.671 1.342l5.855 2.928a2.75 2.75 0 002.46 0l5.852-2.926a.75.75 0 10-.67-1.342l-5.853 2.926a1.25 1.25 0 01-1.118 0l-5.856-2.928z"
-              clipRule="evenodd"
-            />
-          </svg>
-
+          <MessageIcon />
           <span className="ml-2 capitalize">{isLoading ? `${t.sending}..` : t.send}</span>
         </Button>
       </div>
     </form>
+  ) : (
+    <Button
+      type="button"
+      onClick={() => setIsOpen(true)}
+      variant="outline"
+      className="absolute left-1/2"
+    >
+      <MessageIcon />
+      <span className="ml-2 capitalize">{t.write_letter}</span>
+    </Button>
   )
 }
 

@@ -31,7 +31,7 @@ const LanguageSwitcher = ({ title, className }) => {
   }
 
   return (
-    <div className={`flex items-center ${className}`}>
+    <div className={`flex items-center ${className || ''}`}>
       <div className="font-extrabold flex font-black text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"

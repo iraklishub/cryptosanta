@@ -2,6 +2,7 @@
   "language": "language",
   "ho_ho_ho": "ho, ho, ho!",
   "form": {
+    "write_letter": "Write letter",
     "subject": "'s letter to Santa",
     "name": "name",
     "email": "email",
