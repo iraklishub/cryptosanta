@@ -1,6 +1,8 @@
-const Field = ({ type, value, onChange, required, placeholder, className }) => {
+const Field = ({ id, type, value, onChange, required, placeholder, className }) => {
   return (
     <input
+      id={id}
+      name={id}
       type={type}
       value={value}
       onChange={onChange}

@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { toast } from 'react-toastify'
 import { verifyCaptchaToken } from '@/src/utils/recaptchaTokenAuth'
-import { Button, Field, MessageIcon, ExitIcon } from '..'
+import { Button, Field, MessageIcon, ExitIcon, LoadingSpinner } from '..'
 
 const LetterForm = ({ t, sitekey, lng, className }) => {
   const recaptchaRef = useRef(null)
@@ -82,15 +82,34 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
       .catch(() => setIsverified(false))
   }
 
+  // form display animation
+  const [translate, settranslate] = useState(false)
+  useEffect(() => {
+    const timeoutID = setTimeout(() => {
+      if (isOpen) {
+        settranslate(true)
+      }
+    }, 1)
+
+    return () => {
+      clearTimeout(timeoutID)
+    }
+  }, [isOpen])
+
   return isOpen ? (
     <form
       onSubmit={sendLetter}
-      className={`flex flex-col bg-slate-900/60 text-white p-4 relative ${className}`}
+      className={`flex flex-col transition-opacity duration-300 w-full md:w-2/3 lg:w-3/4 bg-slate-900/60 text-white p-4 relative ${
+        translate ? 'opacity-100' : 'opacity-0'
+      } ${className}`}
     >
       <button
         type="button"
-        className="absolute right-4 hover:text-red-400"
-        onClick={() => setIsOpen(false)}
+        className="absolute right-4"
+        onClick={() => {
+          setIsOpen(false)
+          settranslate(false)
+        }}
       >
         <ExitIcon />
       </button>
@@ -101,6 +120,7 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
           {t.letter_text.doing_well} <br /> <br />
           {t.letter_text.my_name_is}{' '}
           <Field
+            id="name"
             type="text"
             value={data.name}
             onChange={(e) => setdata({ ...data, name: e.target.value })}
@@ -111,6 +131,7 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
           , <br /> <br />
           {t.letter_text.good_this_year}, {t.letter_text.ask_parents}{' '}
           <Field
+            id="email"
             type="email"
             value={data.email}
             onChange={(e) => setdata({ ...data, email: e.target.value })}
@@ -121,6 +142,7 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
           <br /> <br />
           {t.letter_text.gift_this_christmas}{' '}
           <Field
+            id="wish"
             type="text"
             value={data.wish}
             onChange={(e) => setdata({ ...data, wish: e.target.value })}
@@ -145,7 +167,7 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
       </div>
       <div className="mt-4 flex justify-end">
         <Button type="submit" disabled={!isVerified || isLoading}>
-          <MessageIcon />
+          {isLoading ? <LoadingSpinner /> : <MessageIcon />}
           <span className="ml-2 capitalize">{isLoading ? `${t.sending}..` : t.send}</span>
         </Button>
       </div>
@@ -155,7 +177,7 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
       type="button"
       onClick={() => setIsOpen(true)}
       variant="outline"
-      className="absolute left-1/2"
+      className="h-fit ml-24 mt-32 md:ml-36 md:mt-52 lg:ml-16 lg:mt-10 shadow-2xl shadow-red-600 animate-bounce"
     >
       <MessageIcon />
       <span className="ml-2 capitalize">{t.write_letter}</span>

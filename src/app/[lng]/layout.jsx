@@ -19,7 +19,7 @@ export default function RootLayout({ children, params }) {
   return (
     <html lang={params.lng}>
       <body
-        className={`${inter.className} h-screen bg-cover bg-center flex flex-col items-center relative`}
+        className={`${inter.className} h-screen bg-cover bg-center flex flex-col items-center justify-between relative`}
       >
         <div className="fixed w-full h-full -z-10">
           <Image

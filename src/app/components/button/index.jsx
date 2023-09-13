@@ -7,7 +7,7 @@ const Button = ({ type, disabled, onClick, variant, className, children }) => {
       disabled={disabled}
       className={
         variant === 'outline'
-          ? `bg-transparent text-white hover:bg-gray-100 hover:text-gray-800 font-semibold py-2 px-4 border border-white hover:border-gray-400 rounded shadow inline-flex items-center ${
+          ? `bg-transparent text-black hover:bg-gray-100 hover:text-gray-800 font-bold py-2 px-4 border border-black hover:border-gray-400 rounded shadow inline-flex items-center ${
               className || ''
             } `
           : `bg-blue-500 font-bold text-white py-2 px-4 rounded inline-flex items-center 
