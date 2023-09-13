@@ -97,81 +97,96 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
   }, [isOpen])
 
   return isOpen ? (
-    <form
-      onSubmit={sendLetter}
-      className={`flex flex-col transition-opacity duration-300 w-full md:w-2/3 lg:w-3/4 bg-slate-900/60 text-white p-4 relative ${
-        translate ? 'opacity-100' : 'opacity-0'
-      } ${className}`}
-    >
-      <button
-        type="button"
-        className="absolute right-4"
-        onClick={() => {
-          setIsOpen(false)
-          settranslate(false)
-        }}
+    <div className="w-full max-h-fit min-h-full bg-slate-900/40 absolute top-0 left-0 flex items-center justify-center">
+      <form
+        onSubmit={sendLetter}
+        className={`flex flex-col w-full h-fit md:w-2/3 lg:w-3/4 transition-opacity duration-300 bg-slate-900/70 text-white p-4 ${
+          translate ? 'opacity-100' : 'opacity-0'
+        } ${className}`}
       >
-        <ExitIcon />
-      </button>
-      <div className="flex flex-col">
-        <span className="capitalize text-center text-2xl">{t.letter}</span>
-        <p className="bg-orange-100/80 text-stone-950 font-semibold mt-4 rounded-md px-6 py-4">
-          {t.letter_text.dear_santa}, <br /> <br />
-          {t.letter_text.doing_well} <br /> <br />
-          {t.letter_text.my_name_is}{' '}
-          <Field
-            id="name"
-            type="text"
-            value={data.name}
-            onChange={(e) => setdata({ ...data, name: e.target.value })}
-            required
-            placeholder={t.letter_text.your_name}
-            className="w-36"
+        <div className="flex flex-col">
+          <div className="relative text-center">
+            <span className="capitalize text-center text-2xl">{t.letter}</span>
+            <button
+              type="button"
+              className="absolute right-4"
+              onClick={() => {
+                setIsOpen(false)
+                settranslate(false)
+              }}
+            >
+              <ExitIcon />
+            </button>
+          </div>
+          <p className="bg-orange-100/80 text-stone-950 font-semibold mt-4 rounded-md px-6 py-4">
+            {t.letter_text.dear_santa}, <br /> <br />
+            {t.letter_text.doing_well} <br /> <br />
+            {t.letter_text.my_name_is}{' '}
+            <Field
+              id="name"
+              type="text"
+              value={data.name}
+              onChange={(e) => setdata({ ...data, name: e.target.value })}
+              required
+              placeholder={t.letter_text.your_name}
+              className="w-36"
+            />
+            , <br /> <br />
+            {t.letter_text.good_this_year}, {t.letter_text.ask_parents}{' '}
+            <Field
+              id="email"
+              type="email"
+              value={data.email}
+              onChange={(e) => setdata({ ...data, email: e.target.value })}
+              required
+              placeholder={t.letter_text.parent_email}
+              className="mt-4"
+            />
+            <br /> <br />
+            {t.letter_text.gift_this_christmas}{' '}
+            <Field
+              id="wish"
+              type="text"
+              value={data.wish}
+              onChange={(e) => setdata({ ...data, wish: e.target.value })}
+              required
+              placeholder={t.letter_text.wish}
+              className="w-full"
+            />
+            <br /> <br />
+            {t.letter_text.merry_christmas_happy_new_year} <br /> <br />
+            {t.letter_text.with_love}, {data.name}.
+            <br />
+          </p>
+        </div>
+        <div className="mt-4 h-20">
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={sitekey}
+            onChange={handleCaptchaSubmission}
+            hl={lng}
+            theme="dark"
           />
-          , <br /> <br />
-          {t.letter_text.good_this_year}, {t.letter_text.ask_parents}{' '}
-          <Field
-            id="email"
-            type="email"
-            value={data.email}
-            onChange={(e) => setdata({ ...data, email: e.target.value })}
-            required
-            placeholder={t.letter_text.parent_email}
-            className="mt-4"
-          />
-          <br /> <br />
-          {t.letter_text.gift_this_christmas}{' '}
-          <Field
-            id="wish"
-            type="text"
-            value={data.wish}
-            onChange={(e) => setdata({ ...data, wish: e.target.value })}
-            required
-            placeholder={t.letter_text.wish}
-            className="w-full"
-          />
-          <br /> <br />
-          {t.letter_text.merry_christmas_happy_new_year} <br /> <br />
-          {t.letter_text.with_love}, {data.name}.
-          <br />
-        </p>
-      </div>
-      <div className="mt-4 h-20">
-        <ReCAPTCHA
-          ref={recaptchaRef}
-          sitekey={sitekey}
-          onChange={handleCaptchaSubmission}
-          hl={lng}
-          theme="dark"
-        />
-      </div>
-      <div className="mt-4 flex justify-end">
-        <Button type="submit" disabled={!isVerified || isLoading}>
-          {isLoading ? <LoadingSpinner /> : <MessageIcon />}
-          <span className="ml-2 capitalize">{isLoading ? `${t.sending}..` : t.send}</span>
-        </Button>
-      </div>
-    </form>
+        </div>
+        <div className="mt-4 flex justify-end">
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => {
+              setIsOpen(false)
+              settranslate(false)
+            }}
+            className="text-white border-white"
+          >
+            <span className="capitalize">{t.close}</span>
+          </Button>
+          <Button type="submit" disabled={!isVerified || isLoading} className="ml-2">
+            {isLoading ? <LoadingSpinner /> : <MessageIcon />}
+            <span className="ml-2 capitalize">{isLoading ? `${t.sending}..` : t.send}</span>
+          </Button>
+        </div>
+      </form>
+    </div>
   ) : (
     <Button
       type="button"

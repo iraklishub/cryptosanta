@@ -1,8 +1,8 @@
-import '@/src/styles/globals.css'
+import '../../styles/globals.css'
 import { Inter } from 'next/font/google'
 import { i18n } from '@/i18n'
 import Image from 'next/image'
-import backgroundImage from '@/public/assets/images/background.jpg'
+import backgroundImage from '../../../public/assets/images/background.jpg'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +27,7 @@ export default function RootLayout({ children, params }) {
             fill={true}
             priority={true}
             quality={100}
+            placeholder="blur"
             alt="background"
             className="object-cover"
           />
