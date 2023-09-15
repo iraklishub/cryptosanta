@@ -1,7 +1,6 @@
 import { getDictionary } from './dictionaries/dictionaries'
 import { LanguageSwitcher, LetterForm } from 'src/app/components'
 import { ToastContainer } from 'react-toastify'
-import Link from 'next/link'
 import 'react-toastify/dist/ReactToastify.css'
 
 export default async function Page({ params: { lng } }) {
@@ -27,15 +26,6 @@ export default async function Page({ params: { lng } }) {
           theme="dark"
         />
       </main>
-      <footer className="w-full p-4 text-white inline-flex justify-end font-semibold">
-        <Link href="/contact" className="text_shadow">
-          Contact
-        </Link>
-        <span className="ml-2">|</span>
-        <Link href="/privacy-policy" className="ml-2 text_shadow">
-          Privacy Policy
-        </Link>
-      </footer>
     </>
   )
 }

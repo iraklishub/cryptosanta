@@ -14,8 +14,7 @@
     "sending_failed": "sending failed",
     "letter_text": {
       "parent_email": "parent's email",
-      "your_name": "your name",
-      "wish": "your wish(es)",
+      "wish": "wish(es)",
       "dear_santa": "Dear Santa",
       "my_name_is": "My name is",
       "doing_well": "I hope you're doing well.",

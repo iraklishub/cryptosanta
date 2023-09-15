@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { toast } from 'react-toastify'
 import { verifyCaptchaToken } from '@/src/utils/recaptchaTokenAuth'
+import axios from 'axios'
 import { Button, Field, MessageIcon, ExitIcon, LoadingSpinner } from '..'
 
 const LetterForm = ({ t, sitekey, lng, className }) => {
@@ -29,10 +30,7 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
     setisLoading(true)
 
     try {
-      const response = await fetch('/api/send', {
-        method: 'POST',
-        body: JSON.stringify(data)
-      })
+      const response = await axios.post('/api/send', data)
 
       if (response.status === 200) {
         setdata({
@@ -128,7 +126,7 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
               value={data.name}
               onChange={(e) => setdata({ ...data, name: e.target.value })}
               required
-              placeholder={t.letter_text.your_name}
+              placeholder={t.name}
               className="w-36"
             />
             , <br /> <br />
