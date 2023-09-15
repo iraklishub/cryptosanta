@@ -11,7 +11,7 @@ export default async function Page({ params: { lng } }) {
       <header className="flex justify-end p-4 w-full">
         <LanguageSwitcher title={dict.language} />
       </header>
-      <main className="p-4 w-full h-full flex justify-center">
+      <main className="p-4 w-full h-full flex justify-center items-center">
         <LetterForm t={dict.form} sitekey={process.env.RECAPTCHA_SITE_KEY} lng={lng} />
         <ToastContainer
           position="top-left"

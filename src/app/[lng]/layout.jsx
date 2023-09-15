@@ -2,7 +2,7 @@ import '../../styles/globals.css'
 import { Inter } from 'next/font/google'
 import { i18n } from '@/i18n'
 import Image from 'next/image'
-import backgroundImage from '../../../public/assets/images/background.jpg'
+import backgroundImage from '../../../public/assets/images/background.png'
 
 const inter = Inter({ subsets: ['latin'] })
 

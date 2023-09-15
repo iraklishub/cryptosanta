@@ -190,7 +190,7 @@ const LetterForm = ({ t, sitekey, lng, className }) => {
       type="button"
       onClick={() => setIsOpen(true)}
       variant="outline"
-      className="h-fit ml-24 mt-32 md:ml-36 md:mt-52 lg:ml-16 lg:mt-10 shadow-2xl shadow-red-600 animate-bounce"
+      className="h-fit shadow-2xl shadow-red-600 animate-bounce bg-white border-0"
     >
       <MessageIcon />
       <span className="ml-2 capitalize">{t.write_letter}</span>
