@@ -1,10 +1,14 @@
 import React from 'react'
+import { clsx } from 'clsx'
 
-const LoadingSpinner = () => {
+const LoadingSpinner = ({ color, size }) => {
   return (
     <div
-      className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
-      role="status"
+      className={clsx(
+        'rounded-full animate-spin border-2 border-solid border-t-transparent',
+        color ? `border-${color}` : 'border-current',
+        size ? `w-${size} h-${size}` : 'w-4 h-4'
+      )}
     />
   )
 }

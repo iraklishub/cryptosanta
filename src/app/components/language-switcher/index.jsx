@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from 'next/navigation'
 import { i18n } from '@/i18n'
+import { clsx } from 'clsx'
 import Select from 'react-select'
 
 const LanguageSwitcher = ({ title, className }) => {
@@ -31,7 +32,7 @@ const LanguageSwitcher = ({ title, className }) => {
   }
 
   return (
-    <div className={`flex items-center ${className || ''}`}>
+    <div className={clsx('flex items-center', className)}>
       <div className="font-extrabold flex font-black text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
