@@ -1,6 +1,7 @@
 import '../../styles/globals.css'
 import { Inter } from 'next/font/google'
 import { i18n } from '@/i18n'
+import { Analytics } from '@vercel/analytics/react'
 import Image from 'next/image'
 import backgroundImage from '../../../public/assets/images/background.png'
 
@@ -34,6 +35,7 @@ export default function RootLayout({ children, params }) {
           />
         </div>
         {children}
+        <Analytics />
       </body>
     </html>
   )
