@@ -24,5 +24,9 @@
       "merry_christmas_happy_new_year": "Merry Christmas and Happy New Year!",
       "with_love": "With love"
     }
+  },
+  "meta_data": {
+    "title": "Send Letter to Santa Claus!",
+    "description": "Dear Santa: Send Christmas/New Year Wishes Here!"
   }
 }

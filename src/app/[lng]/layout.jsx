@@ -2,14 +2,20 @@ import '../../styles/globals.css'
 import { Inter } from 'next/font/google'
 import { i18n } from '@/i18n'
 import { Analytics } from '@vercel/analytics/react'
+import { getDictionary } from './dictionaries/dictionaries'
 import Image from 'next/image'
 import backgroundImage from '../../../public/assets/images/background.png'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Letter to Santa',
-  description: 'Send Letter to Santa Claus!'
+export async function generateMetadata({ params }) {
+  const lng = params.lng
+  const dict = await getDictionary(lng)
+
+  return {
+    title: dict.meta_data.title,
+    description: dict.meta_data.description
+  }
 }
 
 export async function generateStaticParams() {
