@@ -53,7 +53,7 @@ const LanguageSwitcher = ({ title, className }) => {
       <Select
         id="languageselect"
         instanceId="languageselect"
-        className="ml-2"
+        className="ml-2 w-32"
         styles={styles}
         components={components}
         options={localeOptions}

@@ -1,0 +1,30 @@
+{
+  "language": "taal",
+  "form": {
+    "write_letter": "Schrijf brief",
+    "subject": "Een brief aan Santa Claus (De Kerstman)",
+    "name": "naam",
+    "letter": "brief",
+    "close": "sluit",
+    "send": "versturen",
+    "sending": "bezig met verzenden",
+    "sent": "brief verzonden!",
+    "sending_failed": "verzenden is mislukt",
+    "letter_text": {
+      "parent_email": "email van ouders",
+      "wish": "kerstwensen",
+      "dear_santa": "Lieve Santa (Kerstman)",
+      "my_name_is": "Mijn naam is",
+      "doing_well": "Ik hoop dat het goed met je gaat.",
+      "good_this_year": "Ik heb dit jaar geprobeerd goed te zijn",
+      "ask_parents": "Dat kun je aan mijn ouders vragen, zij zijn te bereiken via e-mail -",
+      "gift_this_christmas": "Deze kerst zou ik graag krijgen - ",
+      "merry_christmas_happy_new_year": "Vrolijk kerstfeest en een gelukkig nieuwjaar!",
+      "with_love": "Met liefde"
+    }
+  },
+  "meta_data": {
+    "title": "Stuur een brief naar Santa Claus (Kerstman)!",
+    "description": "Lieve Santa (Kerstman): Stuur hier uw kerst-/nieuwjaarswensen!"
+  }
+}

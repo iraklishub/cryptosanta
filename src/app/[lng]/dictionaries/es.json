@@ -1,0 +1,32 @@
+{
+  "lng": "Spanish",
+  "language": "idioma",
+  "form": {
+    "write_letter": "Escribir carta",
+    "subject": "Una carta a Santa Claus (Papá Noel)",
+    "name": "nombre",
+    "letter": "carta",
+    "close": "cerca",
+    "send": "enviar",
+    "sending": "enviando",
+    "sent": "carta enviada!",
+    "sending_failed": "envío fallido",
+    "letter_text": {
+      "parent_email": "E-mail de los padres",
+      "wish": "desear/deseos",
+      "dear_santa": "querido Santa (Papa Noel)",
+      "my_name_is": "Mi nombre es",
+      "doing_well": "Espero que lo estés haciendo bién.",
+      "good_this_year_m": "He intentado ser bueno este año",
+      "good_this_year_f": "He intentado ser buena este año",
+      "ask_parents": "Puedes preguntarles a mis padres sobre eso, puedes contactarlos por correo electrónico -",
+      "gift_this_christmas": "Esta Navidad me encantaría recibir",
+      "merry_christmas_happy_new_year": "¡Feliz navidad y próspero año nuevo!",
+      "with_love": "Con amor"
+    }
+  },
+  "meta_data": {
+    "title": "¡Envía carta a Santa Claus (Papa Noel)!",
+    "description": "Querido Santa (Papa Noel): ¡Envía deseos de Navidad / Año Nuevo aquí!"
+  }
+}

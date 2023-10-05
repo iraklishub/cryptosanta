@@ -12,6 +12,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
 
   const [isVerified, setIsverified] = useState(false)
   const [isLoading, setisLoading] = useState(false)
+  const [maleVersion, setMaleVersion] = useState(true)
 
   const [data, setdata] = useState({
     name: '',
@@ -88,6 +89,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
       <div className="flex flex-col">
         <div className="relative text-center">
           <span className="capitalize text-center text-2xl">{t.letter}</span>
+          {/*todo - setMaleVersion()*/}
           <button type="button" className="absolute right-4" onClick={onExit}>
             <ExitIcon />
           </button>
@@ -106,7 +108,12 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
             className="w-36"
           />
           , <br /> <br />
-          {t.letter_text.good_this_year}, {t.letter_text.ask_parents}{' '}
+          {t.letter_text.good_this_year
+            ? t.letter_text.good_this_year
+            : maleVersion
+            ? t.letter_text.good_this_year_m
+            : t.letter_text.good_this_year_f}
+          , {t.letter_text.ask_parents}{' '}
           <Field
             id="email"
             type="email"
