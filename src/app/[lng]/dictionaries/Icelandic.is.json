@@ -1,0 +1,33 @@
+{
+  "language": "tungumál",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Skrifaðu bréf",
+    "subject": "Bréf til Santa Clauss",
+    "use_template": "nota sniðmát",
+    "name": "nafn",
+    "letter": "bréf",
+    "close": "loka",
+    "send": "senda",
+    "sending": "sending",
+    "sent": "bréf sent!",
+    "sending_failed": "sending mistókst",
+    "letter_text": {
+      "parent_email": "Tölvupóstur foreldranna",
+      "wish": "óskir",
+      "letter_text": "bréfatexta",
+      "dear_santa": "Kæri Santa",
+      "my_name_is": "Ég heiti",
+      "doing_well": "Ég vona að þér gangi vel.",
+      "good_this_year": "Ég hef reynt að vera góður í ár",
+      "ask_parents": "þú getur spurt foreldra mína um það, þá er hægt að ná í þau á tölvupósti - ",
+      "gift_this_christmas": "Þessi jól væri ég til í að fá",
+      "merry_christmas_happy_new_year": "Gleðileg jól og farsælt komandi ár!",
+      "with_love": "Með ást"
+    }
+  },
+  "meta_data": {
+    "title": "Sendu bréf til Santa Claus!",
+    "description": "Kæri Santa Claus: Sendu jóla- og nýársóskir hér!"
+  }
+}

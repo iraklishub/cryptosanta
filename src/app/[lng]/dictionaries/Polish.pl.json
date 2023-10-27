@@ -1,0 +1,33 @@
+{
+  "language": "język",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Napisać list",
+    "subject": "List do Santa Claus",
+    "use_template": "Użyj szablonu",
+    "name": "imię",
+    "letter": "list",
+    "close": "zamknąć",
+    "send": "wysłać",
+    "sending": "wysyłanie",
+    "sent": "list wysłany!",
+    "sending_failed": "Wysyłanie nie powiodło się",
+    "letter_text": {
+      "parent_email": "email rodziców",
+      "wish": "życzenie(a)",
+      "letter_text": "tekst listu",
+      "dear_santa": "Drogi Santa",
+      "my_name_is": "Nazywam się",
+      "doing_well": "Mam nadzieję, że masz się dobrze.",
+      "good_this_year": "Starałem się być grzeczny w tym roku",
+      "ask_parents": "możesz zapytać o to moich rodziców, można się z nimi skontaktować e-mailem -",
+      "gift_this_christmas": "Na te Święta chciałbym otrzymać",
+      "merry_christmas_happy_new_year": "Wesołych Świąt i Szczęśliwego Nowego Roku!",
+      "with_love": "Z miłością"
+    }
+  },
+  "meta_data": {
+    "title": "Wyślij list do Santa Claus!",
+    "description": "Drogi Santa: Wyślij tutaj życzenia świąteczne i noworoczne!"
+  }
+}

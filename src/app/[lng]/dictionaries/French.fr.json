@@ -1,0 +1,33 @@
+{
+  "language": "langue",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Écrire une lettre",
+    "subject": "Une lettre au Santa Claus (Père Noël)",
+    "use_template": "utilise le modèle",
+    "name": "nom",
+    "letter": "lettre",
+    "close": "fermer",
+    "send": "envoyer",
+    "sending": "Envoi en cours",
+    "sent": "lettre envoyée !",
+    "sending_failed": "Envoi échoué",
+    "letter_text": {
+      "parent_email": "Email de votre parent",
+      "wish": "vœux",
+      "letter_text": "texte de la lettre",
+      "dear_santa": "cher Santa (Père Noël)",
+      "my_name_is": "Je m'appelle",
+      "doing_well": "J'espère que tu vas bien.",
+      "good_this_year": "J'ai essayé d'être sage cette année",
+      "ask_parents": "vous pouvez en parler à mes parents, ils sont joignables par Email -",
+      "gift_this_christmas": "Ce Noël, j'aimerais avoir",
+      "merry_christmas_happy_new_year": "Joyeux Noel et bonne année!",
+      "with_love": "Avec amour"
+    }
+  },
+  "meta_data": {
+    "title": "Envoyez une lettre au Santa Claus (Père Noël)!",
+    "description": "Cher Santa (Père Noël): Envoyez vos vœux de Noël/Nouvel An ici!"
+  }
+}

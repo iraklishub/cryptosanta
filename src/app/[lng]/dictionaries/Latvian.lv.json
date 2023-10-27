@@ -1,0 +1,33 @@
+{
+  "language": "valodu",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Rakstīt vēstuli",
+    "subject": "Vēstule Santa Klausam",
+    "use_template": "izmantot veidni",
+    "name": "vārds",
+    "letter": "vēstule",
+    "close": "aizveriet",
+    "send": "nosūtīt",
+    "sending": "sūtīšana",
+    "sent": "vēstule nosūtīta!",
+    "sending_failed": "nosūtīšana neizdevās",
+    "letter_text": {
+      "parent_email": "Vecāku e-pasts",
+      "wish": "vēlmes",
+      "letter_text": "vēstules teksts",
+      "dear_santa": "Dārgais Santa",
+      "my_name_is": "Mani sauc",
+      "doing_well": "ES ceru, ka tev iet labi.",
+      "good_this_year": "Šogad esmu centies būt labs",
+      "ask_parents": "Jūs varat par to jautāt maniem vecākiem, ar viņiem var sazināties pa e-pastu - ",
+      "gift_this_christmas": "Šajos Ziemassvētkos es labprāt saņemtu",
+      "merry_christmas_happy_new_year": "Priecīgus Ziemassvētkus un laimīgu Jauno gadu!",
+      "with_love": "Ar mīlestību"
+    }
+  },
+  "meta_data": {
+    "title": "Nosūtiet vēstuli Santa Klausam!",
+    "description": "Dārgais Santa: nosūtiet Ziemassvētku/Jaungada vēlējumus šeit!"
+  }
+}

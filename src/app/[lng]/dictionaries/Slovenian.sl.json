@@ -1,0 +1,33 @@
+{
+  "language": "jezik",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Napiši pismo",
+    "subject": "Pismo Santa Klausu",
+    "use_template": "uporabite predlogo",
+    "name": "ime",
+    "letter": "pismo",
+    "close": "Zapri",
+    "send": "poslati",
+    "sending": "pošiljanje",
+    "sent": "pismo poslano!",
+    "sending_failed": "pošiljanje ni uspelo",
+    "letter_text": {
+      "parent_email": "e-pošti staršev",
+      "wish": "želje",
+      "letter_text": "besedilo pisma",
+      "dear_santa": "Dragi Santa",
+      "my_name_is": "Ime mi je",
+      "doing_well": "Upam, da si dobro.",
+      "good_this_year": "Letos sem poskušal biti dober",
+      "ask_parents": "o tem lahko vprašaš moje starše, dosegljivi so po e-pošti - ",
+      "gift_this_christmas": "Ta božič bi rad dobil",
+      "merry_christmas_happy_new_year": "Vesel božič in srečno novo leto!",
+      "with_love": "Z ljubeznijo"
+    }
+  },
+  "meta_data": {
+    "title": "Pošljite pismo Santa Clausu!",
+    "description": "Dragi Santa: sem pošljite božične/novoletne želje!"
+  }
+}

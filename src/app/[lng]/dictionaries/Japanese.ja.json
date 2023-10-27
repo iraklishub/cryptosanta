@@ -1,0 +1,33 @@
+{
+  "language": "言語",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "手紙を書く",
+    "subject": "サンタクロースへの手紙",
+    "use_template": "テンプレートを使用する",
+    "name": "自分の名前",
+    "letter": "手紙",
+    "close": "近い",
+    "send": "送信",
+    "sending": "送信",
+    "sent": "手紙が送られてきました！",
+    "sending_failed": "送信に失敗しました",
+    "letter_text": {
+      "parent_email": "親の電子メール",
+      "wish": "願い",
+      "letter_text": "手紙のテキスト",
+      "dear_santa": "親愛なるサンタクロース",
+      "my_name_is": "私の名前は",
+      "doing_well": "元気にしていることを願います。",
+      "good_this_year": "今年も頑張って頑張りました",
+      "ask_parents": "それについて私の両親に聞いてみてください、彼らは電子メールで連絡を取ることができます - ",
+      "gift_this_christmas": "今年のクリスマスにぜひ手に入れたいのは、",
+      "merry_christmas_happy_new_year": "メリークリスマス、そしてハッピーニューイヤー！",
+      "with_love": "愛を込めて"
+    }
+  },
+  "meta_data": {
+    "title": "サンタクロースに手紙を送ろう！",
+    "description": "親愛なるサンタクロースへ: クリスマス/新年の願いをここに送ってください!"
+  }
+}

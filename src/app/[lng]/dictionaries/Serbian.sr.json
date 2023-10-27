@@ -1,0 +1,33 @@
+{
+  "language": "Језик",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Напиши писмо",
+    "subject": "Писмо Санта Клаусу",
+    "use_template": "користите шаблон",
+    "name": "име",
+    "letter": "писмо",
+    "close": "Близу",
+    "send": "послати",
+    "sending": "слање",
+    "sent": "писмо послато!",
+    "sending_failed": "слање није успело",
+    "letter_text": {
+      "parent_email": "имејл родитеља",
+      "wish": "желети",
+      "letter_text": "текст писма",
+      "dear_santa": "Драги Санта",
+      "my_name_is": "Моје име је",
+      "doing_well": "Надам се да си добро.",
+      "good_this_year": "Покушао сам да будем добар ове године",
+      "ask_parents": "можете питати моје родитеље о томе, могу се добити на мејл - ",
+      "gift_this_christmas": "Овај Божић бих волео да добијем",
+      "merry_christmas_happy_new_year": "Срећан Божић и Нова година!",
+      "with_love": "С 'љубављу"
+    }
+  },
+  "meta_data": {
+    "title": "Пошаљите писмо Санта Клаусу!",
+    "description": "Драги Санта: пошаљите божићне / новогодишње жеље овде!"
+  }
+}

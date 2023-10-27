@@ -1,0 +1,33 @@
+{
+  "language": "Sprog",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Skriv brev",
+    "subject": "Brev til Santa",
+    "use_template": "brug skabelon",
+    "name": "navn",
+    "letter": "brev",
+    "close": "Luk",
+    "send": "sende",
+    "sending": "afsendelse",
+    "sent": "brev sendt!",
+    "sending_failed": "afsendelse mislykkedes",
+    "letter_text": {
+      "parent_email": "forældres email",
+      "wish": "ønsker",
+      "letter_text": "brev tekst",
+      "dear_santa": "Kære Santa",
+      "my_name_is": "Mit navn er",
+      "doing_well": "Jeg håber du har det godt.",
+      "good_this_year": "Jeg har prøvet at være god i år",
+      "ask_parents": "det kan du spørge mine forældre om, de kan kontaktes på e-mail - ",
+      "gift_this_christmas": "Denne jul ville jeg elske at få",
+      "merry_christmas_happy_new_year": "Glædelig jul og godt nytår!",
+      "with_love": "Med kærlighed"
+    }
+  },
+  "meta_data": {
+    "title": "Send brev til Santa Claus!",
+    "description": "Kære Santa: Send jule-/nytårsønsker her!"
+  }
+}

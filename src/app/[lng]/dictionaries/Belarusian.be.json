@@ -1,0 +1,33 @@
+{
+  "language": "мове",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Напісаць ліст",
+    "subject": "Ліст да Санта Клаўса",
+    "use_template": "выкарыстоўваць шаблон",
+    "name": "імя",
+    "letter": "ліст",
+    "close": "зачыніць",
+    "send": "адправіць",
+    "sending": "адпраўка",
+    "sent": "ліст адпраўлены!",
+    "sending_failed": "не атрымалася адправіць",
+    "letter_text": {
+      "parent_email": "эл-пошта бацькоў",
+      "wish": "пажаданні",
+      "letter_text": "тэкст ліста",
+      "dear_santa": "Дарагі Санта",
+      "my_name_is": "Мяне завуць",
+      "doing_well": "Я спадзяюся, што ў вас усё добра.",
+      "good_this_year": "У гэтым годзе я стараўся быць добрым",
+      "ask_parents": "вы можаце спытаць пра гэта маіх бацькоў, з імі можна звязацца па электроннай пошце - ",
+      "gift_this_christmas": "Гэта Каляды я хацеў бы атрымаць",
+      "merry_christmas_happy_new_year": "З Калядамі і Новым годам!",
+      "with_love": "З любоўю"
+    }
+  },
+  "meta_data": {
+    "title": "Дашліце ліст Санта Клаўсу!",
+    "description": "Дарагі Санта: дасылайце пажаданні з Калядамі / Новым годам сюды!"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "language": "언어",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "편지를 쓰다",
+    "subject": "산타클로스에게 보내는 편지",
+    "use_template": "템플릿 사용",
+    "name": "내 이름",
+    "letter": "편지",
+    "close": "닫다",
+    "send": "보내다",
+    "sending": "배상",
+    "sent": "편지 보냈어요!",
+    "sending_failed": "전송 실패",
+    "letter_text": {
+      "parent_email": "부모의 이메일",
+      "wish": "소원",
+      "letter_text": "편지 텍스트",
+      "dear_santa": "친애하는 산타클로스",
+      "my_name_is": "내 이름은",
+      "doing_well": "당신이 잘 지내길 바랍니다.",
+      "good_this_year": "올해도 잘 지내려고 노력했어요",
+      "ask_parents": "그것에 대해 저희 부모님께 물어보세요. 이메일로 연락하실 수 있어요. ",
+      "gift_this_christmas": "이번 크리스마스엔 꼭 받고 싶은",
+      "merry_christmas_happy_new_year": "즐거운 성탄절 보내시고 새해 복 많이 받으세요!",
+      "with_love": "사랑으로"
+    }
+  },
+  "meta_data": {
+    "title": "산타클로스에게 편지를 보내보세요!",
+    "description": "친애하는 산타클로스님: 크리스마스/새해 소원을 여기로 보내주세요!"
+  }
+}

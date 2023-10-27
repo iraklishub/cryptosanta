@@ -1,0 +1,33 @@
+{
+  "language": "Jazyk",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Psát dopis",
+    "subject": "dopis santa clausovi",
+    "use_template": "použít šablonu",
+    "name": "jméno",
+    "letter": "dopis",
+    "close": "zavřít",
+    "send": "poslat",
+    "sending": "odesílání",
+    "sent": "dopis odeslán!",
+    "sending_failed": "odeslání se nezdařilo",
+    "letter_text": {
+      "parent_email": "email rodičů",
+      "wish": "přání(a)",
+      "letter_text": "textový dopis",
+      "dear_santa": "Milý Santo",
+      "my_name_is": "Jmenuji se",
+      "doing_well": "Doufám, že se ti daří.",
+      "good_this_year": "Letos jsem se snažil být dobrý",
+      "ask_parents": "můžete se na to zeptat mých rodičů, jsou k zastižení na e-mailu - ",
+      "gift_this_christmas": "Tyto Vánoce bych rád dostal",
+      "merry_christmas_happy_new_year": "Veselé Vánoce a šťastný nový rok!",
+      "with_love": "S láskou"
+    }
+  },
+  "meta_data": {
+    "title": "Pošlete dopis Santa Clausovi!",
+    "description": "Milý Santo: Zde posílejte vánoční / novoroční přání!"
+  }
+}

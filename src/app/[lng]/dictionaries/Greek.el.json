@@ -1,0 +1,33 @@
+{
+  "language": "Γλώσσα",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Γράψε γράμμα",
+    "subject": "Γράμμα στον Άγιο Βασίλη",
+    "use_template": "χρήση προτύπου",
+    "name": "όνομα",
+    "letter": "γράμμα",
+    "close": "Κλείσε",
+    "send": "στείλετε",
+    "sending": "αποστολή",
+    "sent": "έστειλε επιστολή!",
+    "sending_failed": "η αποστολή απέτυχε",
+    "letter_text": {
+      "parent_email": "Το email του γονέα",
+      "wish": "ευχές",
+      "letter_text": "κείμενο επιστολής",
+      "dear_santa": "Αγαπητέ Άγιο Βασίλη",
+      "my_name_is": "Το όνομά μου είναι",
+      "doing_well": "Ελπίζω να είσαι καλά.",
+      "good_this_year": "Προσπάθησα να είμαι καλός φέτος",
+      "ask_parents": "μπορείτε να ρωτήσετε τους γονείς μου για αυτό, μπορείτε να επικοινωνήσετε με το email - ",
+      "gift_this_christmas": "Αυτά τα Χριστούγεννα θα ήθελα πολύ να τα πάρω",
+      "merry_christmas_happy_new_year": "Καλά Χριστούγεννα και ευτυχισμένο το νέο έτος!",
+      "with_love": "Με αγάπη"
+    }
+  },
+  "meta_data": {
+    "title": "Στείλτε γράμμα στον Άγιο Βασίλη!",
+    "description": "Αγαπητέ Άγιο Βασίλη: Στείλτε Ευχές Χριστουγέννων / Πρωτοχρονιάς εδώ!"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "language": "keel",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Kirjutage kiri",
+    "subject": "Kiri Santa Clausile",
+    "use_template": "kasutage malli",
+    "name": "nimi",
+    "letter": "kiri",
+    "close": "Sulge",
+    "send": "saada",
+    "sending": "saatmine",
+    "sent": "kiri saadetud!",
+    "sending_failed": "saatmine ebaõnnestus",
+    "letter_text": {
+      "parent_email": "vanemate email",
+      "wish": "soove",
+      "letter_text": "kirja tekst",
+      "dear_santa": "Kallis Santa",
+      "my_name_is": "Minu nimi on",
+      "doing_well": "Ma loodan, et sul läheb hästi.",
+      "good_this_year": "Olen püüdnud sel aastal hea olla",
+      "ask_parents": "võite selle kohta mu vanematelt küsida, nendega saab ühendust meili teel - ",
+      "gift_this_christmas": "Need jõulud mulle meeldiks saada",
+      "merry_christmas_happy_new_year": "Häid jõule ja head uut aastat!",
+      "with_love": "Armastusega"
+    }
+  },
+  "meta_data": {
+    "title": "Saada kiri Santa Clausile!!",
+    "description": "Kallis Santa: saatke siia jõulu-/uusaastasoovid!"
+  }
+}

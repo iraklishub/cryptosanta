@@ -1,8 +1,8 @@
 export default function manifest() {
   return {
     name: 'Letter to Claus Santa',
-    short_name: 'Claus Santa letter',
-    description: 'send letter to santa',
+    short_name: 'Claus Santa',
+    description: 'Send letter to Santa Claus',
     start_url: '/',
     display: 'fullscreen',
     background_color: '#9c2d2d',

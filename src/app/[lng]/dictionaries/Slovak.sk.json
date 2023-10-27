@@ -1,0 +1,33 @@
+{
+  "language": "Jazyk",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Napíšte list",
+    "subject": "List Santa Clausovi",
+    "use_template": "použiť šablónu",
+    "name": "meno",
+    "letter": "list",
+    "close": "Zavrieť",
+    "send": "poslať",
+    "sending": "odosielanie",
+    "sent": "list odoslaný!",
+    "sending_failed": "odoslanie zlyhalo",
+    "letter_text": {
+      "parent_email": "e-mail rodiča",
+      "wish": "želania",
+      "letter_text": "text listu",
+      "dear_santa": "drahý Santa",
+      "my_name_is": "Moje meno je",
+      "doing_well": "Dúfam, že sa ti darí.",
+      "good_this_year": "Tento rok som sa snažil byť dobrý",
+      "ask_parents": "na to sa môžeš opýtať mojich rodičov, možno ich zastihnúť na email - ",
+      "gift_this_christmas": "Tieto Vianoce by som rád dostal",
+      "merry_christmas_happy_new_year": "Veselé Vianoce a šťastný nový rok!",
+      "with_love": "S láskou"
+    }
+  },
+  "meta_data": {
+    "title": "Pošlite list Santa Clausovi!",
+    "description": "Milý Santa: Pošlite sem vianočné / novoročné priania!"
+  }
+}

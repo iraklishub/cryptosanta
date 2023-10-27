@@ -1,0 +1,33 @@
+{
+  "language": "språk",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Skriv brev",
+    "subject": "Brev till Santa",
+    "use_template": "använd mall",
+    "name": "namn",
+    "letter": "brev",
+    "close": "Stäng",
+    "send": "skicka",
+    "sending": "sändning",
+    "sent": "brev skickat!",
+    "sending_failed": "Sändning misslyckades",
+    "letter_text": {
+      "parent_email": "förälders e-post",
+      "wish": "lyckönskningar",
+      "letter_text": "brevtext",
+      "dear_santa": "Kära Santa",
+      "my_name_is": "Mitt namn är",
+      "doing_well": "Jag hoppas du mår bra.",
+      "good_this_year": "Jag har försökt vara bra i år",
+      "ask_parents": "det kan du fråga mina föräldrar om, de kan nås på e-post - ",
+      "gift_this_christmas": "Den här julen skulle jag gärna få",
+      "merry_christmas_happy_new_year": "God Jul och Gott Nytt År!",
+      "with_love": "Med kärlek"
+    }
+  },
+  "meta_data": {
+    "title": "Skicka brev till Santa Claus!",
+    "description": "Kära Santa Claus: Skicka jul-/nyårsönskningar här!"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "language": "teanga",
+  "form": {
+    "warning": "Translation may not be correct, contact and help us to fix",
+    "write_letter": "Scríobh litir",
+    "subject": "Litir chuig Santa Claus",
+    "use_template": "úsáid teimpléad",
+    "name": "ainm",
+    "letter": "litir",
+    "close": "dhúnadh",
+    "send": "seol",
+    "sending": "ag seoladh",
+    "sent": "litir seolta!",
+    "sending_failed": "theip ar sheoladh",
+    "letter_text": {
+      "parent_email": "ríomhphost tuismitheora",
+      "wish": "mianta",
+      "letter_text": "téacs litreach",
+      "dear_santa": "Santa a chara",
+      "my_name_is": "Is ainm dom",
+      "doing_well": "Tá súil agam go bhfuil tú go maith.",
+      "good_this_year": "Tá iarracht déanta agam a bheith go maith i mbliana",
+      "ask_parents": "is féidir leat ceist a chur ar mo thuismitheoirí faoi sin, is féidir iad a bhaint amach ar R-phost - ",
+      "gift_this_christmas": "An Nollaig seo ba bhreá liom a fháil",
+      "merry_christmas_happy_new_year": "Nollaig Shona agus Athbhliain faoi Mhaise!",
+      "with_love": "Le grá"
+    }
+  },
+  "meta_data": {
+    "title": "Seol Litir chuig Santa Claus!",
+    "description": "Santa a chara: Seol na Nollag / Mianta na hAthbhliana Anseo!"
+  }
+}
