@@ -8,17 +8,12 @@ export async function POST(request) {
   try {
     const body = await request.json()
 
-    const {
-      name,
-      email,
-      wish,
-      mailData: { subjectText, template, t }
-    } = body
+    const { name, email, wish, t, template } = body
 
     const data = await resend.emails.send({
       from: 'Santa Claus <info@claussanta.com>',
       to: email,
-      subject: `${subjectText}: ${name}`,
+      subject: `${t.subject}: ${name}`,
       react: EmailTemplate({ name, email, wish, template, t })
     })
 

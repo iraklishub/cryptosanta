@@ -23,7 +23,7 @@ const EmailTemplate = ({ name, email, wish, template, t }) => (
               as="h3"
               className="absolute w-full text-white top-4 font-semibold text-base md:text-lg lg:text-xl text-center"
             >
-              {subjectText}: {name}
+              {t.subject}: {name}
             </Heading>
             {template ? (
               <Text className="px-20 text-base md:text-lg lg:text-xl">

@@ -19,24 +19,20 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
   const [data, setdata] = useState({
     name: '',
     email: '',
-    wish: '',
-    mailData: {
-      subjectText: t.subject,
-      template,
-      t
-    }
+    wish: ''
   })
 
   const sendLetter = async (e) => {
     e.preventDefault()
     setisLoading(true)
 
+    const request = { ...data, t, template }
+
     try {
-      const response = await axios.post('/api/send', data)
+      const response = await axios.post('/api/send', request)
 
       if (response.status === 200) {
         setdata({
-          ...data,
           name: '',
           email: '',
           wish: ''
