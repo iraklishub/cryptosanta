@@ -12,14 +12,14 @@ export async function POST(request) {
       name,
       email,
       wish,
-      mailData: { subjectText, t }
+      mailData: { subjectText, template, t }
     } = body
 
     const data = await resend.emails.send({
       from: 'Santa Claus <info@claussanta.com>',
       to: email,
       subject: `${subjectText}: ${name}`,
-      react: EmailTemplate({ name, email, wish, t })
+      react: EmailTemplate({ name, email, wish, template, t })
     })
 
     if (data.status === 'success') {

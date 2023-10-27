@@ -71,3 +71,37 @@ export const i18n = {
     { value: 'ko', label: '한국어' } // Korean
   ]
 }
+
+export const localesHasGender = [
+  'es',
+  'de',
+  'fr',
+  'pt',
+  'nl',
+  'it',
+  'pl',
+  'uk',
+  'ru',
+  'cs',
+  'hr',
+  'sr',
+  'sk',
+  'sl',
+  'be',
+  'bg',
+  'sv',
+  'da',
+  'no',
+  'is',
+  'ga',
+  'fi',
+  'et',
+  'lt',
+  'lv',
+  'ro',
+  'hu',
+  'el',
+  'hy',
+  'ja',
+  'ko'
+]
