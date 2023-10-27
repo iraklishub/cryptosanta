@@ -1,6 +1,6 @@
 import { getDictionary } from './dictionaries/dictionaries'
 import { LanguageSwitcher, Letter } from 'src/app/components'
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer, Flip } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 export default async function Page({ params: { lng } }) {
@@ -14,16 +14,13 @@ export default async function Page({ params: { lng } }) {
       <main className="p-4 w-full h-full flex justify-center items-center">
         <Letter t={dict.form} sitekey={process.env.RECAPTCHA_SITE_KEY} lng={lng} />
         <ToastContainer
-          position="top-left"
-          autoClose={2000}
-          hideProgressBar
-          newestOnTop
           closeOnClick
           rtl={false}
-          pauseOnFocusLoss
+          pauseOnFocusLoss={false}
           draggable
-          pauseOnHover
+          pauseOnHover={false}
           theme="dark"
+          transition={Flip}
         />
       </main>
     </>

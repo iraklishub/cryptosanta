@@ -14,6 +14,7 @@ const LetterForm = dynamic(() => import('./LetterForm'), {
 
 const Letter = ({ t, sitekey, lng }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const [warningDisplay, setWarningDisplay] = useState(false)
 
   const exitForm = () => {
     setIsOpen(false)
@@ -36,18 +37,21 @@ const Letter = ({ t, sitekey, lng }) => {
 
   useEffect(() => {
     if (translationNotCompleted.includes(lng)) {
-      toast.warn(t.warning, {
-        position: 'top-center',
-        autoClose: 6000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-        theme: 'dark'
-      })
+      setWarningDisplay(true)
+      if (warningDisplay) {
+        toast.warn(t.warning, {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          limit: 1,
+          progress: undefined,
+          theme: 'dark'
+        })
+      }
     }
-  }, [])
+  }, [warningDisplay])
 
   return isOpen ? (
     <div className="w-full max-h-fit min-h-full bg-slate-900/40 absolute top-0 left-0 flex items-center justify-center">
