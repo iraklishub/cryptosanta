@@ -7,6 +7,8 @@ import { verifyCaptchaToken } from '@/src/utils/recaptchaTokenAuth'
 import { toast } from 'react-toastify'
 import { localesHasGender } from '@/i18n'
 import { Button, Field, MessageIcon, ExitIcon, LoadingSpinner, Switch } from '..'
+import Lottie from 'lottie-react'
+import letterAnimationData from '../../constants/letteranimation.json'
 
 const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
   const recaptchaRef = useRef(null)
@@ -15,6 +17,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
   const [template, setTemplate] = useState(false)
   const [isLoading, setisLoading] = useState(false)
   const [maleVersion, setMaleVersion] = useState(true)
+  const [letterAnimation, setLetterAnimation] = useState(false)
 
   const [data, setdata] = useState({
     name: '',
@@ -53,6 +56,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
       })
     } finally {
       recaptchaRef.current.reset()
+      setLetterAnimation(true)
       setIsverified(false)
       setisLoading(false)
       toast.success(t.sent, {
@@ -75,7 +79,14 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
       .catch(() => setIsverified(false))
   }
 
-  return (
+  return letterAnimation ? (
+    <Lottie
+      loop={false}
+      animationData={letterAnimationData}
+      style={{ width: 200, color: 'red' }}
+      onComplete={onExit}
+    />
+  ) : (
     <form
       onSubmit={sendLetter}
       className={`flex flex-col w-full h-fit md:w-2/3 lg:w-3/4 transition-opacity duration-300 bg-slate-900/70 text-white p-4 ${

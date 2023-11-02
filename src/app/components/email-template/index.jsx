@@ -26,7 +26,7 @@ const EmailTemplate = ({ name, email, wish, template, t }) => (
               {t.subject}: {name}
             </Heading>
             {template ? (
-              <Text className="px-4 md:px-10 lg:px-20 text-base md:text-lg lg:text-xl">
+              <Text className="px-4 text-center text-base md:text-lg lg:text-xl">
                 {t.letter_text.dear_santa}, <br /> <br />
                 {t.letter_text.doing_well} <br /> <br />
                 {t.letter_text.my_name_is} {name}, <br /> <br />
