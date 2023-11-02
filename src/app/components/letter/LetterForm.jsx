@@ -89,6 +89,29 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
             <ExitIcon />
           </button>
         </div>
+        <div className="mt-4 md:px-6 flex justify-around md:justify-start md:items-center md:gap-x-5">
+          <Switch
+            id="template"
+            value={template}
+            onChange={() => {
+              setTemplate(!template)
+              setMaleVersion(true)
+            }}
+            title={t.use_template}
+          />
+          {localesHasGender.includes(lng)
+            ? template && (
+                <Switch
+                  id="gender"
+                  value={maleVersion}
+                  onChange={() => setMaleVersion(!maleVersion)}
+                  title={maleVersion ? '👦 ♂' : '👧 ♀'}
+                  bgColor={maleVersion ? 'bg-blue-400' : 'bg-pink-400'}
+                  className="ml-2"
+                />
+              )
+            : null}
+        </div>
         <div className="bg-orange-100/80 text-stone-950 font-semibold mt-4 rounded-md px-6 py-4">
           {template ? (
             <p>
@@ -169,30 +192,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
           )}
         </div>
       </div>
-      <div className="mt-4 h-fit flex flex-col md:flex-row md:justify-between items-center">
-        <div className="flex justify-between md:items-center md:gap-x-5">
-          <Switch
-            id="template"
-            value={template}
-            onChange={() => {
-              setTemplate(!template)
-              setMaleVersion(true)
-            }}
-            title={t.use_template}
-          />
-          {localesHasGender.includes(lng)
-            ? template && (
-                <Switch
-                  id="gender"
-                  value={maleVersion}
-                  onChange={() => setMaleVersion(!maleVersion)}
-                  title={maleVersion ? '👦 ♂' : '👧 ♀'}
-                  bgColor={maleVersion ? 'bg-blue-400' : 'bg-pink-400'}
-                  className="ml-2"
-                />
-              )
-            : null}
-        </div>
+      <div className="mt-4 h-20">
         <ReCAPTCHA
           ref={recaptchaRef}
           sitekey={sitekey}
