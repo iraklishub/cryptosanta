@@ -67,7 +67,8 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
         pauseOnHover: true,
         draggable: false,
         progress: undefined,
-        theme: 'dark'
+        theme: 'dark',
+        delay: 2500
       })
     }
   }
