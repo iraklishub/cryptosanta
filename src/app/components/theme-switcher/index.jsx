@@ -35,15 +35,20 @@ const index = () => {
 
   return (
     <div className="flex items-center mr-6 text-white">
-      <Switch
-        id="themeswitch"
-        value={id}
-        onChange={toggleTheme}
-        checked={isGrinch}
-        bgColor={isGrinch ? 'bg-green-600' : 'bg-red-600'}
-        className="mr-1"
-      />
-      {isLoading ? <LoadingSpinner /> : isGrinch ? <GrinchIcon /> : <SantaIcon />}
+      <SantaIcon />
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : (
+        <Switch
+          id="themeswitch"
+          value={id}
+          onChange={toggleTheme}
+          checked={isGrinch}
+          bgColor={isGrinch ? 'bg-green-600' : 'bg-red-600'}
+          className="mr-1"
+        />
+      )}
+      <GrinchIcon />
     </div>
   )
 }
