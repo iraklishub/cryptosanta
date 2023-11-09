@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 import { localesHasGender } from '@/i18n'
 import { Button, Field, MessageIcon, ExitIcon, LoadingSpinner, Switch } from '..'
 import Lottie from 'lottie-react'
-import letterAnimationData from '../../constants/letteranimation.json'
+import santaletterAnimationData from '../../constants/santa-letter-animation.json'
 
 const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
   const recaptchaRef = useRef(null)
@@ -83,7 +83,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
   return letterAnimation ? (
     <Lottie
       loop={false}
-      animationData={letterAnimationData}
+      animationData={santaletterAnimationData}
       style={{ width: 200, color: 'red' }}
       onComplete={onExit}
     />
