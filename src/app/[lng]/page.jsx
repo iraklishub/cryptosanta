@@ -1,5 +1,5 @@
 import { getDictionary } from './dictionaries/dictionaries'
-import { LanguageSwitcher, Letter } from 'src/app/components'
+import { LanguageSwitcher, Letter, ThemeSwitcher } from 'src/app/components'
 import { ToastContainer, Flip } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -9,6 +9,7 @@ export default async function Page({ params: { lng } }) {
   return (
     <>
       <header className="flex justify-end p-4 w-full">
+        <ThemeSwitcher className="mr-4" />
         <LanguageSwitcher title={dict.language} />
       </header>
       <main className="p-4 w-full h-full flex justify-center items-center">

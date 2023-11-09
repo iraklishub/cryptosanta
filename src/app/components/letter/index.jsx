@@ -3,18 +3,27 @@
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 
+import { useTheme } from '@/src/utils/store'
 import WriteLetterButton from './WriteLetterButton'
 import { toast } from 'react-toastify'
 import { LoadingSpinner } from '..'
 import { translationNotCompleted } from '../../constants'
+import Lottie from 'lottie-react'
+import grinchletterAnimationData from '../../constants/grinch-letter-animation.json'
+import explotionAnimationData from '../../constants/explotion-animation.json'
 
 const LetterForm = dynamic(() => import('./LetterForm'), {
   loading: () => <LoadingSpinner color="white" size="6" />
 })
 
 const Letter = ({ t, sitekey, lng }) => {
+  const { id } = useTheme((state) => state.theme)
+  const isGrinch = id === 'grinch'
+
   const [isOpen, setIsOpen] = useState(false)
   const [warningDisplay, setWarningDisplay] = useState(false)
+  const [grinchLetterAnimation, setGrinchLetterAnimation] = useState(false)
+  const [explotionAnimation, setExplotionAnimation] = useState(false)
 
   const exitForm = () => {
     setIsOpen(false)
@@ -59,7 +68,35 @@ const Letter = ({ t, sitekey, lng }) => {
     </div>
   ) : (
     <>
-      <WriteLetterButton label={t.write_letter} onClick={() => setIsOpen(true)} />
+      {grinchLetterAnimation ? (
+        <>
+          {explotionAnimation ? (
+            <Lottie
+              loop={false}
+              animationData={explotionAnimationData}
+              style={{ width: 400 }}
+              onComplete={() => {
+                setExplotionAnimation(false)
+                setGrinchLetterAnimation(false)
+              }}
+            />
+          ) : (
+            <Lottie
+              loop={false}
+              animationData={grinchletterAnimationData}
+              style={{ width: 200 }}
+              onComplete={() => {
+                setExplotionAnimation(true)
+              }}
+            />
+          )}
+        </>
+      ) : (
+        <WriteLetterButton
+          label={t.write_letter}
+          onClick={isGrinch ? () => setGrinchLetterAnimation(true) : () => setIsOpen(true)}
+        />
+      )}
     </>
   )
 }
