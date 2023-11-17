@@ -50,13 +50,13 @@ const Letter = ({ t, sitekey, lng }) => {
       if (warningDisplay) {
         toast.warn(t.warning, {
           position: 'top-center',
-          autoClose: 5000,
-          hideProgressBar: false,
+          autoClose: false,
+          hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: false,
           limit: 1,
           progress: undefined,
-          theme: 'dark'
+          theme: 'light'
         })
       }
     }

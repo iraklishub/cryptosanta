@@ -45,7 +45,6 @@ const index = () => {
           onChange={toggleTheme}
           checked={isGrinch}
           bgColor={isGrinch ? 'bg-green-600' : 'bg-red-600'}
-          className="mr-1"
         />
       )}
       <GrinchIcon />

@@ -52,7 +52,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
         pauseOnHover: true,
         draggable: false,
         progress: undefined,
-        theme: 'dark'
+        theme: 'light'
       })
     } finally {
       recaptchaRef.current.reset()
@@ -67,7 +67,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
         pauseOnHover: true,
         draggable: false,
         progress: undefined,
-        theme: 'dark',
+        theme: 'light',
         delay: 2500
       })
     }
