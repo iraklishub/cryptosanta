@@ -20,7 +20,7 @@ export default async function Page({ params: { lng } }) {
           pauseOnFocusLoss={false}
           draggable
           pauseOnHover={false}
-          theme="dark"
+          theme="light"
           transition={Flip}
         />
       </main>
