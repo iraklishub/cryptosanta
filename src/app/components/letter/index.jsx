@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 
 import { useTheme } from '@/src/utils/store'
 import WriteLetterButton from './WriteLetterButton'
@@ -44,15 +45,28 @@ const Letter = ({ t, sitekey, lng }) => {
     }
   }, [isOpen])
 
+  const toastMessageWithLink = () => (
+    <>
+      {t.warning}{' '}
+      <Link
+        href="https://www.facebook.com/profile.php?id=61551568490085&mibextid=ZbWKwL"
+        target="_blank"
+        className="italic"
+      >
+        here 💬
+      </Link>
+    </>
+  )
+
   useEffect(() => {
     if (translationNotCompleted.includes(lng)) {
       setWarningDisplay(true)
       if (warningDisplay) {
-        toast.warn(t.warning, {
+        toast.warn(toastMessageWithLink, {
           position: 'top-center',
           autoClose: false,
           hideProgressBar: true,
-          closeOnClick: true,
+          closeOnClick: false,
           pauseOnHover: false,
           limit: 1,
           progress: undefined,

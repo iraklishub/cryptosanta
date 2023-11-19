@@ -1,7 +1,7 @@
 {
   "language": "language",
   "form": {
-    "warning": "Translation may not be correct, contact us",
+    "warning": "Translation may not be correct, help us fix. Contact",
     "write_letter": "Write letter",
     "subject": "Letter to Santa",
     "use_template": "use template",
