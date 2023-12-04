@@ -1,17 +1,18 @@
 'use client'
 
+import { clsx } from 'clsx'
 import { useState } from 'react'
 import { Switch } from '..'
 import { useTheme } from '@/src/utils/store'
 import { LoadingSpinner } from '..'
-import SantaIcon from '../icons/santa-icon'
-import GrinchIcon from '../icons/grinch-icon'
+import { SantaIcon, GrinchIcon } from '..'
 
-const index = () => {
+const index = ({ className }) => {
   const {
     theme: { id },
     setTheme
   } = useTheme((state) => state)
+
   const [isLoading, setIsLoading] = useState(false)
 
   const isGrinch = id === 'grinch'
@@ -34,8 +35,10 @@ const index = () => {
   }
 
   return (
-    <div className="flex items-center mr-6 text-white">
-      <SantaIcon />
+    <div className={clsx('flex items-center text-white', className)}>
+      <button type="button" onClick={() => setTheme('santa')}>
+        <SantaIcon />
+      </button>
       {isLoading ? (
         <LoadingSpinner />
       ) : (
@@ -45,9 +48,12 @@ const index = () => {
           onChange={toggleTheme}
           checked={isGrinch}
           bgColor={isGrinch ? 'bg-green-600' : 'bg-red-600'}
+          className="mx-1"
         />
       )}
-      <GrinchIcon />
+      <button type="button" onClick={() => setTheme('grinch')}>
+        <GrinchIcon />
+      </button>
     </div>
   )
 }
