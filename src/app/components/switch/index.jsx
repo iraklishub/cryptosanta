@@ -1,6 +1,6 @@
 import { clsx } from 'clsx'
 
-const Switch = ({ id, value, onChange, title, bgColor, checked, className }) => {
+const Switch = ({ id, value, onChange, title, bgColor, checked, disabled, className }) => {
   return (
     <label className={clsx('relative inline-flex items-center cursor-pointer', className)}>
       <input
@@ -10,6 +10,7 @@ const Switch = ({ id, value, onChange, title, bgColor, checked, className }) => 
         className="sr-only peer"
         onChange={onChange}
         checked={checked}
+        disabled={disabled}
       />
       <div
         className={clsx(
