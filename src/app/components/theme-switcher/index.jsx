@@ -4,10 +4,9 @@ import { clsx } from 'clsx'
 import { useState } from 'react'
 import { Switch } from '..'
 import { useTheme } from '@/src/utils/store'
-import { LoadingSpinner } from '..'
 import { SantaIcon, GrinchIcon } from '..'
 
-const index = ({ className }) => {
+const ThemeSwitcher = ({ className }) => {
   const {
     theme: { id },
     setTheme
@@ -39,18 +38,15 @@ const index = ({ className }) => {
       <button type="button" onClick={() => setTheme('santa')}>
         <SantaIcon />
       </button>
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        <Switch
-          id="themeswitch"
-          value={id}
-          onChange={toggleTheme}
-          checked={isGrinch}
-          bgColor={isGrinch ? 'bg-green-600' : 'bg-red-600'}
-          className="mx-1"
-        />
-      )}
+      <Switch
+        id="themeswitch"
+        value={id}
+        onChange={toggleTheme}
+        checked={isGrinch}
+        bgColor={isGrinch ? 'bg-green-600' : 'bg-red-600'}
+        disabled={isLoading}
+        className="mx-1"
+      />
       <button type="button" onClick={() => setTheme('grinch')}>
         <GrinchIcon />
       </button>
@@ -58,4 +54,4 @@ const index = ({ className }) => {
   )
 }
 
-export default index
+export default ThemeSwitcher

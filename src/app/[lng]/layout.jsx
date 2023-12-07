@@ -4,6 +4,8 @@ import { i18n } from '@/i18n'
 import { Analytics } from '@vercel/analytics/react'
 import { getDictionary } from './dictionaries/dictionaries'
 import { ThemedImage } from '../components'
+import { ToastContainer, Flip } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,6 +32,15 @@ export default function RootLayout({ children, params }) {
         <ThemedImage />
         {children}
         <Analytics />
+        <ToastContainer
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover={false}
+          theme="light"
+          transition={Flip}
+        />
       </body>
     </html>
   )
