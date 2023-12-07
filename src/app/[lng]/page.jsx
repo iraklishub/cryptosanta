@@ -10,8 +10,9 @@ export default async function Page({ params: { lng } }) {
     <>
       <header className="flex justify-between md:justify-end items-start w-full p-2 pt-4 md:p-4">
         <div className="flex flex-col md:flex-row items-center">
-          <ThemeSwitcher />
-          <Link
+          {/* todo delete margin for themeswitcher, finish game(s) page */}
+          <ThemeSwitcher className="mr-2" />
+          {/* <Link
             href={`${lng}/game`}
             className={clsx(
               'mt-2 w-full flex items-center justify-center bg-slate-200 rounded-lg py-1',
@@ -21,7 +22,7 @@ export default async function Page({ params: { lng } }) {
           >
             <JoystickIcon />
             <span className="ml-1.5 text-slate-500 font-semibold">Game</span>
-          </Link>
+          </Link> */}
         </div>
         <LanguageSwitcher title={dict.language} />
       </header>

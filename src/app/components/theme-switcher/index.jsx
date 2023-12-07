@@ -6,7 +6,7 @@ import { Switch } from '..'
 import { useTheme } from '@/src/utils/store'
 import { SantaIcon, GrinchIcon } from '..'
 
-const index = ({ className }) => {
+const ThemeSwitcher = ({ className }) => {
   const {
     theme: { id },
     setTheme
@@ -54,4 +54,4 @@ const index = ({ className }) => {
   )
 }
 
-export default index
+export default ThemeSwitcher
