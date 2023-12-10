@@ -71,7 +71,15 @@ export default function Page({ params: { lng } }) {
           <div className="flex flex-wrap mt-4 gap-y-6 w-full justify-evenly">
             {otherGames.map(({ title, link, image }) => (
               <Link href={link} key={title} className="basis-2/5 md:basis-auto text-center">
-                <Image src={image} alt={title} className="border-4" width={250} height={250} />
+                <Image
+                  src={image}
+                  alt={title}
+                  width={250}
+                  height={250}
+                  quality={100}
+                  placeholder="blur"
+                  className="border-4"
+                />
                 <span className="text-white font-semibold h-fit">{title}</span>
               </Link>
             ))}
