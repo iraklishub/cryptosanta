@@ -27,7 +27,6 @@ const ThemedImage = () => {
       <Image
         src={backgroundSanta}
         fill
-        priority
         quality={100}
         placeholder="blur"
         alt="backgroundSanta"
