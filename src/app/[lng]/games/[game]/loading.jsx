@@ -1,4 +1,4 @@
-import { LoadingSpinner } from '../../components'
+import { LoadingSpinner } from '@/src/app/components'
 
 export default function GameLoading() {
   return (
