@@ -34,10 +34,6 @@ export const translationNotCompleted = [
 export const routeNames = (lng) => ({
   homeRoute: '/',
   gamesRoute: `/${lng}/games`,
-  stickSantaRoute: `/${lng}/games/sticksanta`,
-  zballChristmasRoute: `/${lng}/games/zballchristmas`,
-  santasWarehouseRoute: `/${lng}/games/santaswarehouse`,
-  santaOnSkateRoute: `/${lng}/games/santaonskate`,
   mergeManiaRoute: `/${lng}/games/mergemania`,
   blazingBladeRoute: `/${lng}/games/blazingblade`,
   wordFinderRoute: `/${lng}/games/wordfinder`,
@@ -48,47 +44,11 @@ export const routeNames = (lng) => ({
 })
 
 export const gameiFrames = {
-  zBall: (
-    <iframe
-      src="http://wanted5games.com/games/html5/zball-new-en-s-iga-cloud/index.html?pub=10"
-      name="cloudgames-com"
-      className="w-full h-full"
-      frameBorder="0"
-      scrolling="no"
-    ></iframe>
-  ),
-  stickSanta: (
-    <iframe
-      src="http://wanted5games.com/games/html5/stick-santa-new-en-s-iga-cloud/index.html?pub=10"
-      name="cloudgames-com"
-      className="w-full h-full"
-      frameBorder="0"
-      scrolling="no"
-    ></iframe>
-  ),
-  santaWarehouse: (
-    <iframe
-      src="http://wanted5games.com/games/html5/santas-warehouse-new-en-s-iga-cloud/index.html?pub=10"
-      name="cloudgames-com"
-      className="w-full h-full"
-      frameBorder="0"
-      scrolling="no"
-    ></iframe>
-  ),
-  santaOnSkate: (
-    <iframe
-      src="http://wanted5games.com/games/html5/santa-on-skates-new-en-s-iga-cloud/index.html?pub=10"
-      name="cloudgames-com"
-      className="w-full h-full"
-      frameBorder="0"
-      scrolling="no"
-    ></iframe>
-  ),
   mergeMania: (
     <iframe
       seamless="seamless"
       allowtransparency="true"
-      allowfullscreen="true"
+      allowFullScreen
       frameBorder="0"
       className="w-full h-full border-0"
       src="https://zv1y2i8p.play.gamezop.com/g/hfPOimYqY"
@@ -98,7 +58,7 @@ export const gameiFrames = {
     <iframe
       seamless="seamless"
       allowtransparency="true"
-      allowfullscreen="true"
+      allowFullScreen
       frameBorder="0"
       className="w-full h-full border-0"
       src="https://zv1y2i8p.play.gamezop.com/g/UYiznUAya"
@@ -108,7 +68,7 @@ export const gameiFrames = {
     <iframe
       seamless="seamless"
       allowtransparency="true"
-      allowfullscreen="true"
+      allowFullScreen
       frameBorder="0"
       className="w-full h-full border-0"
       src="https://zv1y2i8p.play.gamezop.com/g/r1K-J3TQ5Ar"
@@ -118,7 +78,7 @@ export const gameiFrames = {
     <iframe
       seamless="seamless"
       allowtransparency="true"
-      allowfullscreen="true"
+      allowFullScreen
       frameBorder="0"
       className="w-full h-full border-0"
       src="https://zv1y2i8p.play.gamezop.com/g/H1WmafkP9JQ"
@@ -128,7 +88,7 @@ export const gameiFrames = {
     <iframe
       seamless="seamless"
       allowtransparency="true"
-      allowfullscreen="true"
+      allowFullScreen
       frameBorder="0"
       className="w-full h-full border-0"
       src="https://zv1y2i8p.play.gamezop.com/g/BJ9bvzIKdJl"
@@ -138,7 +98,7 @@ export const gameiFrames = {
     <iframe
       seamless="seamless"
       allowtransparency="true"
-      allowfullscreen="true"
+      allowFullScreen
       frameBorder="0"
       className="w-full h-full border-0"
       src="https://zv1y2i8p.play.gamezop.com/g/Skz4pzkDqyX"
@@ -148,7 +108,7 @@ export const gameiFrames = {
     <iframe
       seamless="seamless"
       allowtransparency="true"
-      allowfullscreen="true"
+      allowFullScreen
       frameBorder="0"
       className="w-full h-full border-0"
       src="https://zv1y2i8p.play.gamezop.com/g/HJT46GkPcy7"

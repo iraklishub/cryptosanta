@@ -2,10 +2,6 @@ import Link from 'next/link'
 import { routeNames } from '../../constants'
 import { LeftArrow } from '../../components'
 import Image from 'next/image'
-import stickSantaImage from '@/public/assets/images/games/sticksanta.jpg'
-import santasWarehouseImage from '@/public/assets/images/games/santaswarehouse.jpg'
-import santaOnSkateImage from '@/public/assets/images/games/santaonskates.jpg'
-import zballChristmasImage from '@/public/assets/images/games/zballchristmas.jpg'
 import towerTwistImage from '@/public/assets/images/games/towertwist.jpg'
 import ticTacToeImage from '@/public/assets/images/games/tictactoe.jpg'
 import brickPlungeImage from '@/public/assets/images/games/brickplunge.jpg'
@@ -16,10 +12,6 @@ import escapeRunImage from '@/public/assets/images/games/escaperun.jpg'
 
 export default function Page({ params: { lng } }) {
   const {
-    santaOnSkateRoute,
-    stickSantaRoute,
-    zballChristmasRoute,
-    santasWarehouseRoute,
     mergeManiaRoute,
     blazingBladeRoute,
     wordFinderRoute,
@@ -29,12 +21,7 @@ export default function Page({ params: { lng } }) {
     towerTwistRoute
   } = routeNames(lng)
 
-  const christmasGames = [
-    { title: 'Stick Santa', link: stickSantaRoute, image: stickSantaImage },
-    { title: 'zBall Christmas', link: zballChristmasRoute, image: zballChristmasImage },
-    { title: "Santa's Warehouse", link: santasWarehouseRoute, image: santasWarehouseImage },
-    { title: 'Santa On Skate', link: santaOnSkateRoute, image: santaOnSkateImage }
-  ]
+  const christmasGames = []
 
   const otherGames = [
     { title: 'Tower Twist', link: towerTwistRoute, image: towerTwistImage },
@@ -58,12 +45,12 @@ export default function Page({ params: { lng } }) {
         <section className="flex flex-col items-center bg-slate-900/70 rounded-md py-4">
           <h3 className="text-lg font-bold">Christmas Games</h3>
           <div className="flex flex-wrap mt-4 gap-y-6 w-full justify-evenly">
-            {christmasGames.map(({ title, link, image }) => (
+            {/* {christmasGames.map(({ title, link, image }) => (
               <Link href={link} key={title} className="basis-2/5 md:basis-auto text-center">
                 <Image src={image} alt={title} className="border-4" width={250} height={250} />
                 <span className="text-white font-semibold h-fit">{title}</span>
               </Link>
-            ))}
+            ))} */}
           </div>
         </section>
         <section className="flex flex-col items-center bg-slate-900/70 rounded-md py-4 mt-4">
