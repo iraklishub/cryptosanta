@@ -2,11 +2,9 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { getDictionary } from './dictionaries/dictionaries'
 import { LanguageSwitcher, Letter, ThemeSwitcher, JoystickIcon } from 'src/app/components'
-import { routeNames } from '../constants'
 
 export default async function Page({ params: { lng } }) {
   const dict = await getDictionary(lng)
-  const { gamesRoute } = routeNames(lng)
 
   return (
     <>
@@ -14,7 +12,7 @@ export default async function Page({ params: { lng } }) {
         <div className="flex flex-col md:flex-row items-center">
           <ThemeSwitcher />
           <Link
-            href={gamesRoute}
+            href={`/${lng}/games`}
             className={clsx(
               'mt-2 w-full flex items-center justify-center bg-slate-200 rounded-lg py-1',
               'md:w-fit md:px-2 md:mt-0 md:justify-start md:mx-2',

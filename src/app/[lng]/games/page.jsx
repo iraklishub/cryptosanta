@@ -1,37 +1,10 @@
 import Link from 'next/link'
-import { routeNames } from '../../constants'
 import { LeftArrow } from '../../components'
 import Image from 'next/image'
-import towerTwistImage from '@/public/assets/images/games/towertwist.jpg'
-import ticTacToeImage from '@/public/assets/images/games/tictactoe.jpg'
-import brickPlungeImage from '@/public/assets/images/games/brickplunge.jpg'
-import mergeManiaImage from '@/public/assets/images/games/mergemania.jpg'
-import wordFinderImage from '@/public/assets/images/games/wordfinder.jpg'
-import blazingBladeImage from '@/public/assets/images/games/blazingblade.jpg'
-import escapeRunImage from '@/public/assets/images/games/escaperun.jpg'
+import { games } from '../../constants'
 
-export default function Page({ params: { lng } }) {
-  const {
-    mergeManiaRoute,
-    blazingBladeRoute,
-    wordFinderRoute,
-    ticTacToeRoute,
-    brickPlungeRoute,
-    escapeRunRoute,
-    towerTwistRoute
-  } = routeNames(lng)
-
-  const christmasGames = []
-
-  const otherGames = [
-    { title: 'Tower Twist', link: towerTwistRoute, image: towerTwistImage },
-    { title: 'Tic Tac Toe', link: ticTacToeRoute, image: ticTacToeImage },
-    { title: 'Brick Plunge', link: brickPlungeRoute, image: brickPlungeImage },
-    { title: 'Merge Mania', link: mergeManiaRoute, image: mergeManiaImage },
-    { title: 'Word Finder', link: wordFinderRoute, image: wordFinderImage },
-    { title: 'Blazing Blade', link: blazingBladeRoute, image: blazingBladeImage },
-    { title: 'Escape Run', link: escapeRunRoute, image: escapeRunImage }
-  ]
+export default function Page() {
+  const { christmasGames, otherGames } = games
 
   return (
     <>
@@ -45,12 +18,12 @@ export default function Page({ params: { lng } }) {
         <section className="flex flex-col items-center bg-slate-900/70 rounded-md py-4">
           <h3 className="text-lg font-bold">Christmas Games</h3>
           <div className="flex flex-wrap mt-4 gap-y-6 w-full justify-evenly">
-            {/* {christmasGames.map(({ title, link, image }) => (
+            {christmasGames.map(({ title, link, image }) => (
               <Link href={link} key={title} className="basis-2/5 md:basis-auto text-center">
                 <Image src={image} alt={title} className="border-4" width={250} height={250} />
                 <span className="text-white font-semibold h-fit">{title}</span>
               </Link>
-            ))} */}
+            ))}
           </div>
         </section>
         <section className="flex flex-col items-center bg-slate-900/70 rounded-md py-4 mt-4">

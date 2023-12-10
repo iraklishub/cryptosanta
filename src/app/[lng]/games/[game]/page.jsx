@@ -1,7 +1,7 @@
-import { useGameiFrames } from '@/src/utils/hooks'
+import { gameiFrames } from '@/src/app/constants'
 
 export default function Page({ params: { game } }) {
-  const gameiFrame = useGameiFrames(game)
+  const gameiFrame = gameiFrames.find((g) => g.id === game)
 
-  return <>{gameiFrame}</>
+  return <div className="w-screen h-screen bg-black">{gameiFrame.frame}</div>
 }
