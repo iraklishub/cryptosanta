@@ -1,9 +1,11 @@
-const MessageIcon = () => (
+import clsx from 'clsx'
+
+const MessageIcon = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-5 h-5"
+    className={clsx('w-5 h-5', className)}
   >
     <path
       fillRule="evenodd"
