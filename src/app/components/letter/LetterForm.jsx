@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react'
 import axios from 'axios'
 import ReCAPTCHA from 'react-google-recaptcha'
+import Link from 'next/link'
 import { verifyCaptchaToken } from '@/src/utils/recaptchaTokenAuth'
 import { toast } from 'react-toastify'
 import { localesHasGender } from '@/i18n'
@@ -204,7 +205,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
           )}
         </div>
       </div>
-      <div className="mt-4 h-20">
+      <div className="mt-4 h-fit flex flex-col md:flex-row">
         <ReCAPTCHA
           ref={recaptchaRef}
           sitekey={sitekey}
@@ -212,6 +213,12 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
           hl={lng}
           theme="dark"
         />
+        <span className="mt-2 md:ml-2 text-gray-300">
+          By clicking Send, you agree to our{' '}
+          <Link href={`/${lng}/privacy`} className="text-blue-400" target="_blank">
+            privacy policy
+          </Link>
+        </span>
       </div>
       <div className="mt-4 flex justify-end">
         <Button
