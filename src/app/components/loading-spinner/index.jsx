@@ -1,13 +1,11 @@
 import { clsx } from 'clsx'
 
-const LoadingSpinner = ({ color, size, thickness }) => {
+const LoadingSpinner = ({ className }) => {
   return (
     <div
       className={clsx(
-        'rounded-full animate-spin border-solid border-t-transparent',
-        color ? `border-${color}` : 'border-current',
-        thickness ? `border-${thickness}` : 'border-2',
-        size ? `w-${size} h-${size}` : 'w-4 h-4'
+        'w-4 h-4 rounded-full animate-spin border-current border-solid border-t-transparent border-2',
+        className
       )}
     />
   )

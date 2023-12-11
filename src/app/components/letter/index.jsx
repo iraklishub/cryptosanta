@@ -14,7 +14,7 @@ import grinchletterAnimationData from '../../constants/grinch-letter-animation.j
 import explotionAnimationData from '../../constants/explotion-animation.json'
 
 const LetterForm = dynamic(() => import('./LetterForm'), {
-  loading: () => <LoadingSpinner color="white" size="6" />
+  loading: () => <LoadingSpinner className="border-white w-8 h-8 border-4" />
 })
 
 const Letter = ({ t, sitekey, lng }) => {

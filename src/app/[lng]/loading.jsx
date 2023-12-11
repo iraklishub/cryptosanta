@@ -3,7 +3,7 @@ import { LoadingSpinner } from '../components'
 export default function HomeLoading() {
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <LoadingSpinner color="white" size="8" thickness="8" />
+      <LoadingSpinner className="border-white w-8 h-8 border-4" />
     </div>
   )
 }
