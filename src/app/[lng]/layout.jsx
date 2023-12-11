@@ -1,5 +1,6 @@
 import '../../styles/globals.css'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import { i18n } from '@/i18n'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -44,6 +45,11 @@ export default function RootLayout({ children, params }) {
           transition={Flip}
         />
       </body>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3869741958663581"
+        crossOrigin="anonymous"
+      />
     </html>
   )
 }
