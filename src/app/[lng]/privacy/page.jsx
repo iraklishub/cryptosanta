@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { LeftArrow } from '../../components'
+import { LeftArrowExit } from '../../components'
 
 export default function Page({ params: { lng } }) {
   return (
@@ -9,7 +9,7 @@ export default function Page({ params: { lng } }) {
           href="/"
           className="text-white font-semibold flex w-auto hover:text-gray-100 active:text-white"
         >
-          <LeftArrow className="w-6 h-6" />
+          <LeftArrowExit className="w-6 h-6" />
           <span className="ml-2 hidden md:inline">Home Page</span>
         </Link>
       </header>
@@ -454,7 +454,15 @@ export default function Page({ params: { lng } }) {
           <h2>Contact Us</h2>
           <p>If you have any questions about this Privacy Policy, You can contact us:</p>
           <ul>
-            <li>By email: mailtoclaussanta@gmail.com</li>
+            <li>
+              <Link
+                href="https://www.facebook.com/profile.php?id=61551568490085&mibextid=ZbWKwL"
+                target="_blank"
+                className="italic"
+              >
+                here 💬
+              </Link>
+            </li>
             <p>Last updated: December 11, 2023</p>
           </ul>
         </div>

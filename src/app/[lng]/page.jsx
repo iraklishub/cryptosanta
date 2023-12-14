@@ -1,7 +1,13 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import { getDictionary } from './dictionaries/dictionaries'
-import { LanguageSwitcher, Letter, ThemeSwitcher, JoystickIcon } from 'src/app/components'
+import {
+  LanguageSwitcher,
+  Letter,
+  ThemeSwitcher,
+  JoystickIcon,
+  MarketIcon
+} from 'src/app/components'
 
 export default async function Page({ params: { lng } }) {
   const dict = await getDictionary(lng)
@@ -20,6 +26,16 @@ export default async function Page({ params: { lng } }) {
           >
             <JoystickIcon />
             <span className="ml-1.5 text-slate-500 font-semibold">Games</span>
+          </Link>
+          <Link
+            href={`/${lng}/market`}
+            className={clsx(
+              'mt-2 w-full flex items-center justify-center bg-white hover:bg-gray-100 active:bg-white rounded-lg py-1',
+              'md:w-fit md:px-2 md:mt-0 md:justify-start md:mx-2'
+            )}
+          >
+            <MarketIcon />
+            <span className="ml-1.5 text-slate-500 font-semibold">Market</span>
           </Link>
         </div>
         <LanguageSwitcher />
