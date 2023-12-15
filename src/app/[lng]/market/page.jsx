@@ -5,12 +5,24 @@ import { useState } from 'react'
 import { LeftArrowExit, AmazonIcon, AmazonLogoIcon, Button } from '../../components'
 import Image from 'next/image'
 import { marketItems } from '../../constants'
+import backgroundMarket from '@/public/assets/images/hd.jpg'
 
 export default function Page() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
+      <div className="fixed w-screen h-screen -z-10">
+        <Image
+          src={backgroundMarket}
+          fill
+          quality={100}
+          placeholder="blur"
+          alt="backgroundMarket"
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
       <header className="w-full pt-2 pl-2 flex justify-between">
         {isOpen ? (
           <button

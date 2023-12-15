@@ -6,7 +6,6 @@ import { useTheme } from '@/src/utils/store'
 import Image from 'next/image'
 import backgroundSanta from '@/public/assets/images/santa.jpg'
 import backgroundGrinch from '@/public/assets/images/grinch.jpg'
-import backgroundMarket from '@/public/assets/images/hd.jpg'
 
 const ThemedImage = () => {
   const pathname = usePathname()
@@ -23,19 +22,7 @@ const ThemedImage = () => {
     }
   }, [id])
 
-  return isMarket ? (
-    <div className="fixed w-screen h-screen -z-10">
-      <Image
-        src={backgroundMarket}
-        fill
-        quality={100}
-        placeholder="blur"
-        alt="backgroundMarket"
-        sizes="100vw"
-        className="object-cover"
-      />
-    </div>
-  ) : (
+  return isMarket ? null : (
     <div
       className="fixed w-screen h-screen -z-10 flex transition ease-linear duration-0"
       style={{ transform: `translateX(-${current * 100}%` }}
