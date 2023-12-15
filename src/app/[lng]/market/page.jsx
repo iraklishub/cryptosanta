@@ -59,7 +59,7 @@ export default function Page() {
                     src={image}
                     alt={title}
                     width={500}
-                    height={300}
+                    height={100}
                     quality={100}
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DgAgAESgFFab83HQAAAABJRU5ErkJggg=="
