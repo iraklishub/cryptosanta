@@ -1,14 +1,18 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { LeftArrowExit, AmazonIcon, AmazonLogoIcon, Button } from '../../components'
 import Image from 'next/image'
 import { marketItems } from '../../constants'
 import backgroundMarket from '@/public/assets/images/hd.jpg'
+import Lottie from 'lottie-react'
+import saleAnimationData from '@/src/app/constants/christmas-sale-animation.json'
+import giftsAnimationData from '@/src/app/constants/gifts-animation.json'
 
 export default function Page() {
   const [isOpen, setIsOpen] = useState(false)
+  const saleRef = useRef(null)
 
   return (
     <>
@@ -74,14 +78,24 @@ export default function Page() {
           </section>
         </main>
       ) : (
-        <Button
-          type="button"
-          onClick={() => setIsOpen(true)}
-          variant="outline"
-          className={'w-fit h-fit shadow-2xl shadow-red-600 animate-bounce bg-white border-0'}
-        >
-          Enter Market
-        </Button>
+        <div className="flex flex-col items-center">
+          <Lottie loop={true} animationData={giftsAnimationData} className="w-32 -mb-0.5" />
+          <Button
+            type="button"
+            onClick={() => setIsOpen(true)}
+            variant="outline"
+            className={'w-fit h-fit shadow-2xl shadow-red-600 bg-white border-0 -mt-px'}
+          >
+            Enter Market
+          </Button>
+          <Lottie
+            onComplete={() => saleRef.current?.goToAndPlay(112, true)}
+            lottieRef={saleRef}
+            loop={false}
+            animationData={saleAnimationData}
+            className="w-52"
+          />
+        </div>
       )}
     </>
   )
