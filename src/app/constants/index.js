@@ -279,6 +279,81 @@ export const games = {
   ]
 }
 
+export const marketItems = [
+  {
+    title: 'Old World Christmas Store',
+    link: 'https://amzn.to/3uXqUkd',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/abs-image-upload-na/5/AmazonStores/ATVPDKIKX0DER/97a5ffe851808f13e256348bc478caff.w2586.h517._CR0%2C0%2C2586%2C517_SX1500_.jpg'
+  },
+  {
+    title: 'BriLove Store',
+    link: 'https://amzn.to/41jLiIB',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/al-na-9d5791cf-3faf/88f79f58-0bd5-439c-b220-2026a45b7446._CR0%2C0%2C3000%2C600_SX1500_.jpg'
+  },
+  {
+    title: 'Rubies Store',
+    link: 'https://amzn.to/3RfFdrK',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/al-na-9d5791cf-3faf/fcdf3b98-0a34-4cb1-9600-56ed53fb8613._CR0%2C0%2C3000%2C600_SX1500_.jpg'
+  },
+  {
+    title: 'Mr. Christmas Store',
+    link: 'https://amzn.to/3REV7xk',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/al-na-9d5791cf-3faf/a6b18109-915d-4edc-9917-f089fd1be548._CR0%2C0%2C3000%2C600_SX1920_.jpg'
+  },
+  {
+    title: 'Dr. Seuss Store (Grinch-mas)',
+    link: 'https://amzn.to/3t988Gh',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/stores-image-uploads-na-prod/4/AmazonStores/ATVPDKIKX0DER/f280da1ab6922f0c3ba35883e17f5128.w1400.h280._CR0%2C0%2C1400%2C280_SX1400_.jpg'
+  },
+  {
+    title: 'California Costume Collections Store',
+    link: 'https://amzn.to/47XaLdk',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/stores-image-uploads-na-prod/5/AmazonStores/ATVPDKIKX0DER/50ad005d0216854b2728a47b705d1168.w8750.h1750._SL5000_CR0%2C0%2C5000%2C1000_SX1500_.jpg'
+  },
+  {
+    title: 'Design Toscano Store',
+    link: 'https://amzn.to/3RJBEvm',
+    image:
+      'https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/5/AmazonStores/ATVPDKIKX0DER/198185fceb5e0d59bf6588c9c6a8699e.w3000.h600._CR0%2C0%2C3000%2C600_SX1500_.png'
+  },
+  {
+    title: 'JMEXUSS Christmas Lights Store',
+    link: 'https://amzn.to/41osRT1',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/stores-image-uploads-na-prod/6/AmazonStores/ATVPDKIKX0DER/9e424966c920e9eb6aa2938f32d7c293.w3000.h600._CR0%2C0%2C3000%2C600_SX1500_.jpg'
+  },
+  {
+    title: 'Alpine Corporation Store',
+    link: 'https://amzn.to/41pg9Ub',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/stores-image-uploads-na-prod/3/AmazonStores/ATVPDKIKX0DER/ee98fc32ecde998b1143be124b4bda5e.w3000.h600._CR0%2C0%2C3000%2C600_SX1500_.jpg'
+  },
+  {
+    title: 'National Tree Company Store',
+    link: 'https://amzn.to/3RfJFqs',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/stores-image-uploads-na-prod/6/AmazonStores/ATVPDKIKX0DER/34d76d02fce84f6945de77ca35cf9163.w3001.h601._CR0%2C0%2C3001%2C600_SX1500_.jpg'
+  },
+  {
+    title: 'Lenox Christmas Store',
+    link: 'https://amzn.to/3v1i1q1',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/stores-image-uploads-na-prod/9/AmazonStores/ATVPDKIKX0DER/406aa4b2ff51ac0968d171b341c8da51.w3000.h600._CR0%2C0%2C3000%2C600_SX1500_.jpg'
+  },
+  {
+    title: 'Department 56 Store',
+    link: 'https://amzn.to/3ths89u',
+    image:
+      'https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/S/al-na-9d5791cf-3faf/c2aa74d6-1b7a-4496-b103-8b731a252a52._CR0%2C0%2C3000%2C600_SX1500_.jpg'
+  }
+]
+
 export const translationNotCompleted = [
   'es',
   'de',
