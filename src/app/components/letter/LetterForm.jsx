@@ -103,7 +103,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
           </button>
         </div>
         <div className="mt-4 md:px-6 flex justify-around md:justify-start md:items-center md:gap-x-5">
-          {/* <Switch
+          <Switch
             id="template"
             value={template}
             onChange={() => {
@@ -111,7 +111,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
               setMaleVersion(true)
             }}
             title={t.use_template}
-          /> */}
+          />
           {localesHasGender.includes(lng)
             ? template && (
                 <Switch
