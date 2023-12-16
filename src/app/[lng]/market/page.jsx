@@ -1,14 +1,29 @@
 'use client'
 
-import Link from 'next/link'
 import { useState, useRef } from 'react'
-import { LeftArrowExit, AmazonIcon, AmazonLogoIcon, Button } from '../../components'
+import Link from 'next/link'
 import Image from 'next/image'
+import Lottie from 'lottie-react'
+import { LeftArrowExit, AmazonIcon, AmazonLogoIcon, Button } from '../../components'
 import { marketItems } from '../../constants'
 import backgroundMarket from '@/public/assets/images/hd.jpg'
-import Lottie from 'lottie-react'
 import saleAnimationData from '@/src/app/constants/christmas-sale-animation.json'
 import giftsAnimationData from '@/src/app/constants/gifts-animation.json'
+
+// export async function generateMetadata({ params }) {
+//   const lng = params.lng
+//   const dict = await getDictionary(lng)
+
+//   return {
+//     title: dict.meta_data.title,
+//     description: dict.meta_data.description
+//   }
+// }
+
+export const metadata = {
+  title: "Santa's Christmas Market",
+  description: "Checkout stores on Santa's Christmas market"
+}
 
 export default function Page() {
   const [isOpen, setIsOpen] = useState(false)
