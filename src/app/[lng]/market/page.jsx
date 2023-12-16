@@ -1,24 +1,14 @@
 'use client'
 
-import { useState, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import Lottie from 'lottie-react'
+import { useState, useRef } from 'react'
 import { LeftArrowExit, AmazonIcon, AmazonLogoIcon, Button } from '../../components'
+import Image from 'next/image'
 import { marketItems } from '../../constants'
 import backgroundMarket from '@/public/assets/images/hd.jpg'
+import Lottie from 'lottie-react'
 import saleAnimationData from '@/src/app/constants/christmas-sale-animation.json'
 import giftsAnimationData from '@/src/app/constants/gifts-animation.json'
-
-// export async function generateMetadata({ params }) {
-//   const lng = params.lng
-//   const dict = await getDictionary(lng)
-
-//   return {
-//     title: dict.meta_data.title,
-//     description: dict.meta_data.description
-//   }
-// }
 
 export const metadata = {
   title: "Santa's Christmas Market",
