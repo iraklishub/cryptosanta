@@ -13,7 +13,7 @@
     "sent": "letter sent!",
     "sending_failed": "sending failed",
     "letter_text": {
-      "parent_email": "your Santa's email",
+      "parent_email": "Parent's email",
       "wish": "wish(es)",
       "letter_text": "letter text",
       "dear_santa": "Dear Santa",
