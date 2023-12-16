@@ -10,11 +10,6 @@ import Lottie from 'lottie-react'
 import saleAnimationData from '@/src/app/constants/christmas-sale-animation.json'
 import giftsAnimationData from '@/src/app/constants/gifts-animation.json'
 
-export const metadata = {
-  title: "Santa's Christmas Market",
-  description: "Checkout stores on Santa's Christmas market"
-}
-
 export default function Page() {
   const [isOpen, setIsOpen] = useState(false)
   const saleRef = useRef(null)
