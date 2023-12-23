@@ -16,7 +16,7 @@ export default async function Page({ params: { lng } }) {
           className="text-white font-semibold flex items-center w-auto hover:text-gray-100 active:text-white"
         >
           <LeftArrowExit className="w-6 h-6 md:h-8 md:w-8" />
-          <span className="ml-2">{t.back || 'Back'}</span>
+          <span className="ml-2 capitalize">{t.back || 'Back'}</span>
         </Link>
       </header>
       <main className="text-white font-semibold p-4 w-full h-fit flex flex-col">

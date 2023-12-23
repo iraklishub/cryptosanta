@@ -37,7 +37,9 @@ export default async function Page({ params: { lng } }) {
             )}
           >
             <MarketIcon />
-            <span className="ml-1.5 text-slate-500 font-semibold">{t.market || 'Market'}</span>
+            <span className="ml-1.5 text-slate-500 font-semibold capitalize">
+              {t.market || 'Market'}
+            </span>
           </Link>
         </div>
         <LanguageSwitcher />
