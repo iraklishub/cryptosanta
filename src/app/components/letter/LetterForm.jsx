@@ -97,7 +97,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
     >
       <div className="flex flex-col">
         <div className="relative text-center">
-          <span className="capitalize text-center text-2xl">{t.letter}</span>
+          <span className="capitalize text-center text-2xl">{t.letter || 'letter'}</span>
           <button type="button" className="absolute right-4" onClick={onExit}>
             <ExitIcon />
           </button>
@@ -110,7 +110,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
               setTemplate(!template)
               setMaleVersion(true)
             }}
-            title={t.use_template}
+            title={t.use_template || 'use template'}
           />
           {localesHasGender.includes(lng)
             ? template && (
@@ -128,48 +128,48 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
         <div className="bg-orange-100/80 text-stone-950 font-semibold mt-4 rounded-md px-6 py-4">
           {template ? (
             <p>
-              {t.letter_text.dear_santa}, <br /> <br />
-              {t.letter_text.doing_well} <br /> <br />
-              {t.letter_text.my_name_is}{' '}
+              {t.template_t.dear_santa}, <br /> <br />
+              {t.template_t.doing_well} <br /> <br />
+              {t.template_t.my_name_is}{' '}
               <Field
                 id="name"
                 type="text"
                 value={data.name}
                 onChange={(e) => setdata({ ...data, name: e.target.value })}
                 required
-                placeholder={t.name}
+                placeholder={t.name || 'first name'}
                 className="w-36 placeholder:capitalize"
               />
               , <br /> <br />
               {maleVersion
-                ? t.letter_text.good_this_year
-                : t.letter_text.good_this_year_f || t.letter_text.good_this_year}
-              , {t.letter_text.ask_parents}{' '}
+                ? t.template_t.good_this_year
+                : t.template_t.good_this_year_f || t.template_t.good_this_year}
+              , {t.template_t.ask_parents}{' '}
               <Field
                 id="email"
                 type="email"
                 value={data.email}
                 onChange={(e) => setdata({ ...data, email: e.target.value })}
                 required
-                placeholder={t.letter_text.parent_email}
+                placeholder={t.parent_email || "Parent's email"}
                 className="mt-4 placeholder:capitalize"
               />
               <br /> <br />
               {maleVersion
-                ? t.letter_text.gift_this_christmas
-                : t.letter_text.gift_this_christmas_f || t.letter_text.gift_this_christmas}{' '}
+                ? t.template_t.gift_this_christmas
+                : t.template_t.gift_this_christmas_f || t.template_t.gift_this_christmas}{' '}
               <Field
                 id="wish"
                 type="text"
                 value={data.wish}
                 onChange={(e) => setdata({ ...data, wish: e.target.value })}
                 required
-                placeholder={t.letter_text.wish}
+                placeholder={t.wish || 'Wish(es)'}
                 className="w-full placeholder:capitalize"
               />
               <br /> <br />
-              {t.letter_text.merry_christmas_happy_new_year} <br /> <br />
-              {t.letter_text.with_love}, {data.name}.
+              {t.template_t.merry_christmas_happy_new_year} <br /> <br />
+              {t.template_t.with_love}, {data.name}.
               <br />
             </p>
           ) : (
@@ -180,7 +180,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
                 value={data.name}
                 onChange={(e) => setdata({ ...data, name: e.target.value })}
                 required
-                placeholder={t.name}
+                placeholder={t.name || 'first name'}
                 className="w-full md:w-36 placeholder:capitalize"
               />
               <Field
@@ -189,7 +189,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
                 value={data.email}
                 onChange={(e) => setdata({ ...data, email: e.target.value })}
                 required
-                placeholder={t.letter_text.parent_email}
+                placeholder={t.parent_email || "Parent's email"}
                 className="w-full md:w-52 placeholder:capitalize"
               />
               <textarea
@@ -198,7 +198,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
                 onChange={(e) => setdata({ ...data, wish: e.target.value })}
                 wrap="hard"
                 required
-                placeholder={t.letter_text.letter_text}
+                placeholder={t.letter_text || 'letter text'}
                 className="w-full h-80 border-t-0 bg-transparent outline-0 placeholder:text-neutral-500 border-neutral-700 border rounded-b-md px-4 py-2 placeholder:capitalize"
               />
             </div>
@@ -227,11 +227,13 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
           onClick={onExit}
           className="text-white border-white"
         >
-          <span className="capitalize">{t.close}</span>
+          <span className="capitalize">{t.close || 'Close'}</span>
         </Button>
         <Button type="submit" disabled={!isVerified || isLoading} className="ml-2">
           {isLoading ? <LoadingSpinner /> : <MessageIcon />}
-          <span className="ml-2 capitalize">{isLoading ? `${t.sending}..` : t.send}</span>
+          <span className="ml-2 capitalize">
+            {isLoading ? `${t.sending || 'sending'}..` : t.send || 'send'}
+          </span>
         </Button>
       </div>
     </form>

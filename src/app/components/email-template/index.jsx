@@ -27,13 +27,13 @@ const EmailTemplate = ({ name, email, wish, template, t }) => (
             </Heading>
             {template ? (
               <Text className="px-4 text-center text-base md:text-lg lg:text-xl">
-                {t.letter_text.dear_santa}, <br /> <br />
-                {t.letter_text.doing_well} <br /> <br />
-                {t.letter_text.my_name_is} {name}, <br /> <br />
-                {t.letter_text.good_this_year}, {t.letter_text.ask_parents} {email} <br /> <br />
-                {t.letter_text.gift_this_christmas} {wish} <br /> <br />
-                {t.letter_text.merry_christmas_happy_new_year} <br /> <br />
-                {t.letter_text.with_love}, {name}.
+                {t.template_t.dear_santa}, <br /> <br />
+                {t.template_t.doing_well} <br /> <br />
+                {t.template_t.my_name_is} {name}, <br /> <br />
+                {t.template_t.good_this_year}, {t.template_t.ask_parents} {email} <br /> <br />
+                {t.template_t.gift_this_christmas} {wish} <br /> <br />
+                {t.template_t.merry_christmas_happy_new_year} <br /> <br />
+                {t.template_t.with_love}, {name}.
               </Text>
             ) : (
               <Text className="px-20 text-base md:text-lg lg:text-xl">{wish}</Text>

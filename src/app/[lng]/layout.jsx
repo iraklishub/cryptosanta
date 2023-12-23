@@ -13,11 +13,11 @@ const inter = Inter({ subsets: ['latin'] })
 
 export async function generateMetadata({ params }) {
   const lng = params.lng
-  const dict = await getDictionary(lng)
+  const t = await getDictionary(lng)
 
   return {
-    title: dict.meta_data.title,
-    description: dict.meta_data.description
+    title: t.meta_data.title,
+    description: t.meta_data.description
   }
 }
 

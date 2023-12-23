@@ -47,13 +47,13 @@ const Letter = ({ t, sitekey, lng }) => {
 
   const toastMessageWithLink = () => (
     <>
-      {t.warning}{' '}
+      Translation may not be correct, help us fix. Contact{' '}
       <Link
         href="https://www.facebook.com/profile.php?id=61551568490085&mibextid=ZbWKwL"
         target="_blank"
         className="italic"
       >
-        here 💬
+        {t.here || 'here'} 💬
       </Link>
     </>
   )
@@ -107,7 +107,7 @@ const Letter = ({ t, sitekey, lng }) => {
         </>
       ) : (
         <WriteLetterButton
-          label={t.write_letter}
+          label={t.write_letter || 'Write letter'}
           onClick={isGrinch ? () => setGrinchLetterAnimation(true) : () => setIsOpen(true)}
         />
       )}
