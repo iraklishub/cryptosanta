@@ -13,7 +13,7 @@ export async function POST(request) {
     const data = await resend.emails.send({
       from: 'Santa Claus <info@claussanta.com>',
       to: email,
-      subject: `${t.subject}: ${name}`,
+      subject: `${t.subject || 'Letter to Santa'}: ${name}`,
       react: EmailTemplate({ name, email, wish, template, t })
     })
 

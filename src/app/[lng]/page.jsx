@@ -10,7 +10,7 @@ import {
 } from 'src/app/components'
 
 export default async function Page({ params: { lng } }) {
-  const dict = await getDictionary(lng)
+  const t = await getDictionary(lng)
 
   return (
     <>
@@ -25,23 +25,25 @@ export default async function Page({ params: { lng } }) {
             )}
           >
             <JoystickIcon />
-            <span className="ml-1.5 text-slate-500 font-semibold">Games</span>
+            <span className="ml-1.5 text-slate-500 font-semibold capitalize">
+              {t.games || 'Games'}
+            </span>
           </Link>
           <Link
             href={`/${lng}/market`}
             className={clsx(
               'mt-2 w-full flex items-center justify-center bg-white hover:bg-gray-100 active:bg-white rounded-lg py-1',
-              'md:w-fit md:px-2 md:mt-0 md:justify-start md:mx-2'
+              'md:w-fit md:px-2 md:mt-0 md:justify-start md:mr-2'
             )}
           >
             <MarketIcon />
-            <span className="ml-1.5 text-slate-500 font-semibold">Market</span>
+            <span className="ml-1.5 text-slate-500 font-semibold">{t.market || 'Market'}</span>
           </Link>
         </div>
         <LanguageSwitcher />
       </header>
       <main className="p-4 w-full h-full flex justify-center items-center">
-        <Letter t={dict.form} sitekey={process.env.RECAPTCHA_SITE_KEY} lng={lng} />
+        <Letter t={t} sitekey={process.env.RECAPTCHA_SITE_KEY} lng={lng} />
       </main>
     </>
   )
