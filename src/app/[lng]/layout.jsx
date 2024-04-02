@@ -1,7 +1,7 @@
 import '../../styles/globals.css'
 import { Inter } from 'next/font/google'
 import { i18n } from '@/i18n'
-import { Analytics } from '@vercel/analytics/react'
+// import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { getDictionary } from './dictionaries/dictionaries'
 import { ThemedImage } from '../components'
@@ -32,7 +32,7 @@ export default function RootLayout({ children, params }) {
       >
         <ThemedImage />
         {children}
-        <Analytics />
+        {/* <Analytics /> */}
         <SpeedInsights />
         <ToastContainer
           closeOnClick
