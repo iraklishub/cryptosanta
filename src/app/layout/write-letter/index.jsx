@@ -5,19 +5,18 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
 import { useTheme } from '@/src/utils/store'
-import WriteLetterButton from './WriteLetterButton'
 import { toast } from 'react-toastify'
-import { LoadingSpinner } from '..'
+import { Button, MessageIcon, LoadingSpinner } from '../../components'
 import { translationNotCompleted } from '../../constants'
 import Lottie from 'lottie-react'
 import grinchletterAnimationData from '../../constants/grinch-letter-animation.json'
 import explotionAnimationData from '../../constants/explotion-animation.json'
 
-const LetterForm = dynamic(() => import('./LetterForm'), {
+const LetterForm = dynamic(() => import('../letter-form'), {
   loading: () => <LoadingSpinner className="border-white w-8 h-8 border-4" />
 })
 
-const Letter = ({ t, sitekey, lng }) => {
+const WriteLetter = ({ t, sitekey, lng }) => {
   const { id } = useTheme((state) => state.theme)
   const isGrinch = id === 'grinch'
 
@@ -76,43 +75,52 @@ const Letter = ({ t, sitekey, lng }) => {
     }
   }, [warningDisplay])
 
-  return isOpen ? (
-    <div className="w-full max-h-fit min-h-full bg-slate-900/40 absolute top-0 left-0 flex items-center justify-center">
-      <LetterForm cssTranslate={cssTranslate} sitekey={sitekey} lng={lng} t={t} onExit={exitForm} />
-    </div>
-  ) : (
+  return (
     <>
-      {grinchLetterAnimation ? (
-        <>
-          {explotionAnimation ? (
-            <Lottie
-              loop={false}
-              animationData={explotionAnimationData}
-              style={{ width: 400 }}
-              onComplete={() => {
-                setExplotionAnimation(false)
-                setGrinchLetterAnimation(false)
-              }}
-            />
-          ) : (
-            <Lottie
-              loop={false}
-              animationData={grinchletterAnimationData}
-              style={{ width: 200 }}
-              onComplete={() => {
-                setExplotionAnimation(true)
-              }}
-            />
-          )}
-        </>
+      <Button
+        type="button"
+        onClick={isGrinch ? () => setGrinchLetterAnimation(true) : () => setIsOpen(true)}
+        variant="outline"
+        className="h-fit min-w-40 shadow-lg shadow-red-500 animate-bounce bg-white border-0"
+      >
+        <MessageIcon />
+        <span className="ml-2 capitalize">{t.write_letter || 'Write letter'}</span>
+      </Button>
+      {isOpen ? (
+        <div className="w-full max-h-fit min-h-full bg-slate-900/40 absolute top-0 left-0 flex items-center justify-center">
+          <LetterForm
+            cssTranslate={cssTranslate}
+            sitekey={sitekey}
+            lng={lng}
+            t={t}
+            onExit={exitForm}
+          />
+        </div>
       ) : (
-        <WriteLetterButton
-          label={t.write_letter || 'Write letter'}
-          onClick={isGrinch ? () => setGrinchLetterAnimation(true) : () => setIsOpen(true)}
-        />
+        grinchLetterAnimation &&
+        (explotionAnimation ? (
+          <Lottie
+            loop={false}
+            animationData={explotionAnimationData}
+            style={{ width: 500, position: 'absolute' }}
+            onComplete={() => {
+              setExplotionAnimation(false)
+              setGrinchLetterAnimation(false)
+            }}
+          />
+        ) : (
+          <Lottie
+            loop={false}
+            animationData={grinchletterAnimationData}
+            style={{ width: 300, position: 'absolute' }}
+            onComplete={() => {
+              setExplotionAnimation(true)
+            }}
+          />
+        ))
       )}
     </>
   )
 }
 
-export default Letter
+export default WriteLetter

@@ -8,13 +8,13 @@ export async function POST(request) {
   try {
     const body = await request.json()
 
-    const { name, email, wish, t, template } = body
+    const { name, email, wish, subject } = body
 
     const data = await resend.emails.send({
       from: 'Santa Claus <info@claussanta.com>',
       to: email,
-      subject: `${t.subject || 'Letter to Santa'}: ${name}`,
-      react: EmailTemplate({ name, email, wish, template, t })
+      subject: `${subject || 'Letter to Santa'}: ${name}`,
+      react: EmailTemplate({ name, wish, subject })
     })
 
     if (data.status === 'success') {

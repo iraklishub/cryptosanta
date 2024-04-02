@@ -1,5 +1,4 @@
 export { default as LanguageSwitcher } from './language-switcher'
-export { default as Letter } from './letter'
 export { default as Button } from './button'
 export { default as Field } from './field'
 export { default as EmailTemplate } from './email-template'
