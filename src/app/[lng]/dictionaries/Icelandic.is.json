@@ -1,40 +1,28 @@
 {
-  "language": "tungumál",
-  "write_letter": "Skrifaðu bréf",
-  "subject": "Bréf til Santa Clauss",
-  "use_template": "nota sniðmát",
-  "name": "nafn",
-  "letter": "bréf",
-  "close": "loka",
-  "send": "senda",
+  "write_letter": "write letter",
+  "market": "market",
+  "games": "games",
+  "letter": "letter",
+  "name": "name",
+  "email": "email",
+  "letter_text": "letter text",
+  "close": "close",
+  "send": "send",
+  "enter_market": "enter market",
+  "exit": "exit",
+  "christmas_market": "christmas market",
+  "christmas_games": "christmas games",
+  "other_games": "other games",
+  "back": "back",
+
   "sending": "sending",
-  "sent": "bréf sent!",
-  "sending_failed": "sending mistókst",
-  "games": "leikir",
-  "christmas_games": "Jólaleikir",
-  "other_games": "Aðrir leikir",
-  "market": "markaði",
-  "christmas_market": "Christmas Market",
-  "enter_market": "Enter Market",
-  "back": "til baka",
-  "exit": "hætta",
-  "home_page": "heimasíða",
-  "here": "here",
-  "parent_email": "Tölvupóstur foreldranna",
-  "wish": "óskir",
-  "letter_text": "bréfatexta",
-  "template_t": {
-    "dear_santa": "Kæri Santa",
-    "my_name_is": "Ég heiti",
-    "doing_well": "Ég vona að þér gangi vel.",
-    "good_this_year": "Ég hef reynt að vera góður í ár",
-    "ask_parents": "þú getur spurt foreldra mína um það, þá er hægt að ná í þau á tölvupósti - ",
-    "gift_this_christmas": "Þessi jól væri ég til í að fá",
-    "merry_christmas_happy_new_year": "Gleðileg jól og farsælt komandi ár!",
-    "with_love": "Með ást"
-  },
+  "sent": "letter sent!",
+  "sending_failed": "sending failed",
+
+  "christmas_wishes": "christmas wishes",
+
   "meta_data": {
-    "title": "Sendu bréf til Santa Claus!",
-    "description": "Kæri Santa Claus: Sendu jóla- og nýársóskir hér!"
+    "title": "Write Christmas Letter To Loved Ones",
+    "description": "Merry Christmas and Happy New Year, Best Wishes!!"
   }
 }

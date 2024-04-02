@@ -1,40 +1,28 @@
 {
-  "language": "language",
-  "write_letter": "Write letter",
-  "subject": "Letter to Santa",
-  "use_template": "use template",
-  "name": "first name",
+  "write_letter": "write letter",
+  "market": "market",
+  "games": "games",
   "letter": "letter",
+  "name": "name",
+  "email": "email",
+  "letter_text": "letter text",
   "close": "close",
   "send": "send",
+  "enter_market": "enter market",
+  "exit": "exit",
+  "christmas_market": "christmas market",
+  "christmas_games": "christmas games",
+  "other_games": "other games",
+  "back": "back",
+
   "sending": "sending",
   "sent": "letter sent!",
   "sending_failed": "sending failed",
-  "games": "Games",
-  "christmas_games": "Christmas Games",
-  "other_games": "Other Games",
-  "market": "Market",
-  "christmas_market": "Christmas Market",
-  "enter_market": "Enter Market",
-  "back": "Back",
-  "exit": "exit",
-  "home_page": "home page",
-  "here": "here",
-  "parent_email": "Parent's email",
-  "wish": "wish(es)",
-  "letter_text": "letter text",
-  "template_t": {
-    "dear_santa": "Dear Santa",
-    "my_name_is": "My name is",
-    "doing_well": "I hope you are doing well.",
-    "good_this_year": "I have tried to be good this year",
-    "ask_parents": "you can ask my parents about that, they can be reached on Email - ",
-    "gift_this_christmas": "This Christmas I would love to get",
-    "merry_christmas_happy_new_year": "Merry Christmas and Happy New Year!",
-    "with_love": "With love"
-  },
+
+  "christmas_wishes": "christmas wishes",
+
   "meta_data": {
-    "title": "Send Letter to Santa Claus!",
-    "description": "Dear Santa: Send Christmas / New Year Wishes Here!"
+    "title": "Write Christmas Letter To Loved Ones",
+    "description": "Merry Christmas and Happy New Year, Best Wishes!!"
   }
 }

@@ -21,7 +21,7 @@ export default async function Page({ params: { lng } }) {
       </header>
       <main className="text-white font-semibold p-4 w-full h-fit flex flex-col">
         <section className="flex flex-col items-center bg-slate-900/70 rounded-md py-4">
-          <h3 className="text-lg font-bold">{t.christmas_games || 'Christmas Games'}</h3>
+          <h3 className="text-lg font-bold capitalize">{t.christmas_games || 'Christmas Games'}</h3>
           <div className="flex flex-wrap mt-4 gap-y-6 w-full justify-evenly">
             {christmasGames.map(({ title, link, image }) => (
               <Link href={link} key={title} className="basis-2/5 md:basis-auto text-center">
@@ -40,7 +40,7 @@ export default async function Page({ params: { lng } }) {
           </div>
         </section>
         <section className="flex flex-col items-center bg-slate-900/70 rounded-md py-4 mt-4">
-          <h3 className="text-lg font-bold">{t.other_games || 'Other Games'}</h3>
+          <h3 className="text-lg font-bold capitalize">{t.other_games || 'Other Games'}</h3>
           <div className="flex flex-wrap mt-4 gap-y-6 w-full justify-evenly">
             {otherGames.map(({ title, link, image }) => (
               <Link href={link} key={title} className="basis-2/5 md:basis-auto text-center">

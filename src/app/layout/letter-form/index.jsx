@@ -27,7 +27,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
     e.preventDefault()
     setisLoading(true)
 
-    const request = { ...data, subject: t.subject }
+    const request = { ...data, subject: t.christmas_wishes }
 
     try {
       const response = await axios.post('/api/send', request)
@@ -119,7 +119,7 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
               value={data.email}
               onChange={(e) => setdata({ ...data, email: e.target.value })}
               required
-              placeholder={t.parent_email || "Parent's email"}
+              placeholder={t.email || 'Email'}
               className="w-full md:w-52 placeholder:capitalize"
             />
             <textarea

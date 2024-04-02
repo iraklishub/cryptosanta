@@ -52,7 +52,7 @@ const WriteLetter = ({ t, sitekey, lng }) => {
         target="_blank"
         className="italic"
       >
-        {t.here || 'here'} 💬
+        Here 💬
       </Link>
     </>
   )

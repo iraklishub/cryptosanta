@@ -355,6 +355,7 @@ export const marketItems = [
 ]
 
 export const translationNotCompleted = [
+  'ru',
   'es',
   'de',
   'fr',
