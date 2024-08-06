@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: ''
     },
-    sitemap: 'https://claussanta.com/sitemap.xml'
+    sitemap: 'https://santababu.online/sitemap.xml'
   }
 }

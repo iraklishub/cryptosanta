@@ -108,13 +108,13 @@ export default function Page({ params: { lng } }) {
             </li>
             <li>
               <p>
-                <strong>Website</strong> refers to ClausSanta, accessible from{' '}
+                <strong>Website</strong> refers to Santababu, accessible from{' '}
                 <a
-                  href="https://www.claussanta.com"
+                  href="https://www.santababu.online"
                   rel="external nofollow noopener"
                   target="_blank"
                 >
-                  https://www.claussanta.com
+                  https://www.santababu.online
                 </a>
               </p>
             </li>

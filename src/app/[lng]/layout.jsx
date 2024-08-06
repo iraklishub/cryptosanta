@@ -16,7 +16,8 @@ export async function generateMetadata({ params }) {
 
   return {
     title: t.meta_data.title,
-    description: t.meta_data.description
+    description: t.meta_data.description,
+    metadataBase: new URL(`https://${process.env.VERCEL_URL}`)
   }
 }
 
@@ -32,8 +33,8 @@ export default function RootLayout({ children, params }) {
       >
         <ThemedImage />
         {children}
-        <Analytics />
-        <SpeedInsights />
+        {/* <Analytics /> */}
+        {/* <SpeedInsights /> */}
         <ToastContainer
           closeOnClick
           rtl={false}
