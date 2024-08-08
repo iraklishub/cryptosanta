@@ -1,9 +1,9 @@
 export default function sitemap() {
   return [
     {
-      url: 'https://santababu.online',
+      url: 'https://www.santababu.online',
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'monthly',
       priority: 1
     }
   ]

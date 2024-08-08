@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: ''
     },
-    sitemap: 'https://santababu.online/sitemap.xml'
+    sitemap: 'https://www.santababu.online/sitemap.xml'
   }
 }
