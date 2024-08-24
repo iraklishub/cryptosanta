@@ -9,7 +9,7 @@ import Lottie from 'lottie-react'
 import saleAnimationData from '@/src/app/constants/christmas-sale-animation.json'
 import giftsAnimationData from '@/src/app/constants/gifts-animation.json'
 
-const MarketMain = ({ t, isOpen, setIsOpen }) => {
+const GiftsMain = ({ t, isOpen, setIsOpen }) => {
   const saleRef = useRef(null)
 
   return isOpen ? (
@@ -66,4 +66,4 @@ const MarketMain = ({ t, isOpen, setIsOpen }) => {
   )
 }
 
-export default MarketMain
+export default GiftsMain

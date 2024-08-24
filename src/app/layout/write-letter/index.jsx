@@ -2,12 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
 
 import { useTheme } from '@/src/utils/store'
-import { toast } from 'react-toastify'
 import { Button, MessageIcon, LoadingSpinner } from '../../components'
-import { translationNotCompleted } from '../../constants'
 import Lottie from 'lottie-react'
 import grinchletterAnimationData from '../../constants/grinch-letter-animation.json'
 import explotionAnimationData from '../../constants/explotion-animation.json'
@@ -21,12 +18,13 @@ const WriteLetter = ({ t, sitekey, lng }) => {
   const isGrinch = id === 'grinch'
 
   const [isOpen, setIsOpen] = useState(false)
-  const [warningDisplay, setWarningDisplay] = useState(false)
+  const [isFormOpen, setIsFormOpen] = useState(false)
   const [grinchLetterAnimation, setGrinchLetterAnimation] = useState(false)
   const [explotionAnimation, setExplotionAnimation] = useState(false)
 
   const exitForm = () => {
     setIsOpen(false)
+    setIsFormOpen(false)
     setCssTranslate(false)
   }
 
@@ -34,7 +32,7 @@ const WriteLetter = ({ t, sitekey, lng }) => {
   const [cssTranslate, setCssTranslate] = useState(false)
   useEffect(() => {
     const timeoutID = setTimeout(() => {
-      if (isOpen) {
+      if (isFormOpen) {
         setCssTranslate(true)
       }
     }, 1)
@@ -42,51 +40,58 @@ const WriteLetter = ({ t, sitekey, lng }) => {
     return () => {
       clearTimeout(timeoutID)
     }
-  }, [isOpen])
-
-  const toastMessageWithLink = () => (
-    <>
-      Translation may not be correct, help us fix. Contact{' '}
-      <Link
-        href="https://www.facebook.com/profile.php?id=61551568490085&mibextid=ZbWKwL"
-        target="_blank"
-        className="italic"
-      >
-        Here 💬
-      </Link>
-    </>
-  )
-
-  useEffect(() => {
-    if (translationNotCompleted.includes(lng)) {
-      setWarningDisplay(true)
-      if (warningDisplay) {
-        toast.warn(toastMessageWithLink, {
-          position: 'top-center',
-          autoClose: false,
-          hideProgressBar: true,
-          closeOnClick: false,
-          pauseOnHover: false,
-          limit: 1,
-          progress: undefined,
-          theme: 'light'
-        })
-      }
-    }
-  }, [warningDisplay])
+  }, [isFormOpen])
 
   return (
     <>
-      <Button
-        type="button"
-        onClick={isGrinch ? () => setGrinchLetterAnimation(true) : () => setIsOpen(true)}
-        variant="outline"
-        className="h-fit min-w-40 shadow-lg shadow-red-500 animate-bounce bg-white border-0"
-      >
-        <MessageIcon />
-        <span className="ml-2 capitalize">{t.write_letter || 'Write letter'}</span>
-      </Button>
       {isOpen ? (
+        <div className="flex flex-col md:flex-row gap-5">
+          <Button
+            type="button"
+            onClick={
+              isGrinch
+                ? () => setGrinchLetterAnimation(true)
+                : () => {
+                    setIsFormOpen('to_santa')
+                    setIsOpen(false)
+                  }
+            }
+            variant="outline"
+            className="h-fit min-w-40 shadow-lg shadow-red-500 animate-bounce bg-white border-0 flex items-center justify-center"
+          >
+            <MessageIcon />
+            <span className="ml-2">{t.to_santa || 'to Santa'}</span>
+          </Button>
+          <Button
+            type="button"
+            onClick={
+              isGrinch
+                ? () => setGrinchLetterAnimation(true)
+                : () => {
+                    setIsFormOpen('to_friend')
+                    setIsOpen(false)
+                  }
+            }
+            variant="outline"
+            className="h-fit min-w-40 shadow-lg shadow-red-500 animate-bounce bg-white border-0 flex items-center justify-center"
+          >
+            <MessageIcon />
+            <span className="ml-2">{t.to_friend || 'to Friend'}</span>
+          </Button>
+        </div>
+      ) : (
+        <Button
+          type="button"
+          onClick={isGrinch ? () => setGrinchLetterAnimation(true) : () => setIsOpen(true)}
+          variant="outline"
+          className="h-fit min-w-40 shadow-lg shadow-red-500 animate-bounce bg-white border-0 flex items-center justify-center"
+        >
+          <MessageIcon />
+          <span className="ml-2 capitalize">{t.letter || 'letter'}</span>
+        </Button>
+      )}
+
+      {isFormOpen ? (
         <div className="w-full max-h-fit min-h-full bg-slate-900/40 absolute top-0 left-0 flex items-center justify-center">
           <LetterForm
             cssTranslate={cssTranslate}
@@ -94,6 +99,7 @@ const WriteLetter = ({ t, sitekey, lng }) => {
             lng={lng}
             t={t}
             onExit={exitForm}
+            to={isFormOpen}
           />
         </div>
       ) : (

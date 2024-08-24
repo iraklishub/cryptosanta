@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getDictionary } from './dictionaries/dictionaries'
-import { LanguageSwitcher, ThemeSwitcher, JoystickIcon, MarketIcon } from 'src/app/components'
+import { LanguageSwitcher, ThemeSwitcher, JoystickIcon, GiftsIcon } from 'src/app/components'
 import { WriteLetter } from '../layout'
 
 export default async function Page({ params: { lng } }) {
@@ -16,12 +16,12 @@ export default async function Page({ params: { lng } }) {
         <WriteLetter t={t} sitekey={process.env.RECAPTCHA_SITE_KEY} lng={lng} />
         <div className="flex flex-col items-center">
           <Link
-            href={`/${lng}/market`}
+            href={`/${lng}/gifts`}
             className="shadow-lg shadow-red-400 hover:shadow-red-600 mt-6 py-1 min-w-40 flex items-center justify-center bg-white hover:bg-gray-100 active:bg-white rounded"
           >
-            <MarketIcon />
+            <GiftsIcon />
             <span className="ml-1.5 text-slate-600 font-semibold capitalize">
-              {t.market || 'Market'}
+              {t.gifts || 'Gifts'}
             </span>
           </Link>
           <Link

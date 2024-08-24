@@ -6,11 +6,11 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import Link from 'next/link'
 import { verifyCaptchaToken } from '@/src/utils/recaptchaTokenAuth'
 import { toast } from 'react-toastify'
-import { Button, Field, MessageIcon, ExitIcon, LoadingSpinner, Switch } from '../../components'
+import { Button, Field, MessageIcon, ExitIcon, LoadingSpinner } from '../../components'
 import Lottie from 'lottie-react'
 import santaletterAnimationData from '../../constants/santa-letter-animation.json'
 
-const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
+const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit, to }) => {
   const recaptchaRef = useRef(null)
 
   const [isVerified, setIsverified] = useState(false)
@@ -27,33 +27,50 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
     e.preventDefault()
     setisLoading(true)
 
-    const request = { ...data, subject: t.christmas_wishes }
+    if (to === 'to_friend') {
+      const request = { ...data, subject: t.christmas_wishes }
 
-    try {
-      const response = await axios.post('/api/send', request)
+      try {
+        const response = await axios.post('/api/send', request)
 
-      if (response.status === 200) {
-        setdata({
-          name: '',
-          email: '',
-          wish: ''
+        if (response.status === 200) {
+          setdata({
+            name: '',
+            email: '',
+            wish: ''
+          })
+        }
+      } catch (error) {
+        console.log(error)
+        console.error(error)
+        toast.error(t.sending_failed, {
+          position: 'top-left',
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: 'light'
+        })
+      } finally {
+        recaptchaRef.current.reset()
+        setLetterAnimation(true)
+        setIsverified(false)
+        setisLoading(false)
+        toast.success(t.sent, {
+          position: 'top-left',
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: 'light',
+          delay: 2500
         })
       }
-    } catch (error) {
-      console.log(error)
-      console.error(error)
-      toast.error(t.sending_failed, {
-        position: 'top-left',
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-        theme: 'light'
-      })
-    } finally {
-      recaptchaRef.current.reset()
+    } else {
       setLetterAnimation(true)
       setIsverified(false)
       setisLoading(false)
@@ -88,15 +105,18 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
   ) : (
     <form
       onSubmit={sendLetter}
-      className={`flex flex-col w-full h-fit md:w-2/3 lg:w-3/4 transition-opacity duration-300 bg-slate-900/70 text-white p-4 ${
-        cssTranslate ? 'opacity-100' : 'opacity-0'
-      }`}
+      className={`
+        flex flex-col w-full h-fit md:w-2/3 lg:w-3/4 transition-opacity duration-300 bg-slate-900/70 text-white p-4
+        ${cssTranslate ? 'opacity-100' : 'opacity-0'}
+      `}
     >
       <div className="flex flex-col">
         <div className="relative text-center">
-          <span className="capitalize text-center text-2xl">{t.letter || 'letter'}</span>
+          <span className="capitalize text-center text-2xl">
+            {t.letter || 'letter'} {t[to]}
+          </span>
           <button type="button" className="absolute right-4" onClick={onExit}>
-            <ExitIcon />
+            <ExitIcon className="hover:bg-white hover:text-black rounded-xl" />
           </button>
         </div>
         <div className="mt-4 md:px-6 flex justify-around md:justify-start md:items-center md:gap-x-5">
@@ -113,15 +133,17 @@ const LetterForm = ({ cssTranslate, sitekey, lng, t, onExit }) => {
               placeholder={t.name || 'first name'}
               className="w-full md:w-36 placeholder:capitalize"
             />
-            <Field
-              id="email"
-              type="email"
-              value={data.email}
-              onChange={(e) => setdata({ ...data, email: e.target.value })}
-              required
-              placeholder={t.email || 'Email'}
-              className="w-full md:w-52 placeholder:capitalize"
-            />
+            {to === 'to_friend' && (
+              <Field
+                id="email"
+                type="email"
+                value={data.email}
+                onChange={(e) => setdata({ ...data, email: e.target.value })}
+                required
+                placeholder={t.email || 'Email'}
+                className="w-full md:w-52 placeholder:capitalize"
+              />
+            )}
             <textarea
               name="wish"
               value={data.wish}

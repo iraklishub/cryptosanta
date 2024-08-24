@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import backgroundMarket from '@/public/assets/images/hd.jpg'
-import MarketPageWrapper from './wrapper'
+import GiftsPageWrapper from './wrapper'
 import { getDictionary } from '../dictionaries/dictionaries'
 
 export default async function Page({ params: { lng } }) {
@@ -19,7 +19,7 @@ export default async function Page({ params: { lng } }) {
           className="object-cover"
         />
       </div>
-      <MarketPageWrapper t={t} lng={lng} />
+      <GiftsPageWrapper t={t} lng={lng} />
     </>
   )
 }

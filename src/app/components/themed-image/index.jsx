@@ -12,7 +12,7 @@ const ThemedImage = () => {
   const { id } = useTheme((state) => state.theme)
   const [current, setcurrent] = useState(0)
   const isGrinch = id === 'grinch'
-  const isMarket = pathname.includes('market')
+  const isGifts = pathname.includes('gifts')
 
   useEffect(() => {
     if (isGrinch) {
@@ -22,7 +22,7 @@ const ThemedImage = () => {
     }
   }, [id])
 
-  return isMarket ? null : (
+  return isGifts ? null : (
     <div
       className="fixed w-screen h-screen -z-10 flex transition ease-linear duration-0"
       style={{ transform: `translateX(-${current * 100}%` }}

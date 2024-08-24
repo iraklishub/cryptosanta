@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { LeftArrowExit } from '@/src/app/components'
 
-const MarketHeader = ({ t, isOpen, setIsOpen, lng }) => (
+const GiftsHeader = ({ t, isOpen, setIsOpen, lng }) => (
   <header className="w-full pt-2 pl-2 flex justify-between">
     {isOpen ? (
       <button
@@ -24,4 +24,4 @@ const MarketHeader = ({ t, isOpen, setIsOpen, lng }) => (
   </header>
 )
 
-export default MarketHeader
+export default GiftsHeader
