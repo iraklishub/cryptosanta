@@ -33,8 +33,8 @@ export default function RootLayout({ children, params }) {
       >
         <ThemedImage />
         {children}
-        {/* <Analytics /> */}
-        {/* <SpeedInsights /> */}
+        <Analytics />
+        <SpeedInsights />
         <ToastContainer
           closeOnClick
           rtl={false}
