@@ -1,4 +1,4 @@
-import { EmailTemplate } from '../../components'
+// import { EmailTemplate } from '../../components'
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
@@ -8,13 +8,14 @@ export async function POST(request) {
   try {
     const body = await request.json()
 
-    const { name, email, wish, subject } = body
+    const { name, email, text, image, subject, isGrinch } = body
 
     const data = await resend.emails.send({
       from: `${name} <letter@santababu.online>`,
       to: email,
       subject: `${subject || 'Christmas Wishes'}: ${name}`,
-      react: EmailTemplate({ name, wish, subject })
+      react: <></>
+      // react: EmailTemplate({ text, isGrinch, image })
     })
 
     if (data.status === 'success') {

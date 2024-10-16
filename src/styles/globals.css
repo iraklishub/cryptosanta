@@ -2,10 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+/* .capture-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding: 2.5rem;
+  width: 100%;
+  min-height: 20rem;
+}
+
+.capture-container__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  width: 1024px;
+  height: 1024px;
+  object-fit: cover;
+  border-style: none;
+}
+
+.capture-container__text {
+  width: 100%;
+  height: fit-content;
+  text-wrap: wrap;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .capture-container {
+    width: 50%;
+    min-height: 0px;
+  }
+}
+
+@media (min-width: 976px) {
+  .capture-container {
+    width: 33.333333%;
+  }
+} */
+
 .text_shadow {
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
 }
 
 body {
-  background-color: #eb4034;
+  background-color: #e8e0df;
+}
+
+.lightning-red {
+  animation: lightingred;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes lightingred {
+  0% {
+    text-shadow: 0px 0px 20px #b91c1c, 0px 0px 30px #b91c1c, 0px 0px 40px #b91c1c,
+      0px 0px 50px #b91c1c, 0px 0px 60px #b91c1c, 0px 0px 70px #b91c1c, 0px 0px 80px #b91c1c;
+  }
+  50% {
+    text-shadow: 0px 0px 20px #ef4444, 0px 0px 30px #ef4444, 0px 0px 40px #ef4444,
+      0px 0px 50px #ef4444, 0px 0px 60px #ef4444, 0px 0px 70px #ef4444, 0px 0px 80px #ef4444;
+  }
+  100% {
+    text-shadow: 0px 0px 20px #b91c1c, 0px 0px 30px #b91c1c, 0px 0px 40px #b91c1c,
+      0px 0px 50px #b91c1c, 0px 0px 60px #b91c1c, 0px 0px 70px #b91c1c, 0px 0px 80px #b91c1c;
+  }
+}
+
+.lightning-green {
+  animation: lightinggreen;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes lightinggreen {
+  0% {
+    text-shadow: 0px 0px 20px #4ade80, 0px 0px 30px #4ade80, 0px 0px 40px #4ade80,
+      0px 0px 50px #4ade80, 0px 0px 60px #4ade80, 0px 0px 70px #4ade80, 0px 0px 80px #4ade80;
+  }
+  50% {
+    text-shadow: 0px 0px 20px rgb(22, 163, 74), 0px 0px 30px #16a34a, 0px 0px 40px #16a34a,
+      0px 0px 50px #16a34a, 0px 0px 60px #16a34a, 0px 0px 70px #16a34a, 0px 0px 80px #16a34a;
+  }
+  100% {
+    text-shadow: 0px 0px 20px #4ade80, 0px 0px 30px #4ade80, 0px 0px 40px #4ade80,
+      0px 0px 50px #4ade80, 0px 0px 60px #4ade80, 0px 0px 70px #4ade80, 0px 0px 80px #4ade80;
+  }
 }

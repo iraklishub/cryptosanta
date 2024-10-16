@@ -10,7 +10,7 @@ const GiftsHeader = ({ t, isOpen, setIsOpen, lng }) => (
         className="text-white font-semibold flex items-center w-auto hover:text-gray-100 active:text-white"
       >
         <LeftArrowExit className="w-6 h-6 md:h-8 md:w-8" />
-        <span className="ml-2 capitalize">{t.exit || 'exit'}</span>
+        <span className="ml-2 capitalize">{t['Exit'] || 'Exit'}</span>
       </button>
     ) : (
       <Link
@@ -18,7 +18,7 @@ const GiftsHeader = ({ t, isOpen, setIsOpen, lng }) => (
         className="text-white font-semibold flex items-center w-auto hover:text-gray-100 active:text-white"
       >
         <LeftArrowExit className="w-6 h-6 md:h-8 md:w-8" />
-        <span className="ml-2 capitalize">{t.exit || 'exit'}</span>
+        <span className="ml-2 capitalize">{t['Exit'] || 'Exit'}</span>
       </Link>
     )}
   </header>

@@ -7,6 +7,12 @@ const nextConfig = {
         hostname: 'm.media-amazon.com',
         port: '',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.seadn.io',
+        port: '',
+        pathname: '/**'
       }
     ]
   }
