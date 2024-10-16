@@ -1,8 +1,7 @@
 import clsx from 'clsx'
 import { forwardRef } from 'react'
 
-const GeneratedCard = forwardRef(({ image, text, className, options }, ref) => {
-  const { bold, italic, underline, align, font, color, size } = options
+const GeneratedCard = forwardRef(({ image, text, className }, ref) => {
   return (
     <section ref={ref} className="w-full md:w-5/12">
       <div
@@ -17,20 +16,12 @@ const GeneratedCard = forwardRef(({ image, text, className, options }, ref) => {
           backgroundOrigin: 'border-box'
         }}
       >
-        <pre
+        <p
           className={clsx(
-            'w-full min-h-screen md:min-h-0 text-wrap z-10 text-white text-md md:text-md lg:text-lg overflow-y-scroll',
-            bold && 'font-bold',
-            italic && 'italic',
-            underline && 'underline',
-            align === 'left' && 'text-left',
-            align === 'center' && 'text-center',
-            align === 'right' && 'text-right',
-            align === 'justify' && 'text-justify'
+            'w-full min-h-screen md:min-h-0 text-wrap z-10 text-white text-md md:text-md lg:text-lg overflow-y-scroll'
           )}
-        >
-          {text}
-        </pre>
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
       </div>
     </section>
   )

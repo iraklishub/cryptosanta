@@ -7,10 +7,10 @@ import Lottie from 'lottie-react'
 import santaletterAnimationData from '../../constants/santa-letter-animation.json'
 import grinchletterAnimationData from '../../constants/grinch-letter-animation.json'
 import Cards from './components/cards'
-import TextFields from './components/textfields'
 import FormHeader from '../form-header'
 import FormFooter from '../form-footer'
 import GeneratedCard from './components/generated-card'
+import { Tiptap } from '@/src/app/components'
 
 const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
   const captureRef = useRef()
@@ -34,16 +34,7 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
 
   const [state, setState] = useState({
     text: '',
-    card: cards[0],
-    options: {
-      bold: false,
-      italic: false,
-      underline: false,
-      align: 'left',
-      font: 'inter',
-      color: 'red',
-      size: 'base'
-    }
+    card: cards[0]
   })
 
   const handleShare = async (e) => {
@@ -134,14 +125,10 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
           isGrinch={isGrinch}
           cards={cards}
         />
-        <TextFields text={state.text} setState={setState} options={state.options} t={t} />
 
-        <GeneratedCard
-          ref={captureRef}
-          image={state.card.img}
-          text={state.text}
-          options={state.options}
-        />
+        <Tiptap content={state.text} onChange={(e) => setState((prev) => ({ ...prev, text: e }))} />
+
+        <GeneratedCard ref={captureRef} image={state.card.img} text={state.text} />
       </section>
 
       <FormFooter

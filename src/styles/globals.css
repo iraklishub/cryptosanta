@@ -2,55 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .capture-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  padding: 2.5rem;
-  width: 100%;
-  min-height: 20rem;
-}
-
-.capture-container__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: none;
-  width: 1024px;
-  height: 1024px;
-  object-fit: cover;
-  border-style: none;
-}
-
-.capture-container__text {
-  width: 100%;
-  height: fit-content;
-  text-wrap: wrap;
-  z-index: 10;
-}
-
-@media (min-width: 768px) {
-  .capture-container {
-    width: 50%;
-    min-height: 0px;
-  }
-}
-
-@media (min-width: 976px) {
-  .capture-container {
-    width: 33.333333%;
-  }
-} */
-
 .text_shadow {
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
 }
 
 body {
-  background-color: #e8e0df;
+  background-color: #eb4034;
 }
 
 .lightning-red {

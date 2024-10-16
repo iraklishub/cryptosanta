@@ -1,6 +1,8 @@
 export { default as LanguageSwitcher } from './language-switcher'
 export { default as Button } from './button'
 export { default as Field } from './field'
+export { default as Tiptap } from './tiptap'
+export { default as ToolBar } from './toolbar'
 // export { default as EmailTemplate } from './email-template'
 export { default as MessageIcon } from './icons/message-icon'
 export { default as GrinchIcon } from './icons/grinch-icon'
