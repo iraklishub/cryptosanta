@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { Inter } from 'next/font/google'
 import {
   BoldIcon,
   ItalicIcon,
@@ -11,6 +12,8 @@ import {
   FontColorIcon,
   FontSizeIcon
 } from '@/src/app/components/icons/text-options'
+
+const inter = Inter({ subsets: ['latin'] })
 
 const Toolbar = ({ editor, content }) => {
   const optionButtons = [
@@ -49,18 +52,73 @@ const Toolbar = ({ editor, content }) => {
       icon: <AlignJustifyIcon />,
       onclick: () => editor.chain().focus().setTextAlign('justify').run()
     },
-    // { id: 'font', icon: <FontFamilyIcon />, onclick: () => {} },
+    {
+      id: 'font',
+      icon: <FontFamilyIcon />,
+      onclick: (e) => editor.chain().focus().setFontFamily(e.target.value).run()
+    },
     {
       id: 'color',
       icon: <FontColorIcon />,
       onclick: (e) => editor.chain().focus().setColor(e.target.value).run()
     }
-    // { id: 'size', icon: <FontSizeIcon />, onclick: () => {} }
+    // {
+    //   id: 'size',
+    //   icon: <FontSizeIcon />,
+    //   onclick: (e) => editor.chain().focus().setMark('textStyle', '20px').run()
+    // }
   ]
 
   if (!editor) {
     return null
   }
+
+  const selectOptions = [
+    {
+      value: 'Arial, sans-serif',
+      label: 'Arial'
+    },
+    {
+      value: 'Verdana, sans-serif',
+      label: 'Verdena'
+    },
+    {
+      value: 'Tahoma, sans-serif',
+      label: 'Tahoma'
+    },
+    {
+      value: "'Times New Roman', serif",
+      label: 'Times New Roman'
+    },
+    {
+      value: "'Trebuchet MS', sans-serif",
+      label: 'Trebuchet MS'
+    },
+    {
+      value: 'Georgia, serif',
+      label: 'Georgia'
+    },
+    {
+      value: 'Garamond, serif',
+      label: 'Garamond'
+    },
+    {
+      value: "'Courier New', monospace",
+      label: 'Courier New'
+    },
+    {
+      value: "'Brush Script MT', cursive",
+      label: 'Brush Script MT'
+    },
+    {
+      value: 'cursive',
+      label: 'Cursive'
+    },
+    {
+      value: 'fantasy',
+      label: 'Fantasy'
+    }
+  ]
 
   return (
     <div className="flex flex-wrap gap-2">
@@ -70,7 +128,6 @@ const Toolbar = ({ editor, content }) => {
             <label
               key={id}
               htmlFor={id}
-              for={id}
               className="p-1.5 text-gray-300 relative rounded cursor-pointer hover:text-white bg-gray-600"
             >
               {icon}
@@ -82,6 +139,29 @@ const Toolbar = ({ editor, content }) => {
                 data-testid="setColor"
                 className="absolute top-0 left-0 w-8 h-8 invisible"
               />
+            </label>
+          )
+        }
+
+        if (id === 'font') {
+          return (
+            <label
+              key={id}
+              htmlFor={id}
+              className="p-1.5 text-gray-300 relative rounded cursor-pointer hover:text-white bg-gray-600"
+            >
+              {icon}
+              <select
+                id={id}
+                className="absolute left-0 top-0 w-8 h-8 cursor-pointer opacity-0"
+                onChange={(e) => onclick(e)}
+              >
+                {selectOptions.map(({ value, label }) => (
+                  <option value={value} style={{ fontFamily: value }}>
+                    {label}
+                  </option>
+                ))}
+              </select>
             </label>
           )
         }
