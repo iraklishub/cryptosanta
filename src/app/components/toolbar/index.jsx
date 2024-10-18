@@ -137,7 +137,7 @@ const Toolbar = ({ editor, content }) => {
                 onInput={(e) => onclick(e)}
                 value={editor.getAttributes('textStyle').color}
                 data-testid="setColor"
-                className="absolute top-0 left-0 w-8 h-8 invisible"
+                className="absolute top-0 left-0 w-8 h-8 cursor-pointer opacity-0"
               />
             </label>
           )
