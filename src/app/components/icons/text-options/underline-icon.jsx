@@ -13,8 +13,8 @@ const UnderlineIcon = ({ className }) => {
     >
       <path
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeWidth="2"
         d="M6 19h12M8 5v9a4 4 0 0 0 8 0V5M6 5h4m4 0h4"
       />
     </svg>
