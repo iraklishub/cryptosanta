@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import { Inter } from 'next/font/google'
 import {
   BoldIcon,
   ItalicIcon,
@@ -12,10 +11,13 @@ import {
   FontColorIcon,
   FontSizeIcon
 } from '@/src/app/components/icons/text-options'
+import { fontFamilyOptions, fontSizeOptions } from '../../constants'
 
-const inter = Inter({ subsets: ['latin'] })
+const Toolbar = ({ editor }) => {
+  if (!editor) {
+    return null
+  }
 
-const Toolbar = ({ editor, content }) => {
   const optionButtons = [
     {
       id: 'bold',
@@ -51,136 +53,76 @@ const Toolbar = ({ editor, content }) => {
       id: 'justify',
       icon: <AlignJustifyIcon />,
       onclick: () => editor.chain().focus().setTextAlign('justify').run()
+    }
+  ]
+
+  const optionSelects = [
+    {
+      id: 'size',
+      icon: <FontSizeIcon />,
+      onclick: (e) =>
+        editor.chain().focus().setMark('textStyle', { fontSize: e.target.value }).run(),
+      options: fontSizeOptions
     },
     {
       id: 'font',
       icon: <FontFamilyIcon />,
-      onclick: (e) => editor.chain().focus().setFontFamily(e.target.value).run()
-    },
-    {
-      id: 'color',
-      icon: <FontColorIcon />,
-      onclick: (e) => editor.chain().focus().setColor(e.target.value).run()
-    }
-    // {
-    //   id: 'size',
-    //   icon: <FontSizeIcon />,
-    //   onclick: (e) => editor.chain().focus().setMark('textStyle', '20px').run()
-    // }
-  ]
-
-  if (!editor) {
-    return null
-  }
-
-  const selectOptions = [
-    {
-      value: 'Arial, sans-serif',
-      label: 'Arial'
-    },
-    {
-      value: 'Verdana, sans-serif',
-      label: 'Verdena'
-    },
-    {
-      value: 'Tahoma, sans-serif',
-      label: 'Tahoma'
-    },
-    {
-      value: "'Times New Roman', serif",
-      label: 'Times New Roman'
-    },
-    {
-      value: "'Trebuchet MS', sans-serif",
-      label: 'Trebuchet MS'
-    },
-    {
-      value: 'Georgia, serif',
-      label: 'Georgia'
-    },
-    {
-      value: 'Garamond, serif',
-      label: 'Garamond'
-    },
-    {
-      value: "'Courier New', monospace",
-      label: 'Courier New'
-    },
-    {
-      value: "'Brush Script MT', cursive",
-      label: 'Brush Script MT'
-    },
-    {
-      value: 'cursive',
-      label: 'Cursive'
-    },
-    {
-      value: 'fantasy',
-      label: 'Fantasy'
+      onclick: (e) => editor.chain().focus().setFontFamily(e.target.value).run(),
+      options: fontFamilyOptions
     }
   ]
 
   return (
     <div className="flex flex-wrap gap-2">
-      {optionButtons.map(({ id, icon, onclick }) => {
-        if (id === 'color') {
-          return (
-            <label
-              key={id}
-              htmlFor={id}
-              className="p-1.5 text-gray-300 relative rounded cursor-pointer hover:text-white bg-gray-600"
-            >
-              {icon}
-              <input
-                id={id}
-                type="color"
-                onInput={(e) => onclick(e)}
-                value={editor.getAttributes('textStyle').color}
-                data-testid="setColor"
-                className="absolute top-0 left-0 w-8 h-8 cursor-pointer opacity-0"
-              />
-            </label>
-          )
-        }
+      {optionButtons.map(({ id, icon, onclick }) => (
+        <button
+          key={id}
+          type="button"
+          className={clsx(
+            'p-1.5 text-gray-300 rounded cursor-pointer hover:text-white bg-gray-600',
+            editor.isActive(id) && 'border-white border'
+          )}
+          onClick={onclick}
+        >
+          {icon}
+        </button>
+      ))}
 
-        if (id === 'font') {
-          return (
-            <label
-              key={id}
-              htmlFor={id}
-              className="p-1.5 text-gray-300 relative rounded cursor-pointer hover:text-white bg-gray-600"
-            >
-              {icon}
-              <select
-                id={id}
-                className="absolute left-0 top-0 w-8 h-8 cursor-pointer opacity-0"
-                onChange={(e) => onclick(e)}
-              >
-                {selectOptions.map(({ value, label }) => (
-                  <option value={value} style={{ fontFamily: value }}>
-                    {label}
-                  </option>
-                ))}
-              </select>
-            </label>
-          )
-        }
-
-        return (
-          <button
-            key={id}
-            type="button"
-            className={clsx(
-              'p-1.5 text-gray-300 rounded cursor-pointer hover:text-white bg-gray-600',
-              editor.isActive(id) && 'border-white border',
-              (id === 'font' || id === 'color' || id === 'size') && 'border-0'
-            )}
-            onClick={onclick}
+      {optionSelects.map(({ id, icon, onclick, options }) => (
+        <label
+          key={id}
+          htmlFor={id}
+          className="p-1.5 text-gray-300 relative rounded cursor-pointer hover:text-white bg-gray-600"
+        >
+          {icon}
+          <select
+            id={id}
+            className="absolute left-0 top-0 w-8 h-8 cursor-pointer opacity-0"
+            onChange={(e) => onclick(e)}
           >
-            {icon}
-          </button>
-        )
-      })}
+            {options.map(({ value, label }) => (
+              <option key={value} value={value} style={{ fontFamily: value }}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </label>
+      ))}
+
+      <label
+        htmlFor="color"
+        className="p-1.5 text-gray-300 relative rounded cursor-pointer hover:text-white bg-gray-600"
+      >
+        <FontColorIcon />
+        <input
+          id="color"
+          type="color"
+          onInput={(e) => editor.chain().focus().setColor(e.target.value).run()}
+          value={editor.getAttributes('textStyle').color}
+          data-testid="setColor"
+          className="absolute top-0 left-0 w-8 h-8 cursor-pointer opacity-0"
+        />
+      </label>
     </div>
   )
 }

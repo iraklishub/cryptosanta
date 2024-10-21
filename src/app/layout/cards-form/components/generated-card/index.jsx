@@ -16,10 +16,9 @@ const GeneratedCard = forwardRef(({ image, text, className }, ref) => {
           backgroundOrigin: 'border-box'
         }}
       >
-        <p
-          // todo: delete text size classnames
+        <pre
           className={clsx(
-            'w-full min-h-screen md:min-h-0 text-wrap z-10 text-white text-md md:text-lg lg:text-xl overflow-y-scroll'
+            'w-full min-h-screen md:min-h-0 text-wrap z-10 text-white overflow-y-scroll'
           )}
           dangerouslySetInnerHTML={{ __html: text }}
         />

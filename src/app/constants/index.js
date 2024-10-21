@@ -354,36 +354,96 @@ export const marketItems = [
   }
 ]
 
-export const translationNotCompleted = [
-  'ru',
-  'es',
-  'de',
-  'fr',
-  'pt',
-  'nl',
-  'it',
-  'pl',
-  'uk',
-  'cs',
-  'hr',
-  'sr',
-  'sk',
-  'sl',
-  'be',
-  'bg',
-  'sv',
-  'da',
-  'no',
-  'is',
-  'ga',
-  'fi',
-  'et',
-  'lt',
-  'lv',
-  'ro',
-  'hu',
-  'el',
-  'hy',
-  'ja',
-  'ko'
+export const fontFamilyOptions = [
+  {
+    value: 'Arial, sans-serif',
+    label: 'Arial'
+  },
+  {
+    value: 'Verdana, sans-serif',
+    label: 'Verdena'
+  },
+  {
+    value: 'Tahoma, sans-serif',
+    label: 'Tahoma'
+  },
+  {
+    value: "'Times New Roman', serif",
+    label: 'Times New Roman'
+  },
+  {
+    value: "'Trebuchet MS', sans-serif",
+    label: 'Trebuchet MS'
+  },
+  {
+    value: 'Georgia, serif',
+    label: 'Georgia'
+  },
+  {
+    value: 'Garamond, serif',
+    label: 'Garamond'
+  },
+  {
+    value: "'Courier New', monospace",
+    label: 'Courier New'
+  },
+  {
+    value: "'Brush Script MT', cursive",
+    label: 'Brush Script MT'
+  },
+  {
+    value: 'cursive',
+    label: 'Cursive'
+  },
+  {
+    value: 'fantasy',
+    label: 'Fantasy'
+  }
+]
+
+export const fontSizeOptions = [
+  {
+    value: '16px',
+    label: '16px'
+  },
+  {
+    value: '18px',
+    label: '18px'
+  },
+  {
+    value: '20px',
+    label: '20px'
+  },
+  {
+    value: '24px',
+    label: '24px'
+  },
+  {
+    value: '30px',
+    label: '30px'
+  },
+  {
+    value: '36px',
+    label: '36px'
+  },
+  {
+    value: '48px',
+    label: '48px'
+  },
+  {
+    value: '60px',
+    label: '60px'
+  },
+  {
+    value: '72px',
+    label: '72px'
+  },
+  {
+    value: '96px',
+    label: '96px'
+  },
+  {
+    value: '128px',
+    label: '128px'
+  }
 ]

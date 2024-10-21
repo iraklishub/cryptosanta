@@ -11,10 +11,11 @@ import TextStyle from '@tiptap/extension-text-style'
 import Color from '@tiptap/extension-color'
 import HardBreak from '@tiptap/extension-hard-break'
 import FontFamily from '@tiptap/extension-font-family'
+import { FontSize } from './fontSizeExtension'
 import { useEditor, EditorContent } from '@tiptap/react'
 import { ToolBar } from '..'
 
-const Tiptap = ({ content, onChange }) => {
+const Tiptap = ({ onChange }) => {
   const editor = useEditor({
     extensions: [
       Document,
@@ -27,6 +28,7 @@ const Tiptap = ({ content, onChange }) => {
       Color,
       HardBreak,
       FontFamily,
+      FontSize,
       TextAlign.configure({
         types: ['paragraph']
       })
@@ -48,6 +50,7 @@ const Tiptap = ({ content, onChange }) => {
         return false // Allow other key events to propagate
       }
     },
+    immediatelyRender: false,
     onUpdate: ({ editor }) => {
       onChange(editor.getHTML())
     }
@@ -55,12 +58,11 @@ const Tiptap = ({ content, onChange }) => {
 
   return (
     <section className="text-white font-semibold flex flex-col gap-2 w-full md:w-5/12">
-      <ToolBar editor={editor} content={content} />
+      <ToolBar editor={editor} />
       <EditorContent
         style={{ whiteSpace: 'pre-line' }}
         editor={editor}
-        // todo: delete text size classnames
-        className="w-full min-h-72 md:min-h-0 text-xl text-md md:text-lg lg:text-xl flex-grow border-b-2 border-slate-200 outline-0 px-3 py-2 !bg-slate-900/70"
+        className="w-full min-h-72 md:min-h-0 flex-grow border-b-2 border-slate-200 outline-0 px-3 py-2 !bg-slate-900/70"
       />
     </section>
   )

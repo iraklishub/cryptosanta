@@ -126,7 +126,7 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
           cards={cards}
         />
 
-        <Tiptap content={state.text} onChange={(e) => setState((prev) => ({ ...prev, text: e }))} />
+        <Tiptap onChange={(e) => setState((prev) => ({ ...prev, text: e }))} />
 
         <GeneratedCard ref={captureRef} image={state.card.img} text={state.text} />
       </section>
