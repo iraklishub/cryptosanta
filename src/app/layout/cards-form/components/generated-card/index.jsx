@@ -4,9 +4,8 @@ import { LoadingSpinner } from '@/src/app/components'
 
 const GeneratedCard = forwardRef(({ card, text, className }, ref) => {
   return (
-    <section ref={ref} className="w-full lg:w-5/12 relative">
-      <LoadingSpinner className="absolute top-1/2 left-1/2 w-10 h-10 border-4" />
-
+    <section ref={ref} className="w-full lg:w-5/12 relative z-20">
+      <LoadingSpinner className="absolute top-1/2 left-1/2 w-10 h-10 z-0 border-4" />
       <div
         className={`flex p-1.5 justify-center items-center relative z-50 ${className || ''}`}
         style={{
