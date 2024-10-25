@@ -15,7 +15,9 @@ const GiftsMain = ({ t, isOpen, setIsOpen }) => {
   return isOpen ? (
     <main className="text-white font-semibold p-4 w-full h-fit flex flex-col">
       <section className="flex flex-col items-center bg-slate-900/70 rounded-md py-6">
-        <h3 className="text-lg font-bold capitalize">{t.christmas_market || 'Christmas Market'}</h3>
+        <h3 className="text-lg font-bold capitalize">
+          {t['Christmas Market'] || 'Christmas Market'}
+        </h3>
         <div className="flex flex-wrap mt-8 gap-y-6 w-full justify-evenly">
           {marketItems.map(({ title, link, image }) => (
             <Link
@@ -53,7 +55,7 @@ const GiftsMain = ({ t, isOpen, setIsOpen }) => {
           'min-w-[8rem] h-fit shadow-2xl shadow-red-600 bg-white border-0 -mt-px capitalize justify-center'
         }
       >
-        {t.enter_market || 'Enter Market'}
+        {t['Enter Market'] || 'Enter Market'}
       </Button>
       <Lottie
         onComplete={() => saleRef.current?.goToAndPlay(112, true)}

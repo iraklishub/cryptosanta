@@ -354,36 +354,164 @@ export const marketItems = [
   }
 ]
 
-export const translationNotCompleted = [
-  'ru',
-  'es',
-  'de',
-  'fr',
-  'pt',
-  'nl',
-  'it',
-  'pl',
-  'uk',
-  'cs',
-  'hr',
-  'sr',
-  'sk',
-  'sl',
-  'be',
-  'bg',
-  'sv',
-  'da',
-  'no',
-  'is',
-  'ga',
-  'fi',
-  'et',
-  'lt',
-  'lv',
-  'ro',
-  'hu',
-  'el',
-  'hy',
-  'ja',
-  'ko'
+export const fontFamilyOptions = [
+  {
+    value: 'Arial, sans-serif',
+    label: 'Arial'
+  },
+  {
+    value: 'Verdana, sans-serif',
+    label: 'Verdena'
+  },
+  {
+    value: 'Tahoma, sans-serif',
+    label: 'Tahoma'
+  },
+  {
+    value: "'Times New Roman', serif",
+    label: 'Times New Roman'
+  },
+  {
+    value: "'Trebuchet MS', sans-serif",
+    label: 'Trebuchet MS'
+  },
+  {
+    value: 'Georgia, serif',
+    label: 'Georgia'
+  },
+  {
+    value: 'Garamond, serif',
+    label: 'Garamond'
+  },
+  {
+    value: "'Courier New', monospace",
+    label: 'Courier New'
+  },
+  {
+    value: "'Brush Script MT', cursive",
+    label: 'Brush Script MT'
+  },
+  {
+    value: 'cursive',
+    label: 'Cursive'
+  },
+  {
+    value: 'fantasy',
+    label: 'Fantasy'
+  }
+]
+
+export const fontSizeOptions = [
+  {
+    value: '9px',
+    label: '9px'
+  },
+  {
+    value: '11px',
+    label: '11px'
+  },
+  {
+    value: '12px',
+    label: '12px'
+  },
+  {
+    value: '14px',
+    label: '14px'
+  },
+  {
+    value: '16px',
+    label: '16px'
+  },
+  {
+    value: '18px',
+    label: '18px'
+  },
+  {
+    value: '20px',
+    label: '20px'
+  },
+  {
+    value: '24px',
+    label: '24px'
+  },
+  {
+    value: '30px',
+    label: '30px'
+  },
+  {
+    value: '36px',
+    label: '36px'
+  },
+  {
+    value: '48px',
+    label: '48px'
+  },
+  {
+    value: '60px',
+    label: '60px'
+  },
+  {
+    value: '72px',
+    label: '72px'
+  },
+  {
+    value: '96px',
+    label: '96px'
+  },
+  {
+    value: '128px',
+    label: '128px'
+  }
+]
+
+export const cards = [
+  {
+    id: 1,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537097/santababu/cards/13_vmkaol.jpg'
+  },
+  {
+    id: 2,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537096/santababu/cards/12_m3dleu.jpg'
+  },
+  {
+    id: 3,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537095/santababu/cards/11_xsgtvy.jpg'
+  },
+  {
+    id: 4,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537093/santababu/cards/9_mgswas.jpg'
+  },
+  {
+    id: 5,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537093/santababu/cards/8_nitwg1.jpg'
+  },
+  {
+    id: 6,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537092/santababu/cards/7_om2br2.jpg'
+  },
+  {
+    id: 7,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537091/santababu/cards/6_aeji5s.jpg'
+  },
+  {
+    id: 8,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537089/santababu/cards/3_w14lv4.jpg'
+  },
+  {
+    id: 9,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537089/santababu/cards/4_opbjqx.jpg'
+  },
+  {
+    id: 10,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537089/santababu/cards/2_ntzjkp.jpg'
+  },
+  {
+    id: 11,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537088/santababu/cards/1_ee43qs.jpg'
+  },
+  {
+    id: 12,
+    isGrinch: true,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537090/santababu/cards/5_syijk7.jpg'
+  }
 ]

@@ -29,3 +29,25 @@ export async function verifyCaptchaToken(token) {
     throw new Error('Failed to verify reCAPTCHA')
   }
 }
+
+// import ReCAPTCHA from 'react-google-recaptcha'
+// import { verifyCaptchaToken } from '@/src/utils/recaptchaTokenAuth'
+
+// const recaptchaRef = useRef(null)
+
+// async function handleCaptchaSubmission(token) {
+//   // Server function to verify captchaToken
+//   await verifyCaptchaToken(token)
+//     .then(() => setIsverified(true))
+//     .catch(() => setIsverified(false))
+// }
+
+// recaptchaRef.current.reset()  reset function
+
+// <ReCAPTCHA
+//   ref={recaptchaRef}
+//   sitekey={sitekey}
+//   onChange={handleCaptchaSubmission}
+//   hl={lng}
+//   theme="dark"
+// />
