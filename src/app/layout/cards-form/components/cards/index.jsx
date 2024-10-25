@@ -4,10 +4,17 @@ import Image from 'next/image'
 const CardsSection = ({ title, card, setState, isGrinch, cards, className }) => {
   return (
     <section
-      className={clsx('flex flex-col w-full items-center mb-2', 'md:w-2/12', 'lg:mb-0', className)}
+      className={clsx('flex flex-col w-full items-center mb-2', 'lg:w-2/12', 'lg:mb-0', className)}
     >
-      <span className="text-sm mb-4">{title}</span>
-      <div className="flex w-full gap-2 justify-items-center overflow-auto md:grid md:grid-cols-1 lg:grid-cols-2">
+      <span
+        className={clsx(
+          'capitalize text-center text-sm lg:text-base mb-4',
+          isGrinch ? 'lightning-green' : 'lightning-red'
+        )}
+      >
+        {title}
+      </span>
+      <div className="flex w-full gap-2 justify-items-center overflow-auto lg:grid lg:grid-cols-2">
         {cards.map((c) => (
           <Image
             key={c.id}

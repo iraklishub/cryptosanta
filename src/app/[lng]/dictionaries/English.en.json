@@ -20,15 +20,17 @@
   "Christmas Games": "Christmas Games",
   "Other Games": "Other Games",
   "Back": "Back",
-  "Choose Design": "Choose Design",
-  "NFT Cards": "NFT Cards",
+  "Choose Design": "Choose Card",
+  "Cards": "Holiday Cards",
   "Text on Card": "Text on Card",
+  "Fill this text area with love and holiday joy": "Fill this text area with love and holiday joy! 🎄✨",
 
   "Letter to Santa": "Letter to Santa",
 
   "Sending": "Sending",
   "Sharing": "Sharing",
-  "Sent": "Letter Sent",
+  "Card Sent": "Card Sent",
+  "Letter Sent": "Letter Sent!",
   "Sending Failed": "Sending Failed",
 
   "Christmas Wishes": "Christmas Wishes",

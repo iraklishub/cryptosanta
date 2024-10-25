@@ -1,8 +1,9 @@
+import clsx from 'clsx'
 import { Button, LoadingSpinner, MessageIcon } from '@/src/app/components'
 
-const FormFooter = ({ title, onExit, t, disabled, isLoading }) => {
+const FormFooter = ({ title, onExit, t, disabled, isLoading, className }) => {
   return (
-    <div className="mt-4 flex justify-end">
+    <div className={clsx('mt-4 flex justify-end z-10', className)}>
       <Button type="button" variant="outline" onClick={onExit} className="text-white border-white">
         <span className="capitalize text-sm md:text-base">{t['Close'] || 'Close'}</span>
       </Button>

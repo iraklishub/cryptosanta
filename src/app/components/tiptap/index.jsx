@@ -11,11 +11,12 @@ import TextStyle from '@tiptap/extension-text-style'
 import Color from '@tiptap/extension-color'
 import HardBreak from '@tiptap/extension-hard-break'
 import FontFamily from '@tiptap/extension-font-family'
+import Placeholder from '@tiptap/extension-placeholder'
 import { FontSize } from './fontSizeExtension'
 import { useEditor, EditorContent } from '@tiptap/react'
 import { ToolBar } from '..'
 
-const Tiptap = ({ onChange }) => {
+const Tiptap = ({ onChange, placeholder, text }) => {
   const editor = useEditor({
     extensions: [
       Document,
@@ -29,13 +30,16 @@ const Tiptap = ({ onChange }) => {
       HardBreak,
       FontFamily,
       FontSize,
+      Placeholder.configure({
+        placeholder
+      }),
       TextAlign.configure({
         types: ['paragraph']
       })
     ],
     editorProps: {
       attributes: {
-        class: 'w-full min-h-72 md:h-full'
+        class: 'w-full min-h-72 lg:h-full'
       },
       handleKeyDown(_, event) {
         if (event.key === 'Enter') {
@@ -57,12 +61,12 @@ const Tiptap = ({ onChange }) => {
   })
 
   return (
-    <section className="text-white font-semibold flex flex-col gap-2 w-full md:w-5/12">
+    <section className="text-black font-semibold flex flex-col gap-2 w-full lg:w-5/12">
       <ToolBar editor={editor} />
       <EditorContent
         style={{ whiteSpace: 'pre-line' }}
         editor={editor}
-        className="w-full min-h-72 md:min-h-0 flex-grow border-b-2 border-slate-200 outline-0 px-3 py-2 !bg-slate-900/70"
+        className="w-full min-h-72 md:min-h-0 flex-grow border-b-2 border-slate-200 outline-0 px-3 py-2 !bg-[#fff7ed]"
       />
     </section>
   )

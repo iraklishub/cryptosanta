@@ -60,6 +60,7 @@ const Toolbar = ({ editor }) => {
     {
       id: 'size',
       icon: <FontSizeIcon />,
+      defaultValue: '16px',
       onclick: (e) =>
         editor.chain().focus().setMark('textStyle', { fontSize: e.target.value }).run(),
       options: fontSizeOptions
@@ -67,20 +68,22 @@ const Toolbar = ({ editor }) => {
     {
       id: 'font',
       icon: <FontFamilyIcon />,
+      defaultValue: 'Arial, sans-serif',
       onclick: (e) => editor.chain().focus().setFontFamily(e.target.value).run(),
       options: fontFamilyOptions
     }
   ]
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-2 justify-center">
       {optionButtons.map(({ id, icon, onclick }) => (
         <button
           key={id}
           type="button"
           className={clsx(
             'p-1.5 text-gray-300 rounded cursor-pointer hover:text-white bg-gray-600',
-            editor.isActive(id) && 'border-white border'
+            editor.isActive(id) && 'border-white border',
+            editor.isActive({ textAlign: id }) && 'border-white border'
           )}
           onClick={onclick}
         >
@@ -88,7 +91,7 @@ const Toolbar = ({ editor }) => {
         </button>
       ))}
 
-      {optionSelects.map(({ id, icon, onclick, options }) => (
+      {optionSelects.map(({ id, icon, onclick, options, defaultValue }) => (
         <label
           key={id}
           htmlFor={id}
@@ -99,6 +102,7 @@ const Toolbar = ({ editor }) => {
             id={id}
             className="absolute left-0 top-0 w-8 h-8 cursor-pointer opacity-0"
             onChange={(e) => onclick(e)}
+            defaultValue={defaultValue}
           >
             {options.map(({ value, label }) => (
               <option key={value} value={value} style={{ fontFamily: value }}>

@@ -11,30 +11,20 @@ import FormHeader from '../form-header'
 import FormFooter from '../form-footer'
 import GeneratedCard from './components/generated-card'
 import { Tiptap } from '@/src/app/components'
+import { cards } from '../../constants'
 
 const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
   const captureRef = useRef()
   const [isLoading, setisLoading] = useState(false)
   const [letterAnimation, setLetterAnimation] = useState(false)
 
-  const cards = [
-    {
-      id: 1,
-      img: 'https://i.seadn.io/gae/5r0xsU5zEAs8D9b2x_DD3-tZ0E_IgT5j4QQhs2imTSWgG1uobxrjPbYK0s22BZ23J9w5ODeebAS5AHOLvkpMTptjYWZtphlvTi5B?auto=format&dpr=1&w=1000'
-    },
-    {
-      id: 2,
-      img: 'https://i.seadn.io/gae/awlHMs7ZVRLxuiJJ84CylogTTmTYRUTt_pPdWI6oED_60LOGSnH5pnQxpceQcQvUQL7uM4BQlPaBJuvn-pq7xkatOuqj2_nc3SCkeKk?auto=format&dpr=1&w=1000'
-    },
-    {
-      id: 3,
-      img: 'https://i.seadn.io/gae/paj0i3NrC-csXVgL3kO5ERvSTCKpp-XsbGgOfXq2ZKINobqiaBQ4sPX9FG4pMW8TqT_S45dsMAW0xaJdjQsjWwo9EOwKOrKlN6AOhGE?auto=format&dpr=1&w=1000'
-    }
-  ]
+  const filteredCards = isGrinch
+    ? cards.filter((card) => card.isGrinch)
+    : cards.filter((card) => !card.isGrinch)
 
   const [state, setState] = useState({
     text: '',
-    card: cards[0]
+    card: filteredCards[0]
   })
 
   const handleShare = async (e) => {
@@ -63,7 +53,7 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
       try {
         await navigator.share(shareData)
         setLetterAnimation(true)
-        toast.success(t['Sent'], {
+        toast.success(t['Card Sent'], {
           position: 'top-left',
           autoClose: 2000,
           hideProgressBar: true,
@@ -117,18 +107,22 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
         className="w-full"
       />
 
-      <section className="flex flex-col md:flex-row flex-grow gap-2">
+      <section className="flex flex-col lg:flex-row flex-grow gap-2">
         <Cards
           title={t['Choose Design'] || 'Choose Design'}
           card={state.card}
           setState={setState}
           isGrinch={isGrinch}
-          cards={cards}
+          cards={filteredCards}
         />
 
-        <Tiptap onChange={(e) => setState((prev) => ({ ...prev, text: e }))} />
+        <Tiptap
+          onChange={(e) => setState((prev) => ({ ...prev, text: e }))}
+          text={state.text}
+          placeholder={t['Fill this text area with love and holiday joy']}
+        />
 
-        <GeneratedCard ref={captureRef} image={state.card.img} text={state.text} />
+        <GeneratedCard ref={captureRef} card={state.card} text={state.text} />
       </section>
 
       <FormFooter

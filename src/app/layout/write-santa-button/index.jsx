@@ -61,7 +61,12 @@ const WriteToSantaButton = ({ t }) => {
 
       {isOpen && (
         <div className="w-full max-h-fit min-h-full bg-slate-900/40 absolute top-0 left-0 flex items-center justify-center">
-          <LetterToSantaForm cssTranslate={cssTranslate} t={t} onExit={exitForm} />
+          <LetterToSantaForm
+            cssTranslate={cssTranslate}
+            t={t}
+            onExit={exitForm}
+            isGrinch={isGrinch}
+          />
         </div>
       )}
 

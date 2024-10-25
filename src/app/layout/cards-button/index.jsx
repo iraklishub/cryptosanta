@@ -50,7 +50,7 @@ const CardsButton = ({ t }) => {
         )}
       >
         <ChristmasCardIcon />
-        <span className="ml-2 capitalize">{t['NFT Cards'] || 'NFT Cards'}</span>
+        <span className="ml-2 capitalize">{t['Cards'] || 'Cards'}</span>
       </Button>
 
       {isOpen && (

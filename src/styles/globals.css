@@ -55,3 +55,11 @@ body {
       0px 0px 50px #4ade80, 0px 0px 60px #4ade80, 0px 0px 70px #4ade80, 0px 0px 80px #4ade80;
   }
 }
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
