@@ -1,5 +1,6 @@
 'use client'
 
+import { forwardRef } from 'react'
 import Document from '@tiptap/extension-document'
 import Paragraph from '@tiptap/extension-paragraph'
 import Text from '@tiptap/extension-text'
@@ -14,9 +15,9 @@ import FontFamily from '@tiptap/extension-font-family'
 import Placeholder from '@tiptap/extension-placeholder'
 import { FontSize } from './fontSizeExtension'
 import { useEditor, EditorContent } from '@tiptap/react'
-import { ToolBar } from '..'
+import { ToolBar, LoadingSpinner } from '..'
 
-const Tiptap = ({ onChange, placeholder, text }) => {
+const Tiptap = forwardRef(({ onChange, placeholder, card }, ref) => {
   const editor = useEditor({
     extensions: [
       Document,
@@ -39,7 +40,7 @@ const Tiptap = ({ onChange, placeholder, text }) => {
     ],
     editorProps: {
       attributes: {
-        class: 'w-full min-h-72 lg:h-full'
+        class: 'flex-grow'
       },
       handleKeyDown(_, event) {
         if (event.key === 'Enter') {
@@ -61,15 +62,31 @@ const Tiptap = ({ onChange, placeholder, text }) => {
   })
 
   return (
-    <section className="text-black font-semibold flex flex-col gap-2 w-full lg:w-5/12">
+    <section className="text-black font-semibold flex flex-col gap-2 w-full flex-grow relative">
       <ToolBar editor={editor} />
-      <EditorContent
-        style={{ whiteSpace: 'pre-line' }}
-        editor={editor}
-        className="w-full min-h-72 md:min-h-0 flex-grow border-b-2 border-slate-200 outline-0 px-3 py-2 !bg-[#fff7ed]"
-      />
+
+      <div
+        ref={ref}
+        className={`p-1.5 flex-grow flex relative z-50`}
+        style={{
+          width: '100%',
+          height: '100%',
+          backgroundImage: `url(${card?.img || ''})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundOrigin: 'border-box'
+        }}
+      >
+        <EditorContent
+          style={{ whiteSpace: 'pre-line' }}
+          editor={editor}
+          className="flex-grow flex outline-0 px-1 py-1"
+        />
+      </div>
+      <LoadingSpinner className="absolute top-1/2 left-1/2 w-10 h-10 z-0 border-4 text-white" />
     </section>
   )
-}
+})
 
 export default Tiptap

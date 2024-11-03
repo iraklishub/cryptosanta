@@ -6,10 +6,9 @@ import html2canvas from 'html2canvas'
 import Lottie from 'lottie-react'
 import santaletterAnimationData from '../../constants/santa-letter-animation.json'
 import grinchletterAnimationData from '../../constants/grinch-letter-animation.json'
-import Cards from './components/cards'
+import ImagesSection from './components/images-section'
 import FormHeader from '../form-header'
 import FormFooter from '../form-footer'
-import GeneratedCard from './components/generated-card'
 import { Tiptap } from '@/src/app/components'
 import { cards } from '../../constants'
 
@@ -96,7 +95,7 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
     <form
       onSubmit={handleShare}
       className={`
-        flex flex-col gap-6 w-full min-h-screen lg:w-11/12 transition-opacity duration-300 bg-slate-900/70 text-white py-6 px-4
+        flex flex-col gap-6 min-h-screen w-full sm:w-10/12 md:w-full lg:w-10/12 xl:w-8/12 transition-opacity duration-300 bg-slate-900/70 text-white py-6 px-4
         ${cssTranslate ? 'opacity-100' : 'opacity-0'}
       `}
     >
@@ -107,10 +106,10 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
         className="w-full"
       />
 
-      <section className="flex flex-col lg:flex-row flex-grow gap-2">
-        <Cards
-          title={t['Choose Design'] || 'Choose Design'}
-          card={state.card}
+      <section className="flex flex-col md:flex-row flex-grow gap-2">
+        <ImagesSection
+          titles={{ cards: 'Cards', nfts: 'NFTs' }}
+          stateCardID={state.card.id}
           setState={setState}
           isGrinch={isGrinch}
           cards={filteredCards}
@@ -118,11 +117,10 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
 
         <Tiptap
           onChange={(e) => setState((prev) => ({ ...prev, text: e }))}
-          text={state.text}
           placeholder={t['Fill this text area with love and holiday joy']}
+          ref={captureRef}
+          card={state.card}
         />
-
-        <GeneratedCard ref={captureRef} card={state.card} text={state.text} />
       </section>
 
       <FormFooter
