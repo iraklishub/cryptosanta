@@ -13,7 +13,7 @@ const GiftsMain = ({ t, isOpen, setIsOpen }) => {
   const saleRef = useRef(null)
 
   return isOpen ? (
-    <main className="text-white font-semibold p-4 w-full h-fit flex flex-col">
+    <main className="text-white font-semibold p-4 w-full flex-grow flex items-center">
       <section className="flex flex-col items-center bg-slate-900/70 rounded-md py-6">
         <h3 className="text-lg font-bold capitalize">
           {t['Christmas Market'] || 'Christmas Market'}
@@ -45,7 +45,7 @@ const GiftsMain = ({ t, isOpen, setIsOpen }) => {
       </section>
     </main>
   ) : (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col flex-grow items-center justify-center relative">
       <Lottie loop={true} animationData={giftsAnimationData} className="w-32 -mb-0.5" />
       <Button
         type="button"

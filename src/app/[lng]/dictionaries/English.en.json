@@ -3,7 +3,7 @@
   "to Friend": "to Friend",
   "to Santa": "to Santa",
   "Market": "Market",
-  "Gifts": "Gifts",
+  "Gifts Shop": "Gifts Shop",
   "Games": "Games",
   "Letter": "Letter",
   "Santa Card": "Santa Card",
@@ -21,9 +21,13 @@
   "Other Games": "Other Games",
   "Back": "Back",
   "Choose Design": "Choose Card",
-  "Cards": "Holiday Cards",
+  "Holiday Cards": "Holiday Cards",
+  "Cards": "Cards",
+  "NFTs": "NFTs",
   "Text on Card": "Text on Card",
   "Fill this text area with love and holiday joy": "Fill this text area with love and holiday joy! 🎄✨",
+  "Connect To Use Your NFTs": "Connect To Use Your NFTs",
+  "No NFTs Found. Buy on OpenSea.": "No NFTs Found. Buy on OpenSea.",
 
   "Letter to Santa": "Letter to Santa",
 

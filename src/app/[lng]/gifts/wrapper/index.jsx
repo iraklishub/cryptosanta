@@ -8,10 +8,10 @@ const GiftsPageWrapper = ({ t, lng }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <GiftsHeader t={t} isOpen={isOpen} setIsOpen={setIsOpen} lng={lng} />
       <GiftsMain t={t} isOpen={isOpen} setIsOpen={setIsOpen} />
-    </>
+    </div>
   )
 }
 

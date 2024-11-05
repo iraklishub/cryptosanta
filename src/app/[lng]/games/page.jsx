@@ -8,6 +8,19 @@ export default async function Page({ params: { lng } }) {
   const t = await getDictionary(lng)
   const { christmasGames, otherGames } = games
 
+  const gameSections = [
+    {
+      id: 1,
+      section_title: t['Christmas Games'] || 'Christmas Games',
+      games: christmasGames
+    },
+    {
+      id: 2,
+      section_title: t['Other Games'] || 'Other Games',
+      games: otherGames
+    }
+  ]
+
   return (
     <>
       <header className="w-full pt-2 pl-2 flex">
@@ -19,47 +32,41 @@ export default async function Page({ params: { lng } }) {
           <span className="ml-2 capitalize">{t['Back'] || 'Back'}</span>
         </Link>
       </header>
-      <main className="text-white font-semibold p-4 w-full h-fit flex flex-col">
-        <section className="flex flex-col items-center bg-slate-900/70 rounded-md py-4">
-          <h3 className="text-lg font-bold capitalize">
-            {t['Christmas Games'] || 'Christmas Games'}
-          </h3>
-          <div className="flex flex-wrap mt-4 gap-y-6 w-full justify-evenly">
-            {christmasGames.map(({ title, link, image }) => (
-              <Link href={link} key={title} className="basis-2/5 md:basis-auto text-center">
-                <Image
-                  src={image}
-                  alt={title}
-                  width={250}
-                  height={250}
-                  quality={100}
-                  placeholder="blur"
-                  className="border-4"
-                />
-                <span className="text-white font-semibold h-fit">{title}</span>
-              </Link>
-            ))}
-          </div>
-        </section>
-        <section className="flex flex-col items-center bg-slate-900/70 rounded-md py-4 mt-4">
-          <h3 className="text-lg font-bold capitalize">{t['Other Games'] || 'Other Games'}</h3>
-          <div className="flex flex-wrap mt-4 gap-y-6 w-full justify-evenly">
-            {otherGames.map(({ title, link, image }) => (
-              <Link href={link} key={title} className="basis-2/5 md:basis-auto text-center">
-                <Image
-                  src={image}
-                  alt={title}
-                  width={250}
-                  height={250}
-                  quality={100}
-                  placeholder="blur"
-                  className="border-4"
-                />
-                <span className="text-white font-semibold h-fit">{title}</span>
-              </Link>
-            ))}
-          </div>
-        </section>
+      <main className="text-white font-semibold p-4 w-full h-fit flex flex-col gap-4">
+        {gameSections.map(({ id, section_title, games }) => (
+          <section
+            key={id}
+            className="flex flex-col items-center bg-slate-900/70 rounded-md p-6 pb-12"
+          >
+            <h3
+              className="text-xl font-bold capitalize underline underline-offset-8 italic"
+              style={{ fontFamily: 'monospace' }}
+            >
+              {section_title}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center mt-8 gap-6 w-full">
+              {games.map(({ title, link, image }) => (
+                <Link href={link} key={title} className="flex flex-col gap-1 text-center">
+                  <Image
+                    src={image}
+                    alt={title}
+                    width={250}
+                    height={250}
+                    quality={100}
+                    placeholder="blur"
+                    className="border-4"
+                  />
+                  <span
+                    className="text-white font-semibold h-fit text-xl"
+                    style={{ fontFamily: 'cursive' }}
+                  >
+                    {title}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ))}
       </main>
     </>
   )

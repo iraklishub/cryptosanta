@@ -109,7 +109,7 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
 
       <section className="flex flex-col md:flex-row flex-grow gap-2">
         <ImagesSection
-          titles={{ cards: 'Cards', nfts: 'NFTs' }}
+          titles={{ cards: t['Cards'], nfts: t['NFTs'] }}
           stateCardID={state.card.id}
           setState={setState}
           isGrinch={isGrinch}

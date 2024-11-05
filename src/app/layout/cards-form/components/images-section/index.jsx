@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import clsx from 'clsx'
-import { Switch } from '@/src/app/components'
+import { Switch, OpenseaIcon } from '@/src/app/components'
 import CardsList from '../cards-list'
 import NFTsList from '../nfts-list'
 
@@ -23,7 +23,7 @@ const CardsNFTsSection = ({ titles, stateCardID, setState, isGrinch, cards, clas
           isGrinch ? 'lightning-green' : 'lightning-red'
         )}
       >
-        <button type="button" onClick={() => setTheme('santa')}>
+        <button type="button" onClick={() => setChecked(false)}>
           {titles.cards}
         </button>
         <Switch
@@ -31,29 +31,29 @@ const CardsNFTsSection = ({ titles, stateCardID, setState, isGrinch, cards, clas
           value={checked}
           onChange={() => setChecked((prev) => !prev)}
           checked={checked}
-          bgColor={checked ? 'bg-blue-600' : 'bg-red-600'}
+          bgColor={checked ? 'bg-blue-600' : isGrinch ? 'bg-green-600' : 'bg-red-600'}
           className="mx-2"
         />
-        <button type="button" onClick={() => setTheme('grinch')}>
-          {titles.nfts}
+        <button type="button" onClick={() => setChecked(true)} className="relative">
+          {titles.nfts} <OpenseaIcon className="absolute top-0.5 -right-2/3" />
         </button>
       </div>
-      <div className="flex gap-2 justify-items-center overflow-auto md:grid md:grid-cols-2 xl:grid-cols-3">
-        {checked ? (
-          <NFTsList
-            isGrinch={isGrinch}
-            choosedCardID={stateCardID}
-            onClick={(c) => setState((prev) => ({ ...prev, card: c }))}
-          />
-        ) : (
+      {checked ? (
+        <NFTsList
+          isGrinch={isGrinch}
+          choosedCardID={stateCardID}
+          onClick={(c) => setState((prev) => ({ ...prev, card: c }))}
+        />
+      ) : (
+        <div className="flex gap-2 justify-items-center overflow-auto md:grid md:grid-cols-2 xl:grid-cols-3">
           <CardsList
             cards={cards}
             isGrinch={isGrinch}
             choosedCardID={stateCardID}
             onClick={(c) => setState((prev) => ({ ...prev, card: c }))}
           />
-        )}
-      </div>
+        </div>
+      )}
     </section>
   )
 }

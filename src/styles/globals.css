@@ -63,3 +63,9 @@ body {
   height: 0;
   pointer-events: none;
 }
+
+.secondary-connect-wallet > div > button {
+  background-color: white !important;
+  color: #000 !important;
+  font-weight: 500 !important;
+}
