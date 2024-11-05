@@ -48,6 +48,7 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
     const shareData = {
       files: filesArray
     }
+
     if (navigator.share) {
       try {
         await navigator.share(shareData)
@@ -80,7 +81,7 @@ const CardsForm = ({ cssTranslate, isGrinch, t, onExit }) => {
       }
     } else {
       setisLoading(false)
-      alert('Share not supported')
+      alert('Share is not supported from your Browser')
     }
   }
 

@@ -17,6 +17,8 @@ import { FontSize } from './fontSizeExtension'
 import { useEditor, EditorContent } from '@tiptap/react'
 import { ToolBar, LoadingSpinner } from '..'
 
+// todo tiptap highlight extension
+
 const Tiptap = forwardRef(({ onChange, placeholder, card }, ref) => {
   const editor = useEditor({
     extensions: [
@@ -67,7 +69,7 @@ const Tiptap = forwardRef(({ onChange, placeholder, card }, ref) => {
 
       <div
         ref={ref}
-        className={`p-1.5 flex-grow flex relative z-50`}
+        className={`p-1.5 flex-grow flex relative z-50 min-h-[calc(100vh-10rem)] md:min-h-[unset]`}
         style={{
           width: '100%',
           height: '100%',

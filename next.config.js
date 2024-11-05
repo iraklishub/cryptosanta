@@ -21,6 +21,10 @@ const nextConfig = {
         pathname: '/**'
       }
     ]
+  },
+  webpack: (config) => {
+    config.externals.push('pino-pretty', 'lokijs', 'encoding')
+    return config
   }
 }
 

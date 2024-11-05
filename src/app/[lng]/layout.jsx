@@ -1,12 +1,19 @@
 import '../../styles/globals.css'
+import 'react-toastify/dist/ReactToastify.css'
+
 import { Inter } from 'next/font/google'
-import { i18n } from '@/i18n'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+
+import { i18n } from '@/i18n'
 import { getDictionary } from './dictionaries/dictionaries'
 import { ThemedImage } from '../components'
+
 import { ToastContainer, Flip } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+
+// connect wallet (rainbow) imports
+import '@rainbow-me/rainbowkit/styles.css'
+import { RainbowProviders } from '@/src/utils/providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,13 +35,9 @@ export async function generateStaticParams() {
 export default function RootLayout({ children, params }) {
   return (
     <html lang={params.lng}>
-      <body
-        className={`${inter.className} h-screen bg-cover bg-center flex flex-col items-center justify-between relative`}
-      >
+      <body className={`${inter.className}`}>
         <ThemedImage />
-        {children}
-        <Analytics />
-        <SpeedInsights />
+        <RainbowProviders>{children}</RainbowProviders>
         <ToastContainer
           closeOnClick
           rtl={false}
@@ -44,6 +47,8 @@ export default function RootLayout({ children, params }) {
           theme="light"
           transition={Flip}
         />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

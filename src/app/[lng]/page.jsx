@@ -6,7 +6,7 @@ export default async function Page({ params: { lng } }) {
   const t = await getDictionary(lng)
 
   return (
-    <>
+    <div className="h-screen flex flex-col items-center justify-between relative">
       <header className="flex justify-between md:justify-end items-start w-full p-2 pt-4 md:p-4">
         <ThemeSwitcher className="mr-3" />
         <LanguageSwitcher />
@@ -16,6 +16,6 @@ export default async function Page({ params: { lng } }) {
         <CardsButton t={t} />
         <MarketGameButtons t={t} lng={lng} />
       </main>
-    </>
+    </div>
   )
 }
