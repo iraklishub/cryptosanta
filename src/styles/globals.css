@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #eb4034;
+  background-color: red;
 }
 
 .lightning-red {
@@ -68,4 +68,7 @@ body {
   background-color: white !important;
   color: #000 !important;
   font-weight: 500 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
