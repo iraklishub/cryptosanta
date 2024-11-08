@@ -1,12 +1,11 @@
 export default function manifest() {
   return {
-    name: 'Letter to Claus Santa',
-    short_name: 'Claus Santa',
-    description: 'Send letter to Santa Claus',
+    name: 'SantaBabu Christmas themed WebApp',
+    short_name: 'SantaBabu',
+    description:
+      'Send letter to Santa, Generate Holiday Cards, explore holiday market, and Play games.',
     start_url: '/',
     display: 'fullscreen',
-    background_color: '#9c2d2d',
-    theme_color: '#9c2d2d',
     icons: [
       {
         src: '/favicon.ico',
