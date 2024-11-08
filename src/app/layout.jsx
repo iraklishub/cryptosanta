@@ -39,8 +39,8 @@ export default function RootLayout({ children }) {
           theme="light"
           transition={Flip}
         />
-        {/* <Analytics /> */}
-        {/* <SpeedInsights /> */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
