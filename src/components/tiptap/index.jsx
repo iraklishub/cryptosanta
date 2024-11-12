@@ -13,11 +13,10 @@ import Color from '@tiptap/extension-color'
 import HardBreak from '@tiptap/extension-hard-break'
 import FontFamily from '@tiptap/extension-font-family'
 import Placeholder from '@tiptap/extension-placeholder'
+import Highlight from '@tiptap/extension-highlight'
 import { FontSize } from './fontSizeExtension'
 import { useEditor, EditorContent } from '@tiptap/react'
 import { ToolBar, LoadingSpinner } from '..'
-
-// todo tiptap highlight extension
 
 const Tiptap = forwardRef(({ onChange, placeholder, card }, ref) => {
   const editor = useEditor({
@@ -38,7 +37,8 @@ const Tiptap = forwardRef(({ onChange, placeholder, card }, ref) => {
       }),
       TextAlign.configure({
         types: ['paragraph']
-      })
+      }),
+      Highlight.configure({ multicolor: true })
     ],
     editorProps: {
       attributes: {

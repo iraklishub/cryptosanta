@@ -9,7 +9,8 @@ import {
   AlignJustifyIcon,
   FontFamilyIcon,
   FontColorIcon,
-  FontSizeIcon
+  FontSizeIcon,
+  TextHighlightIcon
 } from '../icons/text-options'
 import { fontFamilyOptions, fontSizeOptions } from '@/src/constants'
 
@@ -124,6 +125,19 @@ const Toolbar = ({ editor }) => {
           onInput={(e) => editor.chain().focus().setColor(e.target.value).run()}
           value={editor.getAttributes('textStyle').color}
           data-testid="setColor"
+          className="absolute top-0 left-0 w-8 h-8 cursor-pointer opacity-0"
+        />
+      </label>
+
+      <label
+        htmlFor="highlight"
+        className="p-1.5 text-gray-300 relative rounded cursor-pointer hover:text-white bg-gray-600"
+      >
+        <TextHighlightIcon />
+        <input
+          id="highlight"
+          type="color"
+          onInput={(e) => editor.chain().focus().toggleHighlight({ color: e.target.value }).run()}
           className="absolute top-0 left-0 w-8 h-8 cursor-pointer opacity-0"
         />
       </label>
