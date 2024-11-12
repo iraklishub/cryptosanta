@@ -6,10 +6,6 @@
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
 }
 
-body {
-  background-color: #eb4034;
-}
-
 .lightning-red {
   animation: lightingred;
   animation-duration: 2.5s;
@@ -62,4 +58,13 @@ body {
   float: left;
   height: 0;
   pointer-events: none;
+}
+
+.secondary-connect-wallet > div > button {
+  background-color: white !important;
+  color: #000 !important;
+  font-weight: 500 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
