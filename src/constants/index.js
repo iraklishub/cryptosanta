@@ -467,51 +467,86 @@ export const fontSizeOptions = [
 export const cards = [
   {
     id: 1,
-    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537097/santababu/cards/13_vmkaol.jpg'
-  },
-  {
-    id: 2,
-    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537096/santababu/cards/12_m3dleu.jpg'
-  },
-  {
-    id: 3,
-    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537095/santababu/cards/11_xsgtvy.jpg'
-  },
-  {
-    id: 4,
-    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537093/santababu/cards/9_mgswas.jpg'
-  },
-  {
-    id: 5,
-    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537093/santababu/cards/8_nitwg1.jpg'
-  },
-  {
-    id: 6,
-    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537092/santababu/cards/7_om2br2.jpg'
-  },
-  {
-    id: 7,
-    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537091/santababu/cards/6_aeji5s.jpg'
-  },
-  {
-    id: 8,
-    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537089/santababu/cards/3_w14lv4.jpg'
-  },
-  {
-    id: 9,
-    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537089/santababu/cards/4_opbjqx.jpg'
-  },
-  {
-    id: 10,
-    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537089/santababu/cards/2_ntzjkp.jpg'
-  },
-  {
-    id: 11,
     img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537088/santababu/cards/1_ee43qs.jpg'
   },
   {
-    id: 12,
+    id: 2,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537089/santababu/cards/2_ntzjkp.jpg'
+  },
+  {
+    id: 3,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537089/santababu/cards/3_w14lv4.jpg'
+  },
+  {
+    id: 4,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537089/santababu/cards/4_opbjqx.jpg'
+  },
+  {
+    id: 5,
     isGrinch: true,
     img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537090/santababu/cards/5_syijk7.jpg'
+  },
+  {
+    id: 6,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537091/santababu/cards/6_aeji5s.jpg'
+  },
+  {
+    id: 7,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537092/santababu/cards/7_om2br2.jpg'
+  },
+  {
+    id: 8,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537093/santababu/cards/8_nitwg1.jpg'
+  },
+  {
+    id: 9,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537093/santababu/cards/9_mgswas.jpg'
+  },
+  {
+    id: 10,
+    isGrinch: true,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1731444758/santababu/cards/10_ciowgw.jpg'
+  },
+  {
+    id: 11,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537095/santababu/cards/11_xsgtvy.jpg'
+  },
+  {
+    id: 12,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537096/santababu/cards/12_m3dleu.jpg'
+  },
+  {
+    id: 13,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1729537097/santababu/cards/13_vmkaol.jpg'
+  },
+  {
+    id: 14,
+    isGrinch: true,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1731444758/santababu/cards/14_jviqvq.jpg'
+  },
+  {
+    id: 15,
+    isGrinch: true,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1731444758/santababu/cards/15_eevfn2.jpg'
+  },
+  {
+    id: 16,
+    isGrinch: true,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1731444758/santababu/cards/16_pxs7uq.jpg'
+  },
+  {
+    id: 17,
+    isGrinch: true,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1731444758/santababu/cards/17_lbgv6n.jpg'
+  },
+  {
+    id: 18,
+    isGrinch: true,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1731444759/santababu/cards/18_q26ype.jpg'
+  },
+  {
+    id: 19,
+    isGrinch: true,
+    img: 'https://res.cloudinary.com/sbbcd/image/upload/v1731444759/santababu/cards/19_puxtxd.jpg'
   }
 ]
