@@ -11,6 +11,31 @@ export default function manifest() {
         src: '/favicon.ico',
         sizes: 'any',
         type: 'image/x-icon'
+      },
+      {
+        src: '/favicon16.png',
+        sizes: '16x16',
+        type: 'image/png'
+      },
+      {
+        src: '/favicon32.png',
+        sizes: '32x32',
+        type: 'image/png'
+      },
+      {
+        src: '/icon.png',
+        sizes: '192x192',
+        type: 'image/png'
+      },
+      {
+        src: '/apple-icon.png',
+        sizes: '180x180',
+        type: 'image/png'
+      },
+      {
+        src: '/icon512.png',
+        sizes: '512x512',
+        type: 'image/png'
       }
     ]
   }
