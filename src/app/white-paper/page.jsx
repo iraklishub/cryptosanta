@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import Image from 'next/image'
+import token from '@/public/assets/icons/token.png'
 import { LeftArrowExit } from '@/src/components'
 
 export default function Page() {
@@ -15,60 +17,79 @@ export default function Page() {
       </header>
       <main className="p-4 w-full h-fit flex justify-center">
         <div className="bg-slate-200 p-8 rounded-md prose prose-stone">
-          <h1 className="text-center">SantaBabu's Token (SANTA) Whitepaper</h1>
-          <span className="w-full px-2 font-bold bg-red-300 text-center">
-            Fictional example, does not represent an actual project.
-          </span>
+          <div className="flex items-center gap-4">
+            <h1 className="text-center m-0">SantaBabu (SANTA) Token Whitepaper</h1>
+            <Image src={token} alt="token icon" width={100} height={116} quality={100} priority />
+          </div>
           <hr className="border-black" />
           <article>
             <h2>Abstract</h2>
             <p>
-              Santa's Web App Token (SANTA) is a utility token designed to power a festive ecosystem
-              where users can engage with holiday-themed experiences through a decentralized web
-              app. With features such as creating personalized NFT greeting cards, writing letters
-              to Santa, a gift marketplace, and interactive games, the SANTA token is used for
-              in-app purchases, staking rewards, governance, and more. Built on the Ethereum
-              blockchain, SANTA brings the magic of Christmas into the digital age by allowing users
-              to send gifts, collect holiday-themed NFTs, and engage with the community through
-              governance, while ensuring a transparent and rewarding user experience.
+              SantaBabu (SANTA) Token is the native token of the SantaBabu WebApp, a platform where
+              users can create and send personalized Christmas and New Year letters/cards. It also
+              features interactive holiday-themed games and a catalog/marketplace of gifts. The
+              token unlocks premium features, exclusive rewards, and enhances user engagement within
+              the SantaBabu ecosystem. Through active participation, users can earn tokens and enjoy
+              a richer, more rewarding experience, strengthening the community and the platform's
+              unique holiday interactions.
             </p>
           </article>
           <hr className="border-black" />
           <article>
             <h2>Introduction</h2>
             <p>
-              The holiday season is a time for joy, connection, and celebration, and Santa's Web App
-              aims to bring that experience online in a modern, digital format. By combining the
-              festive traditions of gift-giving, letter-writing, and holiday games with the power of
-              blockchain technology, Santa’s Web App creates an immersive ecosystem where users can
-              interact with Santa-themed virtual experiences, earn rewards, and participate in the
-              platform’s governance. <br />
-              <br /> At the heart of the Santa Web App ecosystem is SANTA, a native token used for
-              purchasing digital goods, minting NFTs, sending gifts, staking, and voting on platform
-              decisions.
+              The holiday season is a time for joy, connection, and celebration, and SantaBabu Web
+              App aims to bring that experience online in a modern, digital format. By combining the
+              festive traditions of letter-writing, gift-giving, and holiday games with the power of
+              blockchain technology, SantaBabu Web App creates an ecosystem where users can interact
+              with Santa-themed virtual experiences.
             </p>
             <ul>
               The app allows users to:
               <li>
-                Generate NFT Greeting Cards: Mint unique, digital holiday greeting cards that can be
-                personalized and shared as NFTs.
+                Write Letters to Santa: Send virtual letters to Santa with the premium features
+                accessible via SANTA tokens.
               </li>
               <li>
-                Write Letters to Santa: Send virtual letters to Santa with the option to include
-                digital gifts or custom messages.
+                Generate Greeting/Holiday Cards: digital holiday greeting cards that can be
+                personalized, shared and printed. Basic card designs are available for free, while
+                premium cards can be unlocked using SANTA tokens. Additionally, NFTs from the
+                SantaBabu collection can also be used to customize these cards.
               </li>
               <li>
-                Gifts Market: Buy, sell, or trade digital gifts, such as NFTs, tokens, and other
-                holiday-themed items.
+                Gifts Market: In the SantaBabu Gifts Market, Users can link their external stores,
+                i.e such as Amazon or Shopify, to their Gifts Market page, allowing other users to
+                easily view and purchase items from their storefronts. This feature connecting
+                e-commerce with the SantaBabu platform. <br /> Also users can set up internal store
+                to showcase and sell holiday-themed digital items, such as
+                <ul>
+                  <li>
+                    NFTs: Unique holiday-themed NFTs, such as collectible art, animations, or
+                    avatars.
+                  </li>
+                  <li>
+                    Virtual Assets: Items like digital clothing, accessories, or skins for avatars
+                    in games.
+                  </li>
+
+                  <li>
+                    Digital Collectibles: Special edition holiday-themed digital items like
+                    wallpapers, GIFs, or soundtracks.
+                  </li>
+                  <li>
+                    Game-Related Items: Gaming avatar items, in-game skins, or virtual gifts tied to
+                    popular games.
+                  </li>
+                </ul>
               </li>
               <li>
-                Holiday Games: Participate in interactive, Santa-themed games to earn rewards and
-                special prizes.
+                Holiday Games: Participate in games from SantaBabu's partner game studios for
+                rewards and exclusive prizes.
               </li>
             </ul>
             <p>
-              The SANTA token facilitates all transactions within the app, and its utility will
-              continue to grow as the platform evolves with new holiday-themed functionalities.
+              The SANTA token facilitates transactions within the app, and its utility will continue
+              to grow as the platform evolves with new holiday-themed functionalities.
             </p>
           </article>
           <hr className="border-black" />
@@ -81,35 +102,36 @@ export default function Page() {
               Similarly, the demand for digital gifting is projected to continue growing, with
               consumers seeking unique, personalized ways to share the holiday spirit. <br />
               <br />
-              Santa’s Web App Token offers a unique value proposition by blending NFT technology
-              with holiday-themed experiences. SANTA allows users to create and exchange
-              personalized NFTs, a novelty in the seasonal market, while also introducing a new way
-              to interact with traditional holiday activities like letter-writing and gift-giving.
+              SantaBabu taps into this trend by bringing holiday traditions to "Web3", offering a
+              platform for digital gifts, NFTs, and virtual collectibles. As demand grows for
+              digital assets and holiday gifting is a tradition, SantaBabu is positioned to capture
+              this evolving space, enabling users to engage with the holidays in innovative ways.
             </p>
             <h3>Use Case Examples:</h3>
             <ol>
               <li>
-                <strong>NFT Greeting Cards:</strong> Users can create and mint personalized holiday
-                greeting cards as NFTs, which can be gifted or sold within the platform’s
-                marketplace. Each NFT card is a unique collectible that can include personal
-                messages, animated graphics, and special effects.
-              </li>
-              <li>
                 <strong>Write Letters to Santa:</strong> Users can compose letters to Santa and
                 customize them with digital gifts, which can be sent to friends and family or used
-                to earn rewards. These letters are stored on the blockchain for authenticity and
+                to earn rewards. These letters can be stored on the blockchain for authenticity and
                 nostalgia.
               </li>
               <li>
-                <strong>Gifts Market:</strong> Users can buy and sell digital items such as NFT art,
-                collectibles, and tokens, creating a virtual holiday marketplace where both gifts
-                and experiences can be traded.
+                <strong>NFT Greeting Cards:</strong> Users can create personalized holiday greeting
+                cards with their SantaBabu NFTs, which can be shared to friends and family or
+                printed.
               </li>
               <li>
-                <strong>Games and Rewards:</strong> Users can participate in holiday-themed games to
-                earn SANTA tokens, exclusive NFTs, or other in-app rewards. These games might
-                include puzzle challenges, gift-wrapping contests, and treasure hunts across the
-                North Pole.
+                <strong>Gifts Market:</strong> Users can explore and purchase holiday-themed items,
+                digital and physical gifts, digital items such as NFTs, collectibles, and virtual
+                assets and physical by link to external e-commerce platforms - Users that have
+                e-commerce accounts on platforms like Amazon or Shopify, can add their online stores
+                to Gifts Market, this connects SantaBabu to the broader e-commerce world, allowing
+                for a seamless digital shopping experience.
+              </li>
+              <li>
+                <strong>Games and Rewards:</strong>
+                Users can participate in games from SantaBabu's partner game studios for rewards and
+                exclusive prizes.
               </li>
             </ol>
           </article>
@@ -118,43 +140,15 @@ export default function Page() {
             <h2>Tokenomics</h2>
             <h3>Token Overview</h3>
             <ul>
-              <li>Token Name: Santa’s Web App Token</li>
+              <li>Token Name: SantaBabu</li>
               <li>Symbol: SANTA</li>
-              <li>Blockchain: Base (ERC-20)</li>
-              <li>Total Supply: 10,000,000,000 SANTA tokens</li>
-              <li>Initial Circulating Supply: 1,000,000,000 SANTA tokens</li>
+              <li>Blockchain: Base (Ethereum L2)</li>
+              <li>Total Supply: 25 000 000 000 000 (25 trillion) SANTA tokens</li>
             </ul>
             <h3>Token Allocation</h3>
             <ul>
-              <li>Public Sale: 30% (3,000,000,000 SANTA)</li>
-              <li>
-                Team and Advisors: 15% (1,500,000,000 SANTA) — subject to a 2-year vesting schedule
-              </li>
-              <li>Partnerships and Marketing: 10% (1,000,000,000 SANTA)</li>
-              <li>Ecosystem Development: 15% (1,500,000,000 SANTA)</li>
-              <li>Staking Rewards: 20% (2,000,000,000 SANTA)</li>
-              <li>Reserve: 10% (1,000,000,000 SANTA)</li>
-            </ul>
-            <h3>Incentive Model</h3>
-            <ul>
-              <li>
-                NFT Minting and Transactions: SANTA tokens will be used to mint custom holiday NFT
-                greeting cards, purchase gifts in the marketplace, and perform other in-app
-                transactions.
-              </li>
-              <li>
-                Staking Rewards: Users can stake their SANTA tokens to earn additional tokens or
-                exclusive NFTs as holiday rewards.
-              </li>
-              <li>
-                Governance: Token holders will have the ability to vote on proposals for new app
-                features, community events, and charity initiatives.
-              </li>
-              <li>
-                Gift Exchange and Rewards: Users can send gifts and tokens to friends and family as
-                part of the holiday gift exchange, with both sender and recipient earning rewards in
-                the form of tokens, NFTs, or unique experiences.
-              </li>
+              <li>Public Sale 2024: 20% (5 000 000 000 000 SANTA)</li>
+              <li>Owner: 80% (20 000 000 000 000 SANTA)</li>
             </ul>
           </article>
           <hr className="border-black" />
@@ -162,89 +156,36 @@ export default function Page() {
             <h2>Technical Architecture</h2>
             <h3>Blockchain Platform</h3>
             <p>
-              Santa’s Web App is built on Base, using the ERC-20 token standard for the SANTA token.
-              Base's robust security features, scalability solutions (Layer 2), and widespread
-              adoption make it the ideal choice for managing transactions and minting NFTs on the
-              platform.
+              Web App is built on Base chain. NFTs (ERC-1155) and SANTA token (ERC-20). Base's
+              robust security features, scalability solutions (Layer 2), and widespread adoption
+              make it the ideal choice for managing transactions and minting NFTs.
             </p>
             <h3>Smart Contracts</h3>
             <ul>
               <li>
-                Token Contract: The SANTA token will be deployed as an ERC-20 token, allowing users
-                to trade, stake, and store tokens securely across Ethereum-compatible wallets.
+                Token: The SANTA token is deployed as an ERC-20 token, allowing users to trade and
+                store tokens securely across Eth/Base-compatible wallets.
               </li>
               <li>
-                NFT Minting Contract: Users can mint personalized NFT greeting cards via a custom
-                smart contract. These NFTs will be minted as ERC-721 tokens, making each card unique
-                and verifiable on the blockchain.
-              </li>
-              <li>
-                Marketplace Contract: A decentralized marketplace will allow users to buy, sell, and
-                trade digital holiday gifts, NFTs, and tokens. This contract will facilitate secure
-                transactions and ownership transfers.
-              </li>
-              <li>
-                Staking Contract: A smart contract will manage staking pools, rewarding users who
-                lock up their SANTA tokens with additional tokens or exclusive NFTs.
-              </li>
-              <li>
-                Governance Contract: A decentralized autonomous organization (DAO) framework will
-                empower SANTA token holders to vote on proposals affecting the app’s development,
-                governance, and charitable donations.
+                NFT Minting: NFTs are minted on Base chain and available for sale on Opensea NFT
+                platform. These NFTs are minted as ERC-1155 tokens, making each card unique and
+                verifiable on the blockchain.
               </li>
             </ul>
           </article>
           <hr className="border-black" />
           <article>
             <h2>Community and Ecosystem</h2>
-            <span>Santa’s Web App aims to build a strong, family-friendly community.</span>
+            <span>
+              SantaBabu Web App aims to build a strong, christmas holiday lovers community.
+            </span>
             <ul>
               We will engage with users through:
-              <li>
-                Social Media: Active Twitter, Telegram, and Discord channels for real-time updates
-                and community discussions.
-              </li>
-              <li>
-                Influencers: Partnering with holiday-themed influencers and content creators to
-                promote the app and engage a broader audience.
-              </li>
-              <li>
-                Charity Programs: Involving users in donating SANTA tokens or digital gifts to
-                children’s charities and holiday causes.
-              </li>
+              <li>X Account - for real-time updates and community discussions.</li>
+              <li>Telegram Channel - for real-time updates and community discussions.</li>
             </ul>
           </article>
           <hr className="border-black" />
-          <article>
-            <h2>Additional Functionalities can be added</h2>
-            <ul>
-              <li>
-                <strong>Seasonal Challenges and Competitions:</strong> Host seasonal holiday-themed
-                competitions (e.g., best NFT card, best letter to Santa) where users can earn
-                rewards.
-              </li>
-              <li>
-                <strong>Multilingual Support:</strong> Offer the app in multiple languages to cater
-                to global users, especially in regions with rich holiday traditions.
-              </li>
-              <li>
-                <strong>Custom Santa Letters:</strong> Use AI to generate personalized holiday
-                letters or messages from Santa, tailored to the recipient's interests or wishes.
-                Users can specify details (e.g., child's name, favorite activities) and receive a
-                one-of-a-kind Santa letter.
-              </li>
-              <li>
-                <strong>Interactive Chat with Santa:</strong> Implement a chatbot where users can
-                chat with an AI-powered virtual Santa, who can answer questions, tell stories, or
-                even engage in fun games.
-              </li>
-              <li>
-                <strong>Customizable Digital Christmas Trees:</strong> Allow users to decorate their
-                own virtual Christmas tree, adding ornaments, lights, and gifts. Trees can be shared
-                as NFTs or displayed in user profiles.
-              </li>
-            </ul>
-          </article>
           <article>
             <h2>Risk Factors and Challenges</h2>
             <ul>
@@ -253,12 +194,12 @@ export default function Page() {
                 users should be aware of the risks associated with cryptocurrency investments.
               </li>
               <li>
-                User Adoption: The platform’s success depends on user adoption and engagement, which
+                User Adoption: The project's success depends on user adoption and engagement, which
                 may be influenced by competition or lack of awareness.
               </li>
               <li>
                 Regulatory Changes: As blockchain technology and NFTs continue to evolve, future
-                regulations may impact the platform’s operations.
+                regulations may impact the platform's operations.
               </li>
             </ul>
           </article>
@@ -278,20 +219,17 @@ export default function Page() {
           <article>
             <p>
               <strong>Join us in celebrating the magic of the holidays with SANTA!</strong> <br />
-              https://www.santababu.online
-            </p>
-          </article>
-          <hr className="border-black" />
-          <article>
-            <p>
-              This whitepaper example outlines an exciting, innovative way to celebrate the holidays
-              through Blockchain technology, Tokens and NFTs, blending modern digital tools with
-              timeless holiday joy. <br />
+              <Link href="https://santababu.online" className="underline">
+                Santababu.online
+              </Link>
               <br />
-              <strong>
-                P.S whitepaper will be modified, it is a fictional example and does not represent an
-                full/actual project.
-              </strong>
+              <Link href="https://x.com/santababux" className="underline" target="_blank">
+                X.com
+              </Link>
+              <br />
+              <Link href="https://t.me/santababutg" className="underline" target="_blank">
+                Telegram
+              </Link>
             </p>
           </article>
         </div>
