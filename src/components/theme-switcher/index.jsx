@@ -1,6 +1,5 @@
 'use client'
 
-import { clsx } from 'clsx'
 import { useState } from 'react'
 import { Switch } from '..'
 import { useTheme } from '@/src/utils/store'
@@ -34,7 +33,7 @@ const ThemeSwitcher = ({ className }) => {
   }
 
   return (
-    <div className={clsx('flex items-center text-white', className)}>
+    <div className={`flex items-center text-white ${className || ''}`}>
       <button type="button" onClick={() => setTheme('santa')}>
         <SantaIcon />
       </button>
