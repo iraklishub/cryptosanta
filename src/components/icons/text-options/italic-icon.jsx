@@ -1,25 +1,21 @@
-import clsx from 'clsx'
-
-const ItalicIcon = ({ className }) => {
-  return (
-    <svg
-      className={clsx('w-5 h-5', className)}
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="m8.874 19 6.143-14M6 19h6.33m-.66-14H18"
-      />
-    </svg>
-  )
-}
+const ItalicIcon = ({ className }) => (
+  <svg
+    className={`w-5 h-5 ${className || ''}`}
+    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="m8.874 19 6.143-14M6 19h6.33m-.66-14H18"
+    />
+  </svg>
+)
 
 export default ItalicIcon

@@ -1,7 +1,6 @@
 // General Components
 
 export { default as Button } from './button'
-export { default as Field } from './field'
 export { default as Switch } from './switch'
 export { default as ThemeSwitcher } from './theme-switcher'
 export { default as ThemedImage } from './themed-image'
@@ -27,3 +26,7 @@ export { default as ExitIcon } from './icons/exit-icon'
 export { default as OpenseaIcon } from './icons/opensea-icon'
 export { default as OpenseaBadgeIcon } from './icons/opensea-badge-icon'
 export { default as WalletIcon } from './icons/wallet-icon'
+export { default as Xicon } from './icons/x-icon'
+export { default as TelegramIcon } from './icons/telegram-icon'
+export { default as EmailIcon } from './icons/email-icon'
+export { default as MenuIcon } from './icons/menu-icon'
