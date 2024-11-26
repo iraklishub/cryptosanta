@@ -4,12 +4,12 @@ const MenuIcon = ({ className }) => (
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
-    className={`w-8 h-8 ${className || ''}`}
+    className={`w-10 h-10 ${className || ''}`}
   >
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth="2"
+      strokeWidth="2.5"
       d="M4 6h16M4 12h16M4 18h16"
     />
   </svg>

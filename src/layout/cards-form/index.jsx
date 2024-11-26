@@ -86,6 +86,62 @@ const CardsForm = ({ cssTranslate, isGrinch, onExit }) => {
     }
   }
 
+  // const handlePrint = () => {
+  //   const printWindow = window.open('', '', 'height=500,width=800')
+
+  //   // Clone the element and its contents
+  //   const printContent = captureRef.current.cloneNode(true)
+
+  //   // Write HTML content into the new window, including only the content of the ref
+  //   printWindow.document.write('<html><head><title>Print</title>')
+
+  //   // Optionally add custom styles
+  //   printWindow.document.write(`
+  //     <style>
+  //       body { font-family: Arial, sans-serif; padding: 20px; }
+  //       h1 { color: #333; }
+  //       p { font-size: 14px; }
+  //       img { max-width: 100%; } /* Make sure images scale well */
+  //     </style>
+  //   `)
+
+  //   printWindow.document.write('</head><body>')
+
+  //   // Append the cloned node to the body of the print window
+  //   printWindow.document.body.appendChild(printContent)
+
+  //   printWindow.document.write('</body></html>')
+  //   printWindow.document.close() // Close the document to finalize it
+
+  //   // Wait for images to load before printing
+  //   const images = printContent.querySelectorAll('img')
+  //   let loadedImagesCount = 0
+
+  //   images.forEach((img) => {
+  //     // If the image is already loaded, increment the count
+  //     if (img.complete) {
+  //       loadedImagesCount++
+  //     } else {
+  //       // Otherwise, wait for it to load
+  //       img.onload = () => {
+  //         loadedImagesCount++
+  //         // If all images are loaded, trigger the print
+  //         if (loadedImagesCount === images.length) {
+  //           printWindow.print()
+  //         }
+  //       }
+  //     }
+  //   })
+
+  //   // If there are no images, print immediately
+  //   if (images.length === 0) {
+  //     printWindow.print()
+  //   }
+
+  //   // Optionally close the print window after printing is done
+  //   printWindow.onafterprint = () => printWindow.close()
+  // }
+
   return letterAnimation ? (
     <Lottie
       loop={false}
@@ -131,6 +187,9 @@ const CardsForm = ({ cssTranslate, isGrinch, onExit }) => {
         disabled={!state.text || isLoading}
         isLoading={isLoading}
       />
+      {/* <button type="button" onClick={handlePrint}>
+        print
+      </button> */}
     </form>
   )
 }
