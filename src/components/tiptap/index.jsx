@@ -12,13 +12,12 @@ import TextStyle from '@tiptap/extension-text-style'
 import Color from '@tiptap/extension-color'
 import HardBreak from '@tiptap/extension-hard-break'
 import FontFamily from '@tiptap/extension-font-family'
-import Placeholder from '@tiptap/extension-placeholder'
 import Highlight from '@tiptap/extension-highlight'
 import { FontSize } from './fontSizeExtension'
 import { useEditor, EditorContent } from '@tiptap/react'
 import { ToolBar, LoadingSpinner } from '..'
 
-const Tiptap = forwardRef(({ onChange, placeholder, card }, ref) => {
+const Tiptap = forwardRef(({ onChange, card }, ref) => {
   const editor = useEditor({
     extensions: [
       Document,
@@ -32,9 +31,6 @@ const Tiptap = forwardRef(({ onChange, placeholder, card }, ref) => {
       HardBreak,
       FontFamily,
       FontSize,
-      Placeholder.configure({
-        placeholder
-      }),
       TextAlign.configure({
         types: ['paragraph']
       }),
