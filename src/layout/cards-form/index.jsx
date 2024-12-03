@@ -8,7 +8,7 @@ import ImagesSection from './components/images-section'
 import FormHeader from '../form-header'
 import FormFooter from '../form-footer'
 import { Tiptap, Button } from '@/src/components'
-import { cards } from '@/src//constants'
+import { cards } from '@/src/constants'
 
 const CardsForm = ({ cssTranslate, isGrinch, onExit }) => {
   const captureRef = useRef()
@@ -168,7 +168,7 @@ const CardsForm = ({ cssTranslate, isGrinch, onExit }) => {
       <section className="flex flex-col md:flex-row flex-grow gap-2">
         <ImagesSection
           titles={{ cards: 'Cards', nfts: 'NFTs' }}
-          stateCardID={state.card.id}
+          stateCardID={state.card?.id}
           setState={setState}
           isGrinch={isGrinch}
           cards={filteredCards}

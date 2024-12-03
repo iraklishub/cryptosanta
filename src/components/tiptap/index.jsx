@@ -69,20 +69,27 @@ const Tiptap = forwardRef(({ onChange, card }, ref) => {
         style={{
           width: '100%',
           height: '100%',
-          backgroundImage: `url(${card?.img || ''})`,
+          backgroundImage: `url(${
+            card?.img ||
+            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAC9UlEQVR4nO3cT2sTQRjH8YC0otIKQd+AHhRaT+LJu6K3Unq3CB48Cd4FwatFS/0DvRTxVUj1NVS0UPQi9V7RVhQ1fmXtHEJINsnOMzt5kt8HvO48M7+4z07SnUZDRERERERERERERESkA3ABeAy8Bw6Qg7AWj4D5ZB8Y4CjwFGhpzXsq1uYJMJ1i8d/0Hlc6vDYNAXjWOYL0tWZ5z9dtZ3h/gDmLAIqGK9WsWASwXXFwgXcWAexrJSv7ZhGARFAAmSmAzBRAZgogMwWQmQLITAFk5jWAXWARmAn/FoAdHPIYwC7Q7FJHE/iMMx4DWCypZQlnPAYwU1LLLM6MWwAnccZjAAsltRSN2RWPAeyUNOEPOOMxAMLTzlK458+GT767xfccwNhQAJkpgMwUQGYK4NALYIMMFABsAceAEzn+xGbSA9gDzrTNZQ74XmcBkxxAC7jeZT7LdRYxyQHcL5lTbf1gUgPYBI6UzKm2fuAlgPXw8ofVDzqnBphXLf3AQwBb4SllKnxyY/wELg0xt+VJD2Cv4ykl9hvPWxXmtzGpAbSAa13GOwd8qXC9lxXnl7QfjHIA90rGvAL8HuJab4HjEXNM1g8qL3xbcSm8KntKKQB3BrxW8b/lbCNSqn4wigF8GuQppQA873Otv2U/YY5CP7AoytIP4OIQY0/1eT32QfQEE/cDi6Is3awwfhP42ONd3NLb2Cj0A4uCrKxH1HC+48mo2Gydjp5cDf3AohizzVZkHVfDu7e/gMvRE6upH1gUYrrZiqzlLnDb4lp19QOLQsw3W15w2A+iToSxKCLJZssLIvuBRQHJNltexPQDi8GTbrY8iOkHFoMn3Wx5UXV/YDFw8s2WF8ANDwFIGwWQmQLITAGMQQA6sKm6rxYB6MiyzEeWFSfCSjUPLQKYD18DS45jK0MIxXG8MpxVk8UPAUyHnwBlMJspzo8uQljT7ajvbWfVfPG7fCm1UnR4PaL+tx/WYsXsni8iIiIiIiIiIiIiIo1x8g+BesPYVKTjNgAAAABJRU5ErkJggg=='
+          })`,
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          backgroundSize: 'cover',
+          backgroundSize: card?.img ? 'cover' : 'auto',
           backgroundOrigin: 'border-box'
         }}
       >
-        <EditorContent
-          style={{ whiteSpace: 'pre-line' }}
-          editor={editor}
-          className="flex-grow flex outline-0 px-1 py-1"
-        />
+        {card?.img && (
+          <EditorContent
+            style={{ whiteSpace: 'pre-line' }}
+            editor={editor}
+            className="flex-grow flex outline-0 px-1 py-1"
+          />
+        )}
       </div>
-      <LoadingSpinner className="absolute top-1/2 left-1/2 w-10 h-10 z-0 border-4 text-white" />
+      {card?.img && (
+        <LoadingSpinner className="absolute top-1/2 left-1/2 w-10 h-10 z-0 border-4 text-white" />
+      )}
     </section>
   )
 })

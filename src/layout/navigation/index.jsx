@@ -8,7 +8,8 @@ import { MenuIcon } from '@/src/components'
 const navLinks = [
   { id: 'about', title: 'About' },
   { id: 'contact', title: 'Contact' },
-  { id: 'token', title: 'Token' }
+  { id: 'token', title: 'Token' },
+  { id: 'nfts', title: 'NTF Collection' }
 ]
 
 const Navigation = ({ className }) => {

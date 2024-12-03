@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import clsx from 'clsx'
 import { Switch, OpenseaIcon } from '@/src/components'
 import CardsList from '../cards-list'
@@ -8,6 +8,15 @@ import NFTsList from '../nfts-list'
 
 const CardsNFTsSection = ({ titles, stateCardID, setState, isGrinch, cards, className }) => {
   const [checked, setChecked] = useState(false)
+
+  useEffect(() => {
+    if (checked) {
+      setState((prev) => ({ ...prev, card: undefined }))
+    } else {
+      setState((prev) => ({ ...prev, card: cards[0] }))
+    }
+  }, [checked])
+
   return (
     <section
       className={clsx(
