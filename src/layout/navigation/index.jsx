@@ -47,7 +47,7 @@ const Navigation = ({ className }) => {
   }, [])
 
   return (
-    <nav className={`flex items-center relative ${className || ''}`}>
+    <nav className={`flex items-center relative w-fit ${className || ''}`}>
       <button
         ref={buttonRef} // Attach the ref to the hamburger button
         type="button"
