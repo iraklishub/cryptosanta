@@ -8,7 +8,8 @@ import { MenuIcon } from '@/src/components'
 const navLinks = [
   { id: 'about', title: 'About' },
   { id: 'contact', title: 'Contact' },
-  { id: 'token', title: 'Token' }
+  { id: 'token', title: 'Token' },
+  { id: 'nfts', title: 'NTF Collection' }
 ]
 
 const Navigation = ({ className }) => {
@@ -47,7 +48,7 @@ const Navigation = ({ className }) => {
   }, [])
 
   return (
-    <nav className={`flex items-center relative ${className || ''}`}>
+    <nav className={`flex items-center relative w-fit ${className || ''}`}>
       <button
         ref={buttonRef} // Attach the ref to the hamburger button
         type="button"

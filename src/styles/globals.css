@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '~react-toastify/dist/ReactToastify.min.css';
 
 .text_shadow {
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
@@ -58,13 +59,4 @@
   float: left;
   height: 0;
   pointer-events: none;
-}
-
-.secondary-connect-wallet > div > button {
-  background-color: white !important;
-  color: #000 !important;
-  font-weight: 500 !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

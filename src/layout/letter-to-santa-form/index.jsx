@@ -68,7 +68,7 @@ const LetterToSantaForm = ({ cssTranslate, onExit, isGrinch }) => {
       `}
     >
       <Image
-        src="https://res.cloudinary.com/sbbcd/image/upload/v1729537094/santababu/cards/10_gkvbn7.jpg"
+        src="https://res.cloudinary.com/sbbcd/image/upload/v1733247691/santababu/cards/santaletter_dzwlzx.jpg"
         fill
         quality={60}
         placeholder="blur"
@@ -79,6 +79,7 @@ const LetterToSantaForm = ({ cssTranslate, onExit, isGrinch }) => {
             : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DgAgAESgFFab83HQAAAABJRU5ErkJggg=='
         }
         className="object-cover"
+        sizes="100%"
       />
       <FormHeader
         title="Letter to Santa"

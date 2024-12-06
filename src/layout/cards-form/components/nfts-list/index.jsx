@@ -59,7 +59,10 @@ const NFTsList = ({ choosedCardID, onClick, isGrinch }) => {
           target="_blank"
           className="col-span-full flex flex-col gap-4 items-center justify-center"
         >
-          <span className="text-xs md:text-sm text-center">No NFTs Found. Buy on OpenSea.</span>
+          <span className="text-xs md:text-sm text-center">
+            You don't own any NFTs from SantaBabu collection yet. Explore and buy your first one on
+            OpenSea!
+          </span>
           <OpenseaBadgeIcon className="w-24 md:w-32" />
         </Link>
       ) : (

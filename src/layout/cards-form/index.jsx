@@ -3,20 +3,16 @@
 import { useState, useRef } from 'react'
 import { toast } from 'react-toastify'
 import html2canvas from 'html2canvas'
-import Lottie from 'lottie-react'
 
-import santaletterAnimationData from '@/src/constants/santa-letter-animation.json'
-import grinchletterAnimationData from '@/src/constants/grinch-letter-animation.json'
 import ImagesSection from './components/images-section'
 import FormHeader from '../form-header'
 import FormFooter from '../form-footer'
-import { Tiptap } from '@/src/components'
-import { cards } from '@/src//constants'
+import { Tiptap, Button } from '@/src/components'
+import { cards } from '@/src/constants'
 
 const CardsForm = ({ cssTranslate, isGrinch, onExit }) => {
   const captureRef = useRef()
   const [isLoading, setisLoading] = useState(false)
-  const [letterAnimation, setLetterAnimation] = useState(false)
 
   const filteredCards = isGrinch
     ? cards.filter((card) => card.isGrinch)
@@ -53,8 +49,7 @@ const CardsForm = ({ cssTranslate, isGrinch, onExit }) => {
     if (navigator.share) {
       try {
         await navigator.share(shareData)
-        setLetterAnimation(true)
-        toast.success('Card Sent', {
+        toast.success('Card Shared', {
           position: 'top-left',
           autoClose: 2000,
           hideProgressBar: true,
@@ -67,7 +62,7 @@ const CardsForm = ({ cssTranslate, isGrinch, onExit }) => {
         })
       } catch (error) {
         console.error('Error sharing:', error)
-        toast.error('Sending Failed', {
+        toast.error('Share Failed', {
           position: 'top-left',
           autoClose: 2000,
           hideProgressBar: true,
@@ -86,70 +81,76 @@ const CardsForm = ({ cssTranslate, isGrinch, onExit }) => {
     }
   }
 
-  // const handlePrint = () => {
-  //   const printWindow = window.open('', '', 'height=500,width=800')
+  const handlePrint = async () => {
+    // Use html2canvas to capture the content of the captureRef element
+    const canvas = await html2canvas(captureRef.current, {
+      allowTaint: true,
+      useCORS: true,
+      backgroundColor: null
+    })
 
-  //   // Clone the element and its contents
-  //   const printContent = captureRef.current.cloneNode(true)
+    // Create an image element to display the captured content
+    const img = new Image()
+    img.src = canvas.toDataURL()
 
-  //   // Write HTML content into the new window, including only the content of the ref
-  //   printWindow.document.write('<html><head><title>Print</title>')
+    // Open a new print window with a default size (it will be resized later based on content)
+    const printWindow = window.open('', '', `width=800,height=1200`)
 
-  //   // Optionally add custom styles
-  //   printWindow.document.write(`
-  //     <style>
-  //       body { font-family: Arial, sans-serif; padding: 20px; }
-  //       h1 { color: #333; }
-  //       p { font-size: 14px; }
-  //       img { max-width: 100%; } /* Make sure images scale well */
-  //     </style>
-  //   `)
+    // Wait for the image to load before writing it into the print window
+    img.onload = () => {
+      // Write the HTML content to the print window, including the image
+      printWindow.document.write('<html><head><title>Print</title>')
 
-  //   printWindow.document.write('</head><body>')
+      // Add custom styles for print to ensure portrait orientation and scaling
+      printWindow.document.write(`
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+          }
+          @page {
+            size: A4 portrait;  /* Force portrait orientation */
+            margin: 0;
+          }
+          .print-content {
+            width: 100%;
+            height: 100%;
+            transform-origin: 0 0; /* Align to top-left corner */
+            overflow: hidden;
+          }
+          img {
+            max-width: 100%;
+            height: auto;
+            transform: scale(0.85); /* Scale the image to fit the page */
+          }
+        </style>
+      `)
 
-  //   // Append the cloned node to the body of the print window
-  //   printWindow.document.body.appendChild(printContent)
+      printWindow.document.write('</head><body>')
 
-  //   printWindow.document.write('</body></html>')
-  //   printWindow.document.close() // Close the document to finalize it
+      // Create a wrapper div and append the image
+      const wrapper = printWindow.document.createElement('div')
+      wrapper.classList.add('print-content')
+      wrapper.appendChild(img)
 
-  //   // Wait for images to load before printing
-  //   const images = printContent.querySelectorAll('img')
-  //   let loadedImagesCount = 0
+      printWindow.document.body.appendChild(wrapper)
 
-  //   images.forEach((img) => {
-  //     // If the image is already loaded, increment the count
-  //     if (img.complete) {
-  //       loadedImagesCount++
-  //     } else {
-  //       // Otherwise, wait for it to load
-  //       img.onload = () => {
-  //         loadedImagesCount++
-  //         // If all images are loaded, trigger the print
-  //         if (loadedImagesCount === images.length) {
-  //           printWindow.print()
-  //         }
-  //       }
-  //     }
-  //   })
+      printWindow.document.write('</body></html>')
+      printWindow.document.close() // Finalize document
 
-  //   // If there are no images, print immediately
-  //   if (images.length === 0) {
-  //     printWindow.print()
-  //   }
+      // Wait for images to load before printing
+      img.onload = () => {
+        printWindow.print()
+      }
 
-  //   // Optionally close the print window after printing is done
-  //   printWindow.onafterprint = () => printWindow.close()
-  // }
+      // Optionally close the print window after printing is done
+      printWindow.onafterprint = () => printWindow.close()
+    }
+  }
 
-  return letterAnimation ? (
-    <Lottie
-      loop={false}
-      animationData={isGrinch ? grinchletterAnimationData : santaletterAnimationData}
-      style={{ width: 300, color: isGrinch ? 'red' : 'green' }}
-      onComplete={onExit}
-    />
-  ) : (
+  return (
     <form
       onSubmit={handleShare}
       className={`
@@ -167,7 +168,7 @@ const CardsForm = ({ cssTranslate, isGrinch, onExit }) => {
       <section className="flex flex-col md:flex-row flex-grow gap-2">
         <ImagesSection
           titles={{ cards: 'Cards', nfts: 'NFTs' }}
-          stateCardID={state.card.id}
+          stateCardID={state.card?.id}
           setState={setState}
           isGrinch={isGrinch}
           cards={filteredCards}
@@ -175,21 +176,16 @@ const CardsForm = ({ cssTranslate, isGrinch, onExit }) => {
 
         <Tiptap
           onChange={(e) => setState((prev) => ({ ...prev, text: e }))}
-          placeholder="Fill this text area with love and holiday joy! 🎄✨"
           ref={captureRef}
           card={state.card}
         />
       </section>
 
-      <FormFooter
-        title={isLoading ? 'Sharing' : 'Share'}
-        onExit={onExit}
-        disabled={!state.text || isLoading}
-        isLoading={isLoading}
-      />
-      {/* <button type="button" onClick={handlePrint}>
-        print
-      </button> */}
+      <FormFooter title={isLoading ? 'Sharing' : 'Share'} onExit={onExit} isLoading={isLoading}>
+        <Button type="button" onClick={handlePrint} className="ml-2">
+          <span className="capitalize text-sm md:text-base">Print</span>
+        </Button>
+      </FormFooter>
     </form>
   )
 }
