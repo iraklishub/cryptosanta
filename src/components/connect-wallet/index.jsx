@@ -10,23 +10,11 @@ import tokenIcon32 from '@/public/assets/icons/token.png'
 const ConnectWallet = ({ label, classNameConnect, classNameAccount }) => {
   return (
     <ConnectButton.Custom>
-      {({
-        account,
-        chain,
-        openAccountModal,
-        openChainModal,
-        openConnectModal,
-        authenticationStatus,
-        mounted
-      }) => {
+      {({ account, chain, openAccountModal, openChainModal, openConnectModal, mounted }) => {
         // Note: If your app doesn't use authentication, you
         // can remove all 'authenticationStatus' checks
-        const ready = mounted && authenticationStatus !== 'loading'
-        const connected =
-          ready &&
-          account &&
-          chain &&
-          (!authenticationStatus || authenticationStatus === 'authenticated')
+        const ready = mounted !== 'loading'
+        const connected = ready && account && chain
 
         const { data } = useBalance({
           address: account?.address,
@@ -54,7 +42,7 @@ const ConnectWallet = ({ label, classNameConnect, classNameAccount }) => {
                       classNameConnect || ''
                     }`}
                   >
-                    {label}
+                    {label || 'Connect Wallet'}
                   </Button>
                 )
               }
@@ -102,7 +90,9 @@ const ConnectWallet = ({ label, classNameConnect, classNameAccount }) => {
                   <span className="hidden md:inline">{account.ensName || account.displayName}</span>
                   <hr className="border-white border h-full hidden md:block" />
                   <span className="flex items-center gap-1 ml-2 md:ml-0">
-                    {data ? `${formatTokenValue(data.value, data.decimals)}` : ''}
+                    <span className="min-w-8">
+                      {data ? `${formatTokenValue(data.value, data.decimals)}` : ''}
+                    </span>
                     <Image src={tokenIcon32} alt="token icon" className="w-7 h-auto" />
                   </span>
                 </button>

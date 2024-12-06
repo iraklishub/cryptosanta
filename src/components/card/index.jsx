@@ -9,6 +9,8 @@ const Card = ({ title, description, imgUrl, link }) => (
         <Image
           src={imgUrl}
           alt="nft image"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DgAgAESgFFab83HQAAAABJRU5ErkJggg=="
           width={320}
           height={320}
           className="rounded-t-lg w-80 h-auto"
