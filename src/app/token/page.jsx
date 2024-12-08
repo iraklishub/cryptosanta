@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import token from '@/public/assets/icons/token.png'
-import { LeftArrowExit } from '@/src/components'
+import { LeftArrowExit, UniswapIcon, USDCIcon, ETHIcon } from '@/src/components'
 
 export default function Page() {
   return (
@@ -61,25 +61,37 @@ export default function Page() {
 
             <h2 className="text-xl font-semibold mt-6">Where to Buy</h2>
             <p>
-              You can buy or trade SantaBabu (SANTA) tokens on the decentralized exchanges (DEXes):
+              You can buy or trade SantaBabu (SANTA) tokens on the decentralized exchange (DEX):
             </p>
             <ul>
-              <li>
+              <li className="list-none">
                 <Link
                   href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center gap-2"
                 >
-                  Uniswap
+                  <UniswapIcon />
+                  Uniswap (ETH/SANTA)
+                  <span className="flex items-center gap-1">
+                    <ETHIcon className="-mr-1" />|
+                    <Image src={token} alt="token icon" width={22} height={22} quality={100} />
+                  </span>
                 </Link>
               </li>
-              <li>
+              <li className="list-none">
                 <Link
-                  href="https://pancakeswap.finance/?chain=base&outputCurrency=0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D"
+                  href="https://app.uniswap.org/#/swap?inputCurrency=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913&outputCurrency=0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center gap-2"
                 >
-                  PancakeSwap
+                  <UniswapIcon />
+                  Uniswap (USDC/SANTA)
+                  <span className="flex items-center gap-1">
+                    <USDCIcon />|
+                    <Image src={token} alt="token icon" width={22} height={22} quality={100} />
+                  </span>
                 </Link>
               </li>
             </ul>
@@ -93,9 +105,9 @@ export default function Page() {
 
             <h2 className="text-xl font-semibold mt-6">Future Plans</h2>
             <p>
-              As the project grows, we plan to list SANTA on more exchanges, integrate with various
-              platforms, and enhance the ecosystem with new features. Hodlers and active
-              participants will be rewarded as the SantaBabu community expands.
+              As the project grows, we plan to list SANTA on more exchanges, enhance the ecosystem
+              with new features, integrate token with them. Hodlers and active participants will be
+              rewarded as the SantaBabu community expands.
             </p>
           </section>
         </div>
