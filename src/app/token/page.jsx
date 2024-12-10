@@ -53,7 +53,7 @@ export default function Page() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title="basescan.org explorer"
-                  className="text-xs sm:text-sm md:text-base"
+                  className="text-sm md:text-base token-address"
                 >
                   0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D
                 </Link>
@@ -65,7 +65,7 @@ export default function Page() {
             <p>
               You can buy or trade SantaBabu (SANTA) tokens on the decentralized exchange (DEX):
             </p>
-            <ul>
+            <ul className="ps-0 md:ps-6">
               <li className="list-none">
                 <Link
                   href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D"
@@ -89,7 +89,7 @@ export default function Page() {
               Access real-time market data, performance metrics, and analytical insights for the
               token:
             </p>
-            <ul>
+            <ul className="ps-0 md:ps-6">
               <li className="list-none">
                 <Link
                   href="https://www.geckoterminal.com/base/pools/0x7ce1a029c36e1c416189f6591d463d44f394ef19"
@@ -99,9 +99,9 @@ export default function Page() {
                 >
                   <GeckoTerminalIcon />
                   <span className="font-medium">
-                    <span className="text-[#725ef6] font-bold">Gecko</span>Terminal
-                  </span>{' '}
-                  (ETH/SANTA)
+                    <span className="text-[#725ef6] font-bold">Gecko</span>Terminal (ETH/SANTA)
+                  </span>
+
                   <span className="flex items-center gap-1">
                     <ETHIcon className="-mr-1" />|
                     <Image src={token} alt="token icon" width={22} height={22} quality={100} />
