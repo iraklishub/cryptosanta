@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import token from '@/public/assets/icons/token.png'
-import { LeftArrowExit, UniswapIcon, USDCIcon, ETHIcon } from '@/src/components'
+import { LeftArrowExit, UniswapIcon, GeckoTerminalIcon, ETHIcon } from '@/src/components'
 
 export default function Page() {
   return (
@@ -36,6 +36,7 @@ export default function Page() {
               The SantaBabu (SANTA) token is a fun and community-driven ERC-20 token built on the
               Base Chain. It's designed to enhance the experience on the SantaBabu platform.
             </p>
+            <hr className="border-black" />
 
             <h2 className="text-xl font-semibold mt-6">Technical Info</h2>
             <ul className="list-none p-0">
@@ -58,6 +59,7 @@ export default function Page() {
                 </Link>
               </li>
             </ul>
+            <hr className="border-black" />
 
             <h2 className="text-xl font-semibold mt-6">Where to Buy</h2>
             <p>
@@ -69,7 +71,7 @@ export default function Page() {
                   href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 w-fit"
                 >
                   <UniswapIcon />
                   Uniswap (ETH/SANTA)
@@ -79,22 +81,35 @@ export default function Page() {
                   </span>
                 </Link>
               </li>
+            </ul>
+            <hr className="border-black" />
+
+            <h2 className="text-xl font-semibold mt-6">Token Analytics</h2>
+            <p>
+              Access real-time market data, performance metrics, and analytical insights for the
+              token:
+            </p>
+            <ul>
               <li className="list-none">
                 <Link
-                  href="https://app.uniswap.org/#/swap?inputCurrency=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913&outputCurrency=0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D"
+                  href="https://www.geckoterminal.com/base/pools/0x7ce1a029c36e1c416189f6591d463d44f394ef19"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 no-underline w-fit"
                 >
-                  <UniswapIcon />
-                  Uniswap (USDC/SANTA)
+                  <GeckoTerminalIcon />
+                  <span className="font-medium">
+                    <span className="text-[#725ef6] font-bold">Gecko</span>Terminal
+                  </span>{' '}
+                  (ETH/SANTA)
                   <span className="flex items-center gap-1">
-                    <USDCIcon />|
+                    <ETHIcon className="-mr-1" />|
                     <Image src={token} alt="token icon" width={22} height={22} quality={100} />
                   </span>
                 </Link>
               </li>
             </ul>
+            <hr className="border-black" />
 
             <h2 className="text-xl font-semibold mt-6">Use Cases</h2>
             <p>
@@ -102,6 +117,7 @@ export default function Page() {
               premium features and create personalized holiday experiences. Users can earn rewards
               and participate in exclusive app features!
             </p>
+            <hr className="border-black" />
 
             <h2 className="text-xl font-semibold mt-6">Future Plans</h2>
             <p>
