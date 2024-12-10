@@ -18,9 +18,7 @@ const Card = ({ title, description, imgUrl, link }) => (
       </Link>
       <div className="px-4 pt-6">
         <Link href={link} target="_blank">
-          <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {title}
-          </h5>
+          <h5 className="mb-2 text-xl font-bold tracking-tight text-white">{title}</h5>
         </Link>
         <p className="mb-3 font-normal text-gray-400 text-sm truncate">{description}</p>
       </div>

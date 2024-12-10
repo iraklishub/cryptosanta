@@ -60,3 +60,9 @@
   height: 0;
   pointer-events: none;
 }
+
+.token-address {
+  word-wrap: break-word; /* Wraps the text if it's too long */
+  word-break: break-word; /* Breaks the address if necessary */
+  overflow-wrap: break-word; /* Ensures words break where needed */
+}
