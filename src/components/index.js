@@ -9,6 +9,7 @@ export { default as ToolBar } from './toolbar'
 export { default as Tiptap } from './tiptap'
 export { default as ConnectWallet } from './connect-wallet'
 export { default as Card } from './card'
+export { default as RainbowProviders } from './rainbowproviders'
 // export { default as EmailTemplate } from './email-template'
 
 // Icon components

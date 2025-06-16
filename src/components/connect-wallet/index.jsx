@@ -4,7 +4,10 @@ import Image from 'next/image'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 // import { ETHBlueIcon } from '..'
 import { Button } from '..'
-import { useBalance } from 'wagmi'
+// useBalance works only native (ETH) token
+// import { useBalance } from 'wagmi'
+import { useReadContracts } from 'wagmi'
+import { erc20Abi } from 'viem'
 import formatTokenValue from '@/src/utils/formatTokenValue'
 import tokenIcon32 from '@/public/assets/icons/token.png'
 
@@ -17,10 +20,27 @@ const ConnectWallet = ({ label, classNameConnect, classNameAccount }) => {
         const ready = mounted !== 'loading'
         const connected = ready && account && chain
 
-        const { data } = useBalance({
-          address: account?.address,
-          // token address here
-          token: '0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D'
+        const { data } = useReadContracts({
+          allowFailure: false,
+          contracts: [
+            {
+              address: '0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D',
+              abi: erc20Abi,
+              functionName: 'balanceOf',
+              args: [account?.address]
+            },
+            {
+              address: '0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D',
+              abi: erc20Abi,
+              functionName: 'decimals'
+            },
+            {
+              address: '0x5a4C81600dF2f76a19aC97eE1d31E82eCFd5C33D',
+              abi: erc20Abi,
+              functionName: 'symbol'
+            }
+          ],
+          enabled: !!account?.address
         })
 
         return (
@@ -94,7 +114,7 @@ const ConnectWallet = ({ label, classNameConnect, classNameAccount }) => {
                   <span className="flex items-center gap-1 ml-2 md:ml-0">
                     {/* {account.displayBalance} */}
                     <span className="min-w-8">
-                      {data ? `${formatTokenValue(data.value, data.decimals)}` : ''}
+                      {data ? `${formatTokenValue(data[0], data[1], data[2])}` : 'error'}
                     </span>
                     <Image src={tokenIcon32} alt="token icon" className="w-7 h-auto" />
                   </span>
