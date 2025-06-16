@@ -1,7 +1,7 @@
 export default function manifest() {
   return {
-    name: 'SantaBabu Christmas themed WebApp',
-    short_name: 'SantaBabu',
+    name: 'Crypto Santa Christmas themed WebApp',
+    short_name: 'Crypto Santa',
     description:
       'Send letter to Santa, Generate Holiday Cards, explore holiday market, and Play games.',
     start_url: '/',

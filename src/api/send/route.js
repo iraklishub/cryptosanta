@@ -11,7 +11,7 @@ export async function POST(request) {
     const { name, email, text, image, subject, isGrinch } = body
 
     const data = await resend.emails.send({
-      from: `${name} <letter@santababu.online>`,
+      from: `${name} <letter@cryptosanta.online>`,
       to: email,
       subject: `${subject || 'Christmas Wishes'}: ${name}`,
       react: <></>

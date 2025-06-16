@@ -4,7 +4,7 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
       disallow: ''
-    },
-    sitemap: 'https://www.santababu.online/sitemap.xml'
+    }
+    // sitemap: 'https://www.cryptosanta.online/sitemap.xml'
   }
 }
