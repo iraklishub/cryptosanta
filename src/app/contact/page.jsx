@@ -21,34 +21,36 @@ export default function Page() {
             <li className="flex flex-wrap p-0 gap-2 items-center justify-center">
               <EmailIcon /> <strong className="hidden sm:inline">Email :</strong>
               <Link
-                href="mailto:contact@santababu.online"
+                // href="mailto:contact@cryptosanta.online"
+                href="mailto:"
                 className="text-blue-500 hover:underline"
               >
-                contact@santababu.online
+                contact@cryptosanta.online
               </Link>
             </li>
             <hr className="border-black" />
             <li className="flex flex-wrap p-0 gap-2 items-center justify-center">
               <Xicon /> <strong className="hidden sm:inline">X (Twitter) :</strong>
               <Link
-                href="https://x.com/santababux"
+                // href="https://x.com/cryptosantax"
+                href="https://x.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:underline"
               >
-                @santababux
+                @cryptosantax
               </Link>
             </li>
             <hr className="border-black" />
             <li className="flex flex-wrap p-0 gap-2 items-center justify-center">
               <TelegramIcon /> <strong className="hidden sm:inline">Telegram :</strong>
               <Link
-                href="https://t.me/santababutg"
+                href="https://t.me/cryptosantatg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:underline"
               >
-                @santababutg
+                @cryptosantatg
               </Link>
             </li>
           </ul>

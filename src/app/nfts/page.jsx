@@ -60,7 +60,7 @@ export default function Page() {
               </Link>
               <div className="prose prose-h1:text-slate-50 prose-p:text-slate-50 prose-a:text-slate-50">
                 <Link href="https://opensea.io/collection/santababu" target="_blank">
-                  <h1 className="text-3xl">SantaBabu</h1>
+                  <h1 className="text-3xl">Crypto Santa's SantaBabu Collection</h1>
                 </Link>
                 <p>
                   🎅 SantaBabu NFT Collection 🎄 Get into the holiday spirit with the SantaBabu

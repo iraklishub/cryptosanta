@@ -18,7 +18,9 @@ export default function Page() {
       <main className="p-4 w-full h-fit flex justify-center">
         <div className="bg-slate-200 p-8 rounded-md w-full prose prose-stone">
           <div className="flex items-center gap-4">
-            <h1 className="text-center m-0 text-2xl md:text-4xl">SantaBabu (SANTA) Token</h1>
+            <h1 className="text-center m-0 text-2xl md:text-4xl">
+              Crypto Santa Token (CRYPTOSANTA)
+            </h1>
             <Image
               src={token}
               alt="token icon"
@@ -31,10 +33,12 @@ export default function Page() {
           </div>
 
           <section>
-            <h2 className="text-xl font-semibold mt-6">Token Overview</h2>
+            <h2 className="text-xl font-semibold mt-6">
+              Crypto Santa's Token Overview (ticker - SANTA)
+            </h2>
             <p>
-              The SantaBabu (SANTA) token is a fun and community-driven ERC-20 token built on the
-              Base Chain. It's designed to enhance the experience on the SantaBabu platform.
+              The Crypto Santa's (SANTA) token is a fun and community-driven ERC-20 token built on
+              the Base Chain. It's designed to enhance the experience on the Crypto Santa platform.
             </p>
             <hr className="border-black" />
 
@@ -63,7 +67,7 @@ export default function Page() {
 
             <h2 className="text-xl font-semibold mt-6">Where to Buy</h2>
             <p>
-              You can buy or trade SantaBabu (SANTA) tokens on the decentralized exchange (DEX):
+              You can buy or trade Crypto Santa (SANTA) tokens on the decentralized exchange (DEX):
             </p>
             <ul className="ps-0 md:ps-6">
               <li className="list-none">
@@ -113,7 +117,7 @@ export default function Page() {
 
             <h2 className="text-xl font-semibold mt-6">Use Cases</h2>
             <p>
-              The SANTA token is going to power the SantaBabu ecosystem, enabling users to unlock
+              The SANTA token is going to power the Crypto Santa ecosystem, enabling users to unlock
               premium features and create personalized holiday experiences. Users can earn rewards
               and participate in exclusive app features!
             </p>
@@ -123,7 +127,7 @@ export default function Page() {
             <p>
               As the project grows, we plan to list SANTA on more exchanges, enhance the ecosystem
               with new features, integrate token with them. Hodlers and active participants will be
-              rewarded as the SantaBabu community expands.
+              rewarded as the Crypto Santa community expands.
             </p>
           </section>
         </div>

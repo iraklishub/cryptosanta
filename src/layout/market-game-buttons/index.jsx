@@ -14,7 +14,7 @@ const MarketGameButtons = () => {
       id: 'market',
       link: 'gifts',
       icon: <GiftsIcon />,
-      title: 'Gifts Shop'
+      title: 'Gifts Market'
     },
     {
       id: 'games',
@@ -32,6 +32,7 @@ const MarketGameButtons = () => {
           href={`/${link}`}
           className={clsx(
             'shadow-lg mt-6 py-1 min-w-40 flex items-center justify-center bg-white hover:bg-gray-100 active:bg-white rounded',
+            id === 'market' && 'min-w-44',
             isGrinch
               ? 'shadow-green-500 hover:shadow-green-600'
               : 'shadow-red-500 hover:shadow-red-600'

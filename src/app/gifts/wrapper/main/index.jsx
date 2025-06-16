@@ -53,7 +53,7 @@ const GiftsMain = ({ isOpen, setIsOpen }) => {
           'min-w-[8rem] h-fit shadow-2xl shadow-red-600 bg-white border-0 -mt-px capitalize justify-center'
         }
       >
-        Enter Market
+        Explore Stores
       </Button>
       <Lottie
         onComplete={() => saleRef.current?.goToAndPlay(112, true)}

@@ -8,10 +8,14 @@ import santaletterAnimationData from '@/src/constants/santa-letter-animation.jso
 import FormHeader from '../form-header'
 import TextFields from './components/textfields'
 import FormFooter from '../form-footer'
+import { useSendTransaction } from 'wagmi'
+import { parseEther } from 'viem'
 
 const LetterToSantaForm = ({ cssTranslate, onExit, isGrinch }) => {
   const [isLoading, setisLoading] = useState(false)
   const [letterAnimation, setLetterAnimation] = useState(false)
+
+  const { sendTransactionAsync } = useSendTransaction()
 
   const [data, setdata] = useState({
     text: ''
@@ -21,20 +25,42 @@ const LetterToSantaForm = ({ cssTranslate, onExit, isGrinch }) => {
     e.preventDefault()
     setisLoading(true)
 
-    setLetterAnimation(true)
+    try {
+      await sendTransactionAsync({
+        to: '0x1a811AF6AD8C8A37973e7ee42cE45c360ae24033',
+        value: parseEther('0.001'),
+        data: '0x' + Buffer.from(data.text).toString('hex')
+      })
 
-    setisLoading(false)
-    toast.success('Letter Sent', {
-      position: 'top-left',
-      autoClose: 2000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: false,
-      progress: undefined,
-      theme: 'light',
-      delay: 2500
-    })
+      setLetterAnimation(true)
+      setisLoading(false)
+      toast.success('Letter Sent', {
+        position: 'top-left',
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: 'light',
+        delay: 2500
+      })
+    } catch (err) {
+      setisLoading(false)
+      toast.error(`Error: ${err}`, {
+        position: 'top-left',
+        autoClose: false,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: 'light',
+        delay: 2500
+      })
+    }
+
+    // Resend Email fetch
 
     // const request = { ...data, subject: t.christmas_wishes }
     // try {
@@ -68,7 +94,7 @@ const LetterToSantaForm = ({ cssTranslate, onExit, isGrinch }) => {
       `}
     >
       <Image
-        src="https://res.cloudinary.com/sbbcd/image/upload/v1733247691/santababu/cards/santaletter_dzwlzx.jpg"
+        src="https://res.cloudinary.com/sbbcd/image/upload/v1733247691/cryptosanta/cards/santaletter_dzwlzx.jpg"
         fill
         quality={60}
         placeholder="blur"

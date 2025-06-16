@@ -1,5 +1,5 @@
 import { getDefaultConfig, connectorsForWallets } from '@rainbow-me/rainbowkit'
-import { base } from 'wagmi/chains'
+import { base, baseSepolia } from 'wagmi/chains'
 
 import {
   coinbaseWallet,
@@ -26,13 +26,13 @@ const connectors = connectorsForWallets(
       wallets: [walletConnectWallet]
     }
   ],
-  { appName: 'Santababu', projectId: projectId }
+  { appName: 'cryptosanta', projectId: projectId }
 )
 
 export const config = getDefaultConfig({
-  appName: 'Santababu',
+  appName: 'cryptosanta',
   projectId,
-  chains: [base],
+  chains: [base, baseSepolia],
   ssr: true,
   connectors
 })

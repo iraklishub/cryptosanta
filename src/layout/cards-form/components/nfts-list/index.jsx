@@ -60,8 +60,8 @@ const NFTsList = ({ choosedCardID, onClick, isGrinch }) => {
           className="col-span-full flex flex-col gap-4 items-center justify-center"
         >
           <span className="text-xs md:text-sm text-center">
-            You don't own any NFTs from SantaBabu collection yet. Explore and buy your first one on
-            OpenSea!
+            You don't own any NFTs from Crypto Santa's SantaBabu collection yet. Explore and buy
+            your first one on OpenSea!
           </span>
           <OpenseaBadgeIcon className="w-24 md:w-32" />
         </Link>
