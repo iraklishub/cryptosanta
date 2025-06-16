@@ -1,17 +1,14 @@
-import '../styles/globals.css'
+import '@/src/styles/globals.css'
 
 import { Inter } from 'next/font/google'
+import { ToastContainer, Flip } from 'react-toastify'
+import '@rainbow-me/rainbowkit/styles.css'
+import { RainbowProviders, ThemedImage } from '@/src/components'
 // import { Analytics } from '@vercel/analytics/react'
 // import { SpeedInsights } from '@vercel/speed-insights/next'
-
-import { ThemedImage } from '../components'
-
-import { ToastContainer, Flip } from 'react-toastify'
-
-// rainbow imports
-
-import '@rainbow-me/rainbowkit/styles.css'
-import { RainbowProviders } from '@/src/utils/providers'
+import { headers } from 'next/headers'
+import { cookieToInitialState } from 'wagmi'
+import { getConfig } from '@/src/utils/config'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,12 +20,13 @@ export async function generateMetadata() {
   }
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const initialState = cookieToInitialState(getConfig(), (await headers()).get('cookie'))
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
         <ThemedImage />
-        <RainbowProviders>{children}</RainbowProviders>
+        <RainbowProviders initialState={initialState}>{children}</RainbowProviders>
         <ToastContainer
           closeOnClick
           rtl={false}
